@@ -127,7 +127,11 @@ def generate_ai_plan(processed_data, config):
         for g in weekly_goals
     ])
 
-    upcoming = [r for r in races if r.get("status") == "upcoming"]
+    # races may be a dict with 'upcoming'/'past' keys or a list
+    if isinstance(races, dict):
+        upcoming = races.get("upcoming", [])
+    else:
+        upcoming = [r for r in races if r.get("status") == "upcoming"]
     race_str = ""
     if upcoming:
         race_str = f"\n即将到来的比赛: {upcoming[0]['name']} ({upcoming[0].get('countdown_days','?')}天后)"
@@ -151,23 +155,35 @@ def generate_ai_plan(processed_data, config):
 - 至少1天完全休息
 - 输出格式严格为7行，每行格式"周X: 内容"，不要额外说明"""
 
+    # Support custom base URL (e.g. Baidu Qianfan proxy)
+    base_url = os.environ.get("ANTHROPIC_BASE_URL", "https://api.anthropic.com")
+    model = os.environ.get("ANTHROPIC_DEFAULT_HAIKU_MODEL", "claude-haiku-4-5-20251001")
+
     try:
         resp = requests.post(
-            "https://api.anthropic.com/v1/messages",
+            f"{base_url}/v1/messages",
             headers={
                 "x-api-key": api_key,
                 "anthropic-version": "2023-06-01",
                 "content-type": "application/json",
             },
             json={
-                "model": "claude-haiku-4-5-20251001",
+                "model": model,
                 "max_tokens": 500,
                 "messages": [{"role": "user", "content": prompt}],
             },
             timeout=30,
         )
         resp.raise_for_status()
-        text = resp.json()["content"][0]["text"]
+        # Handle both standard Anthropic and Qianfan (which may include thinking blocks)
+        content_blocks = resp.json()["content"]
+        text = ""
+        for block in content_blocks:
+            if block.get("type") == "text":
+                text += block.get("text", "")
+        if not text:
+            # Fallback: try first block regardless of type
+            text = content_blocks[0].get("text", "") if content_blocks else ""
 
         # Parse the response into a dict
         plan = {}
