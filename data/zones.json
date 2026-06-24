@@ -1,0 +1,88 @@
+{
+  "ftp": 220,
+  "ftp_is_estimated": false,
+  "heart_rate_zones": [
+    {
+      "min": 0,
+      "max": 124
+    },
+    {
+      "min": 125,
+      "max": 155
+    },
+    {
+      "min": 156,
+      "max": 170
+    },
+    {
+      "min": 171,
+      "max": 185
+    },
+    {
+      "min": 186,
+      "max": null
+    }
+  ],
+  "heart_rate_zone_source": "MaxHeartRate",
+  "power_zones": [
+    {
+      "min": 0,
+      "max": 121
+    },
+    {
+      "min": 122,
+      "max": 165
+    },
+    {
+      "min": 166,
+      "max": 198
+    },
+    {
+      "min": 199,
+      "max": 231
+    },
+    {
+      "min": 232,
+      "max": 264
+    },
+    {
+      "min": 265,
+      "max": 330
+    },
+    {
+      "min": 331,
+      "max": null
+    }
+  ],
+  "run_zones": [
+    {
+      "min": 0,
+      "max": 2.739
+    },
+    {
+      "min": 2.739,
+      "max": 3.182
+    },
+    {
+      "min": 3.182,
+      "max": 3.544
+    },
+    {
+      "min": 3.544,
+      "max": 3.786
+    },
+    {
+      "min": 3.786,
+      "max": 4.028
+    },
+    {
+      "min": 4.028,
+      "max": null
+    }
+  ],
+  "sample_race_pace": {
+    "best_effort_type": "Fastest5k",
+    "time": "22m 0s",
+    "is_estimated": true
+  }
+}

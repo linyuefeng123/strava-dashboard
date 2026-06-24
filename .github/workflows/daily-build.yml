@@ -1,0 +1,87 @@
+name: Daily Dashboard Build
+
+on:
+  # 每日北京时间 6:00 (UTC 22:00 前一天)
+  schedule:
+    - cron: '0 22 * * *'
+  # 手动触发
+  workflow_dispatch:
+  # config 变更时触发
+  push:
+    paths:
+      - 'config.yaml'
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh Strava Token
+        id: strava_auth
+        run: |
+          RESPONSE=$(curl -s -X POST https://www.strava.com/oauth/token \
+            -d client_id=${{ secrets.STRAVA_CLIENT_ID }} \
+            -d client_secret=${{ secrets.STRAVA_CLIENT_SECRET }} \
+            -d refresh_token=${{ secrets.STRAVA_REFRESH_TOKEN }} \
+            -d grant_type=refresh_token)
+
+          ACCESS_TOKEN=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])")
+          NEW_REFRESH=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['refresh_token'])")
+
+          echo "access_token=$ACCESS_TOKEN" >> $GITHUB_OUTPUT
+          echo "refresh_token=$NEW_REFRESH" >> $GITHUB_OUTPUT
+
+      - name: Update Refresh Token Secret
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Update the refresh token for next run
+          gh secret set STRAVA_REFRESH_TOKEN --body "${{ steps.strava_auth.outputs.refresh_token }}" || true
+
+      - name: Fetch Strava Data
+        run: |
+          python src/fetch_strava.py \
+            --access-token "${{ steps.strava_auth.outputs.access_token }}" \
+            --year 2026 \
+            --output-dir data
+
+      - name: Process Data
+        run: python -c "
+          import sys, json
+          sys.path.insert(0, 'src')
+          from process_data import process_data
+          result = process_data(data_dir='data', config_path='config.yaml')
+          with open('data/processed.json', 'w') as f:
+              json.dump(result, f, indent=2, ensure_ascii=False)
+          print('Processed data saved')
+          "
+
+      - name: Generate Training Plan
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python src/generate_training.py
+
+      - name: Render Dashboard
+        run: python src/render_html.py
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          publish_branch: gh-pages

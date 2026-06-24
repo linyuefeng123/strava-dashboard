@@ -1,0 +1,100 @@
+{
+  "annual_summary": {
+    "ride": {
+      "distance_km": 175.5,
+      "time_hours": 6.0,
+      "count": 3,
+      "calories": 3122,
+      "pr_count": 32
+    },
+    "run": {
+      "distance_km": 25.8,
+      "time_hours": 2.3,
+      "count": 2,
+      "calories": 1806,
+      "pr_count": 17
+    }
+  },
+  "weekly_summary": {
+    "ride": {
+      "distance_km": 15.6,
+      "time_hours": 0.5,
+      "count": 1
+    },
+    "run": {
+      "distance_km": 5.0,
+      "time_hours": 0.6,
+      "count": 1
+    }
+  },
+  "weekly_goals": [],
+  "annual_goals": [],
+  "monthly_trend": {
+    "1": {},
+    "2": {},
+    "3": {
+      "run": {
+        "distance_km": 20.8,
+        "time_hours": 1.7,
+        "count": 1
+      }
+    },
+    "4": {},
+    "5": {
+      "ride": {
+        "distance_km": 138.6,
+        "time_hours": 4.8,
+        "count": 1
+      }
+    },
+    "6": {
+      "ride": {
+        "distance_km": 36.9,
+        "time_hours": 1.2,
+        "count": 2
+      },
+      "run": {
+        "distance_km": 5.0,
+        "time_hours": 0.6,
+        "count": 1
+      }
+    }
+  },
+  "key_metrics": {
+    "ftp": 220,
+    "best_5k_time": 2040,
+    "best_half_marathon_time": null,
+    "total_prs": 49
+  },
+  "races": {
+    "upcoming": [],
+    "past": [
+      {
+        "name": "松江田园铁三",
+        "date": "2026-06-14",
+        "distance_km": null,
+        "sport": "",
+        "result": "第6名，骑车第2跑步第7，获奖388元",
+        "time": null
+      },
+      {
+        "name": "上海铁三",
+        "date": "2026-05-10",
+        "distance_km": null,
+        "sport": "",
+        "result": "完赛，电变电池掉了",
+        "time": null
+      },
+      {
+        "name": "苏州半马",
+        "date": "2026-03-29",
+        "distance_km": null,
+        "sport": "",
+        "result": "首次参赛，1:43:14",
+        "time": null
+      }
+    ]
+  },
+  "streak": 2,
+  "last_updated": "2026-06-24T20:29:23.938665"
+}
