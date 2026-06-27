@@ -263,12 +263,42 @@ def _compute_annual_goals(
     return results
 
 
+def _expand_goals_config(goals_dict: dict, period: str = "annual") -> list[dict]:
+    """Convert flat goal config (e.g. {run_km: 800}) to list-of-dicts format.
+
+    The config.yaml uses a flat dict: goals.annual.run_km: 800
+    The computation functions expect a list of dicts:
+        [{sport: "run", metric: "distance_km", target: 800, label: "Run Distance"}]
+    """
+    mapping = [
+        ("ride_km", "ride", "distance_km", "Ride Distance"),
+        ("run_km", "run", "distance_km", "Run Distance"),
+        ("swim_km", "swim", "distance_km", "Swim Distance"),
+        ("workout_count", "workout", "count", "Workouts"),
+    ]
+    results = []
+    for key, sport, metric, label in mapping:
+        if key in goals_dict:
+            results.append({
+                "sport": sport,
+                "metric": metric,
+                "target": goals_dict[key],
+                "label": label,
+            })
+    return results
+
+
 def _compute_monthly_trend(activities: list[dict]) -> dict:
-    """Per-month (1-6), per-sport breakdown: distance, time, count."""
+    """Per-month (1 to current month), per-sport breakdown: distance, time, count."""
     trend: dict[int, dict[str, dict]] = {}
 
-    # Initialise all six months so the frontend always has a complete series
-    for m in range(1, 7):
+    # Dynamically compute months up to current month of reference year
+    today = date.today()
+    if today.year == REFERENCE_YEAR:
+        max_month = today.month
+    else:
+        max_month = 12
+    for m in range(1, max_month + 1):
         trend[m] = {}
 
     for act in activities:
@@ -364,6 +394,122 @@ def _compute_key_metrics(activities: list[dict], zones: dict) -> dict:
                         metrics["best_half_marathon_time"] = elapsed
 
     return metrics
+
+
+def _compute_weekly_trend(activities: list[dict], num_weeks: int = 8) -> list[dict]:
+    """Per-week, per-sport distance for the last N weeks.
+
+    Returns a list of dicts, each with:
+        week_num, start_date (str), per-sport {distance_km, time_hours, count}
+    Sorted most recent week first.
+    """
+    today = date.today()
+    # Find the Monday of the current week
+    current_monday = today - timedelta(days=today.weekday())
+
+    # Build week boundaries (most recent first)
+    weeks = []
+    for i in range(num_weeks):
+        monday = current_monday - timedelta(weeks=i)
+        sunday = monday + timedelta(days=6)
+        iso_week = monday.isocalendar()[1]
+        weeks.append({
+            "week_num": iso_week,
+            "start_date": monday.isoformat(),
+            "end_date": sunday.isoformat(),
+            "monday": monday,
+            "sunday": sunday,
+            "sports": {},
+        })
+
+    # Aggregate activities into weeks
+    for act in activities:
+        sport = _normalise_sport(act.get("sport_type", ""))
+        if sport is None or sport not in DISTANCE_SPORTS:
+            continue
+
+        try:
+            act_date = _parse_date(act.get("start_date_local", ""))
+        except (ValueError, TypeError):
+            continue
+
+        for week in weeks:
+            if week["monday"] <= act_date <= week["sunday"]:
+                if sport not in week["sports"]:
+                    week["sports"][sport] = {"distance_km": 0.0, "time_hours": 0.0, "count": 0}
+
+                dist_m = act.get("distance", 0) or 0
+                week["sports"][sport]["distance_km"] += dist_m / 1000.0
+
+                moving_s = act.get("moving_time", 0) or 0
+                week["sports"][sport]["time_hours"] += moving_s / 3600.0
+
+                week["sports"][sport]["count"] += 1
+                break
+
+    # Round and format output
+    result = []
+    for week in weeks:
+        sports_data = {}
+        for sport_key, sport_val in week["sports"].items():
+            sports_data[sport_key] = {
+                "distance_km": round(sport_val["distance_km"], 1),
+                "time_hours": round(sport_val["time_hours"], 1),
+                "count": sport_val["count"],
+            }
+        result.append({
+            "week_num": week["week_num"],
+            "start_date": week["start_date"],
+            "sports": sports_data,
+        })
+
+    return result
+
+
+def _compute_recent_activities(activities: list[dict], limit: int = 7) -> list[dict]:
+    """Return the N most recent activities with formatted fields.
+
+    Each entry has: id, name, sport_type, sport_icon, distance_km,
+    date_short, moving_time_min.
+    """
+    # Sort by start_date_local descending
+    sorted_acts = sorted(
+        activities,
+        key=lambda a: a.get("start_date_local", ""),
+        reverse=True,
+    )
+
+    sport_icons = {
+        "Run": "[R]", "TrailRun": "[R]",
+        "Ride": "[B]", "VirtualRide": "[B]",
+        "Swim": "[S]",
+        "WeightTraining": "[W]", "Workout": "[W]",
+    }
+
+    result = []
+    for act in sorted_acts[:limit]:
+        sport_type = act.get("sport_type", "")
+        dist_m = act.get("distance", 0) or 0
+        moving_s = act.get("moving_time", 0) or 0
+
+        # Format date as "M/D"
+        try:
+            act_date = _parse_date(act.get("start_date_local", ""))
+            date_short = f"{act_date.month}/{act_date.day}"
+        except (ValueError, TypeError):
+            date_short = ""
+
+        result.append({
+            "id": act.get("id"),
+            "name": act.get("name", ""),
+            "sport_type": sport_type,
+            "sport_icon": sport_icons.get(sport_type, "[?]"),
+            "distance_km": round(dist_m / 1000.0, 1),
+            "date_short": date_short,
+            "moving_time_min": round(moving_s / 60.0, 0),
+        })
+
+    return result
 
 
 def _compute_races(races_config: list[dict]) -> dict:
@@ -495,8 +641,19 @@ def process_data(data_dir: str = "data", config_path: str = "config.yaml") -> di
             filtered_activities.append(act)
 
     # ---- Extract config sections ----
-    weekly_goals_cfg = config.get("weekly_goals", [])
+    # Expand flat goal config into list format if not already provided
     annual_goals_cfg = config.get("annual_goals", [])
+    if not annual_goals_cfg:
+        annual_goals_cfg = _expand_goals_config(
+            config.get("goals", {}).get("annual", {}), period="annual"
+        )
+
+    weekly_goals_cfg = config.get("weekly_goals", [])
+    if not weekly_goals_cfg:
+        weekly_goals_cfg = _expand_goals_config(
+            config.get("goals", {}).get("weekly", {}), period="weekly"
+        )
+
     races_cfg = config.get("races", [])
     manual_data = config.get("manual_data", {})
 
@@ -515,6 +672,8 @@ def process_data(data_dir: str = "data", config_path: str = "config.yaml") -> di
     key_metrics = _compute_key_metrics(filtered_activities, raw_zones)
     races = _compute_races(races_cfg)
     streak = _compute_streak(filtered_activities)
+    weekly_trend = _compute_weekly_trend(filtered_activities, num_weeks=8)
+    recent_activities = _compute_recent_activities(filtered_activities, limit=7)
 
     return {
         "annual_summary": annual_summary,
@@ -525,5 +684,7 @@ def process_data(data_dir: str = "data", config_path: str = "config.yaml") -> di
         "key_metrics": key_metrics,
         "races": races,
         "streak": streak,
+        "weekly_trend": weekly_trend,
+        "recent_activities": recent_activities,
         "last_updated": datetime.now().isoformat(),
     }

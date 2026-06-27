@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}天气日历{% endblock %}
+{% block header %}天气日历{% endblock %}
+
+{% block content %}
+
+<!-- ===== 当前天气 ===== -->
+{% if weather and weather.current %}
+<div class="box">
+  <p class="section-title">当前天气</p>
+  <table class="weather-table">
+    <tr>
+      <td class="weather-icon">{{ weather.current.icon }}</td>
+      <td class="weather-temp">{{ weather.current.temperature }}°C</td>
+      <td class="weather-desc">{{ weather.current.description }}</td>
+      <td style="text-align:right; color:#888888; font-size:9pt;">上海</td>
+    </tr>
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 3天预报 ===== -->
+{% if weather and weather.forecast %}
+<div class="box">
+  <p class="section-title">3天预报</p>
+  <table class="forecast-table">
+    {% for day in weather.forecast %}
+    <tr>
+      <td class="forecast-day">{{ day.day_label }}</td>
+      <td class="forecast-icon">{{ day.icon }}</td>
+      <td class="weather-desc">{{ day.description }}</td>
+      <td class="forecast-range">{{ day.high }}/{{ day.low }}°C</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 今日日期 ===== -->
+<div class="box">
+  <p class="section-title">今日</p>
+  <table class="data-table">
+    <tr>
+      <td style="font-weight:bold;">{{ solar_date }}</td>
+    </tr>
+    <tr>
+      <td style="color:#333333;">农历{{ lunar_date }}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ===== 赛事日历 ===== -->
+{% if races %}
+<div class="box">
+  <p class="section-title">赛事日历</p>
+  <table class="upcoming-table">
+    {% for race in races %}
+    <tr>
+      <td class="event-bullet">*</td>
+      <td class="event-name">{{ race.name }}</td>
+      {% if race.status == 'done' %}
+      <td class="event-days" style="color:#888888;">已完赛</td>
+      {% elif race.countdown > 0 %}
+      <td class="event-days">{{ race.countdown }}d 后</td>
+      {% else %}
+      <td class="event-days">{{ race.date }}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 一言 ===== -->
+{% if quote %}
+<div class="box">
+  <p class="section-title">一言</p>
+  <p class="quote-text">{{ quote.text }}</p>
+  {% if quote.from %}
+  <p class="quote-from">—— {{ quote.from }}</p>
+  {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}

@@ -17,6 +17,9 @@ goals:
 
 # 比赛/活动日历
 races:
+  - name: "Challenge铁人三项"
+    date: "2026-10-24"
+    status: upcoming
   - name: "上海铁三"
     date: "2026-05-10"
     status: done
@@ -29,9 +32,6 @@ races:
     date: "2026-03-29"
     status: done
     result: "首次参赛，1:43:14"
-  # - name: "待定赛事"
-  #   date: "2026-09-01"
-  #   status: upcoming
 
 # 手动补充数据（Strava 缺失或记录异常的）
 manual_data: []
@@ -39,3 +39,25 @@ manual_data: []
   #   type: Swim
   #   distance_km: 1.5
   #   note: "泳池手动记录"
+
+# 天气配置（上海坐标）
+weather:
+  latitude: 31.23
+  longitude: 121.47
+  timezone: "Asia/Shanghai"
+
+# 待办事项（手动维护，每日构建时渲染）
+todos:
+  - text: "完成 5km 轻松跑"
+    done: false
+  - text: "MyWhoosh Z2 耐力 60min"
+    done: false
+  - text: "力量训练：深蹲+硬拉"
+    done: false
+  - text: "拉伸放松 15min"
+    done: false
+
+# 名言来源
+quotes:
+  categories: [d, i, k]  # hitokoto: 诗词/名言/哲理
+  fallback: true          # API 失败时使用硬编码备用

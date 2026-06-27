@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}每日指导{% endblock %}
+{% block header %}每日指导{% endblock %}
+
+{% block content %}
+
+<!-- ===== 今日训练 ===== -->
+{% if today_training %}
+<div class="box">
+  <p class="section-title">今日训练</p>
+  <table class="data-table">
+    <tr>
+      <td class="train-today" style="font-size:11pt; text-align:center; padding:4px;">
+        &gt;&gt;&gt; {{ today_training }} &lt;&lt;&lt;
+      </td>
+    </tr>
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 本周目标进度 ===== -->
+{% if weekly_goals %}
+<div class="box">
+  <p class="section-title">本周目标进度</p>
+  <table class="goals-table">
+    {% for goal in weekly_goals %}
+    <tr>
+      <td class="goal-icon">{{ goal.icon }}</td>
+      <td class="goal-sport">{{ goal.sport }}</td>
+      <td class="goal-values">{{ goal.current_disp }}/{{ goal.target_disp }}</td>
+      <td>
+        {% set bar_total = 20 %}
+        {% set bar_filled = (goal.pct * bar_total / 100) | int %}
+        <table class="bar-table">
+          <tr>
+            {% for i in range(bar_total) %}
+            <td class="{% if i < bar_filled %}bar-fill{% else %}bar-empty{% endif %}" width="{{ 100 // bar_total }}%"></td>
+            {% endfor %}
+          </tr>
+        </table>
+      </td>
+      <td class="goal-pct">{{ goal.pct }}%</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 赛事倒计时 ===== -->
+{% if next_race %}
+<div class="box">
+  <p class="section-title">赛事倒计时</p>
+  <div class="countdown-box">
+    <div class="countdown-days">{{ next_race.countdown }} 天</div>
+    <div class="countdown-label">距 {{ next_race.name }}</div>
+  </div>
+</div>
+{% endif %}
+
+<!-- ===== 训练区间参考 ===== -->
+{% if zones %}
+<div class="box">
+  <p class="section-title">训练区间参考</p>
+  <table class="zone-table">
+    {% if zones.hr_zones %}
+    <tr>
+      <td class="zone-label">心率:</td>
+      <td class="zone-value">{{ zones.hr_zones }}</td>
+    </tr>
+    {% endif %}
+    {% if zones.power_zones %}
+    <tr>
+      <td class="zone-label">功率:</td>
+      <td class="zone-value">{{ zones.power_zones }}</td>
+    </tr>
+    {% endif %}
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 一言 ===== -->
+{% if quote %}
+<div class="box">
+  <p class="section-title">一言</p>
+  <p class="quote-text">{{ quote.text }}</p>
+  {% if quote.from %}
+  <p class="quote-from">—— {{ quote.from }}</p>
+  {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}

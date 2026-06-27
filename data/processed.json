@@ -1,0 +1,258 @@
+{
+  "annual_summary": {
+    "ride": {
+      "distance_km": 175.5,
+      "time_hours": 6.0,
+      "count": 3,
+      "calories": 3122,
+      "pr_count": 32
+    },
+    "run": {
+      "distance_km": 25.8,
+      "time_hours": 2.3,
+      "count": 2,
+      "calories": 1806,
+      "pr_count": 17
+    }
+  },
+  "weekly_summary": {
+    "ride": {
+      "distance_km": 15.6,
+      "time_hours": 0.5,
+      "count": 1
+    },
+    "run": {
+      "distance_km": 5.0,
+      "time_hours": 0.6,
+      "count": 1
+    }
+  },
+  "weekly_goals": [
+    {
+      "label": "Ride Distance",
+      "target": 100,
+      "current": 15.6,
+      "pct": 15.6
+    },
+    {
+      "label": "Run Distance",
+      "target": 20,
+      "current": 5.0,
+      "pct": 25.0
+    },
+    {
+      "label": "Workouts",
+      "target": 2,
+      "current": 0,
+      "pct": 0.0
+    }
+  ],
+  "annual_goals": [
+    {
+      "label": "Ride Distance",
+      "target": 5000,
+      "current": 175.5,
+      "pct": 3.5
+    },
+    {
+      "label": "Run Distance",
+      "target": 800,
+      "current": 25.8,
+      "pct": 3.2
+    },
+    {
+      "label": "Swim Distance",
+      "target": 20,
+      "current": 0,
+      "pct": 0.0
+    },
+    {
+      "label": "Workouts",
+      "target": 100,
+      "current": 0,
+      "pct": 0.0
+    }
+  ],
+  "monthly_trend": {
+    "1": {},
+    "2": {},
+    "3": {
+      "run": {
+        "distance_km": 20.8,
+        "time_hours": 1.7,
+        "count": 1
+      }
+    },
+    "4": {},
+    "5": {
+      "ride": {
+        "distance_km": 138.6,
+        "time_hours": 4.8,
+        "count": 1
+      }
+    },
+    "6": {
+      "ride": {
+        "distance_km": 36.9,
+        "time_hours": 1.2,
+        "count": 2
+      },
+      "run": {
+        "distance_km": 5.0,
+        "time_hours": 0.6,
+        "count": 1
+      }
+    }
+  },
+  "key_metrics": {
+    "ftp": 220,
+    "best_5k_time": 2040,
+    "best_half_marathon_time": null,
+    "total_prs": 49
+  },
+  "races": {
+    "upcoming": [
+      {
+        "name": "Challenge铁人三项",
+        "date": "2026-10-24",
+        "distance_km": null,
+        "sport": "",
+        "countdown_days": 119
+      }
+    ],
+    "past": [
+      {
+        "name": "松江田园铁三",
+        "date": "2026-06-14",
+        "distance_km": null,
+        "sport": "",
+        "result": "第6名，骑车第2跑步第7，获奖388元",
+        "time": null
+      },
+      {
+        "name": "上海铁三",
+        "date": "2026-05-10",
+        "distance_km": null,
+        "sport": "",
+        "result": "完赛，电变电池掉了",
+        "time": null
+      },
+      {
+        "name": "苏州半马",
+        "date": "2026-03-29",
+        "distance_km": null,
+        "sport": "",
+        "result": "首次参赛，1:43:14",
+        "time": null
+      }
+    ]
+  },
+  "streak": 0,
+  "weekly_trend": [
+    {
+      "week_num": 26,
+      "start_date": "2026-06-22",
+      "sports": {
+        "ride": {
+          "distance_km": 15.6,
+          "time_hours": 0.5,
+          "count": 1
+        },
+        "run": {
+          "distance_km": 5.0,
+          "time_hours": 0.6,
+          "count": 1
+        }
+      }
+    },
+    {
+      "week_num": 25,
+      "start_date": "2026-06-15",
+      "sports": {
+        "ride": {
+          "distance_km": 21.2,
+          "time_hours": 0.7,
+          "count": 1
+        }
+      }
+    },
+    {
+      "week_num": 24,
+      "start_date": "2026-06-08",
+      "sports": {}
+    },
+    {
+      "week_num": 23,
+      "start_date": "2026-06-01",
+      "sports": {}
+    },
+    {
+      "week_num": 22,
+      "start_date": "2026-05-25",
+      "sports": {}
+    },
+    {
+      "week_num": 21,
+      "start_date": "2026-05-18",
+      "sports": {}
+    },
+    {
+      "week_num": 20,
+      "start_date": "2026-05-11",
+      "sports": {}
+    },
+    {
+      "week_num": 19,
+      "start_date": "2026-05-04",
+      "sports": {}
+    }
+  ],
+  "recent_activities": [
+    {
+      "id": "19044298301",
+      "name": "午间骑行",
+      "sport_type": "Ride",
+      "sport_icon": "[B]",
+      "distance_km": 15.6,
+      "date_short": "6/24",
+      "moving_time_min": 30.0
+    },
+    {
+      "id": "19030509087",
+      "name": "午间跑步",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 5.0,
+      "date_short": "6/23",
+      "moving_time_min": 34.0
+    },
+    {
+      "id": "18990921662",
+      "name": "MyWhoosh - Threshold block #2",
+      "sport_type": "VirtualRide",
+      "sport_icon": "[B]",
+      "distance_km": 21.2,
+      "date_short": "6/20",
+      "moving_time_min": 41.0
+    },
+    {
+      "id": "18327936572",
+      "name": "嘉兴九龙山5.1长距离",
+      "sport_type": "Ride",
+      "sport_icon": "[B]",
+      "distance_km": 138.6,
+      "date_short": "5/1",
+      "moving_time_min": 290.0
+    },
+    {
+      "id": "17895339462",
+      "name": "苏州半马",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 20.8,
+      "date_short": "3/29",
+      "moving_time_min": 103.0
+    }
+  ],
+  "last_updated": "2026-06-27T10:34:22.221417"
+}

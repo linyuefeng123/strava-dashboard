@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}待办专注{% endblock %}
+{% block header %}待办专注{% endblock %}
+
+{% block content %}
+
+<!-- ===== 今日待办 ===== -->
+{% if todos %}
+<div class="box">
+  <p class="section-title">今日待办</p>
+  <table class="todo-table">
+    {% for todo in todos %}
+    <tr>
+      <td class="todo-check">{% if todo.done %}[x]{% else %}[ ]{% endif %}</td>
+      <td{% if todo.done %} class="todo-done"{% endif %}>{{ todo.text }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="2" class="todo-summary">
+        完成: {{ todo_done_count }}/{{ todo_total_count }}
+      </td>
+    </tr>
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 本周训练 ===== -->
+{% if training_plan %}
+<div class="box">
+  <p class="section-title">本周训练</p>
+  <table class="training-table">
+    {% for day in training_plan %}
+    <tr{% if day.is_today %} class="train-today"{% endif %}>
+      <td class="train-day">{{ day.day }}</td>
+      {% if day.rest %}
+      <td class="train-rest">{{ day.description }}</td>
+      {% else %}
+      <td class="train-desc">{{ day.description }}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 运动连续 ===== -->
+{% if streak and streak > 0 %}
+<div class="box">
+  <p class="section-title">运动连续</p>
+  <table class="data-table">
+    <tr>
+      <td style="font-weight:bold; font-size:12pt;">连续运动 {{ streak }} 天</td>
+    </tr>
+  </table>
+</div>
+{% endif %}
+
+{% endblock %}
