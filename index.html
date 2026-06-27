@@ -3,395 +3,108 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="refresh" content="3600">
-<title>Eric Lin's Sports Dashboard</title>
+<title>Eric Lin · 运动仪表盘</title>
 <style>
-/* ===== E-ink Dashboard: 758x1024, 16-gray, table layout ===== */
 html, body {
-  margin: 0;
-  padding: 0;
-  width: 758px;
-  height: 1024px;
-  background: #FFFFFF;
-  color: #000000;
+  margin: 0; padding: 0;
+  width: 758px; height: 1024px;
+  background: #FFFFFF; color: #000000;
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 10pt;
-  line-height: 1.25;
+  font-size: 10pt; line-height: 1.25;
   -webkit-text-size-adjust: none;
 }
+.page { width: 758px; height: 1024px; padding: 3px 5px; box-sizing: border-box; }
+.box { border: 1px solid #888888; margin-bottom: 2px; padding: 2px 4px; }
 
-/* --- Layout container --- */
-.page {
-  width: 758px;
-  height: 1024px;
-  padding: 3px 5px;
-  box-sizing: border-box;
-}
+/* Header */
+.header-table { width: 100%; border-collapse: collapse; border: 1px solid #888888; margin-bottom: 2px; }
+.header-table td { padding: 2px 5px; font-size: 11pt; font-weight: bold; }
+.header-left { text-align: left; }
+.header-right { text-align: right; font-weight: normal; font-size: 9.5pt; color: #333333; }
 
-/* --- Section box --- */
-.box {
-  border: 1px solid #888888;
-  margin-bottom: 2px;
-  padding: 2px 4px;
-}
+/* Section titles */
+.section-title { font-size: 9pt; font-weight: bold; margin: 0 0 1px 0; padding: 0; letter-spacing: 0.5px; }
 
-/* --- Header --- */
-.header-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #888888;
-  margin-bottom: 2px;
-}
-.header-table td {
-  padding: 2px 5px;
-  font-size: 11pt;
-  font-weight: bold;
-}
-.header-left {
-  text-align: left;
-}
-.header-right {
-  text-align: right;
-  font-weight: normal;
-  font-size: 9.5pt;
-  color: #333333;
-}
-.header-streak {
-  font-weight: normal;
-  font-size: 9pt;
-  color: #555555;
-}
-
-/* --- Section titles --- */
-.section-title {
-  font-size: 9pt;
-  font-weight: bold;
-  margin: 0 0 1px 0;
-  padding: 0;
-  letter-spacing: 0.5px;
-}
-
-/* --- Annual goals table --- */
-.goals-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.goals-table td {
-  padding: 1px 2px;
-  font-size: 9pt;
-  vertical-align: middle;
-}
-.goal-icon {
-  width: 22px;
-  text-align: center;
-  font-weight: bold;
-}
-.goal-sport {
-  width: 32px;
-  font-weight: bold;
-}
-.goal-values {
-  width: 90px;
-  text-align: right;
-  color: #333333;
-  font-size: 8.5pt;
-  white-space: nowrap;
-}
-
-/* --- Progress bar (table-based) --- */
-.bar-table {
-  border-collapse: collapse;
-  height: 8px;
-}
-.bar-table td {
-  padding: 0;
-  height: 8px;
-  font-size: 1px;
-  line-height: 1px;
-}
-.bar-fill {
-  background: #444444;
-}
-.bar-empty {
-  background: #CCCCCC;
-}
-
-.goal-pct {
-  width: 28px;
-  text-align: right;
-  font-size: 8.5pt;
-  font-weight: bold;
-}
-
-/* --- Two-column layout --- */
-.split-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2px;
-}
-.split-table td {
-  vertical-align: top;
-  padding: 0;
-}
-.split-left {
-  width: 50%;
-  padding-right: 2px;
-}
-.split-right {
-  width: 50%;
-  padding-left: 2px;
-}
-
-/* --- Key metrics table --- */
-.metrics-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.metrics-table td {
-  padding: 1px 2px;
-  font-size: 8.5pt;
-  vertical-align: top;
-}
-.metric-label {
-  font-weight: bold;
-  width: 50px;
-}
-.metric-value {
-  color: #333333;
-}
-.metric-arrow {
-  width: 12px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 8pt;
-}
-
-/* --- Weekly goals table --- */
-.weekly-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.weekly-table td {
-  padding: 1px 2px;
-  font-size: 8.5pt;
-  vertical-align: middle;
-}
-.weekly-icon {
-  width: 22px;
-  text-align: center;
-  font-weight: bold;
-}
-.weekly-values {
-  text-align: right;
-  color: #333333;
-  font-size: 8.5pt;
-  white-space: nowrap;
-}
-.weekly-status {
-  width: 16px;
-  text-align: center;
-  font-weight: bold;
-}
-.weekly-summary {
-  font-size: 8.5pt;
-  padding: 1px 2px;
-  border-top: 1px solid #CCCCCC;
-  color: #333333;
-}
-
-/* --- Year progress --- */
-.progress-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.progress-table td {
-  padding: 1px 3px;
-  font-size: 8.5pt;
-  vertical-align: middle;
-}
-.progress-label {
-  font-weight: bold;
-  width: 70px;
-}
-.progress-bar-table {
-  border-collapse: collapse;
-  height: 8px;
-}
-.progress-bar-table td {
-  padding: 0;
-  height: 8px;
-  font-size: 1px;
-  line-height: 1px;
-}
-.progress-pct {
-  width: 35px;
-  text-align: right;
-  font-size: 8pt;
-}
-
-/* --- Trend tables (weekly & monthly) --- */
-.trend-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.trend-table td {
-  padding: 0px 2px;
-  font-size: 8pt;
-  vertical-align: middle;
-  font-family: "Courier New", monospace;
-}
-.trend-sport {
-  width: 24px;
-  font-weight: bold;
-  font-family: "Georgia", serif;
-  font-size: 8.5pt;
-}
-.trend-label {
-  width: 22px;
-  text-align: center;
-  color: #333333;
-}
-.trend-bar {
-  color: #333333;
-  letter-spacing: 0px;
-  font-size: 7.5pt;
-}
-.trend-value {
-  width: 38px;
-  text-align: right;
-  color: #333333;
-  font-family: "Georgia", serif;
-  font-size: 7.5pt;
-}
-
-/* --- Recent activities --- */
-.recent-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.recent-table td {
-  padding: 1px 2px;
-  font-size: 8.5pt;
-  vertical-align: middle;
-}
-.recent-icon {
-  width: 22px;
-  text-align: center;
-  font-weight: bold;
-}
-.recent-name {
-  font-weight: normal;
-  max-width: 300px;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.recent-dist {
-  width: 50px;
-  text-align: right;
-  color: #333333;
-}
-.recent-date {
-  width: 35px;
-  text-align: right;
-  color: #555555;
-  font-size: 8pt;
-}
-
-/* --- Upcoming races --- */
-.races-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.races-table td {
-  padding: 1px 3px;
-  font-size: 9pt;
-}
-.race-bullet {
-  width: 12px;
-  text-align: center;
-}
-.race-name {
-  font-weight: bold;
-}
-.race-days {
-  text-align: right;
-  color: #333333;
-  white-space: nowrap;
-}
-
-/* --- Training plan --- */
-.training-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.training-table td {
-  padding: 2px 3px;
-  font-size: 9pt;
-}
-.train-day {
-  width: 26px;
-  font-weight: bold;
-}
-.train-icon {
-  width: 20px;
-  text-align: center;
-  font-weight: bold;
-}
-.train-desc {
-  color: #333333;
-}
-.train-rest {
-  color: #888888;
-  font-style: italic;
-}
-.train-today {
-  background: #DDDDDD;
-}
-
-/* --- AI Tip --- */
+/* AI Tip - prominent */
 .ai-tip {
-  border: 1px solid #888888;
+  border: 2px solid #444444;
   margin-bottom: 2px;
-  padding: 3px 5px;
-  font-size: 8.5pt;
-  color: #333333;
-  font-style: italic;
-}
-.ai-tip-label {
-  font-weight: bold;
-  font-style: normal;
-  font-size: 8pt;
-}
-
-/* --- Utility --- */
-.separator {
-  border-top: 1px solid #CCCCCC;
-  margin: 1px 0;
-}
-
-/* --- Bottom navigation bar --- */
-.nav-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 758px;
-  border-top: 1px solid #888888;
-  background: #FFFFFF;
-  text-align: center;
-  padding: 4px 0;
-}
-.nav-item {
-  display: inline-block;
-  width: 180px;
-  font-size: 10pt;
-  color: #333333;
-  text-decoration: none;
-  padding: 2px 0;
-}
-.nav-item.active {
-  font-weight: bold;
-  text-decoration: underline;
+  padding: 4px 6px;
+  font-size: 9pt;
   color: #000000;
 }
+.ai-tip-label { font-weight: bold; font-size: 8.5pt; color: #555555; }
+
+/* Goals with progress bars */
+.goals-table { width: 100%; border-collapse: collapse; }
+.goals-table td { padding: 1px 2px; font-size: 9pt; vertical-align: middle; }
+.goal-icon { width: 22px; text-align: center; font-weight: bold; }
+.goal-sport { width: 32px; font-weight: bold; }
+.goal-values { width: 90px; text-align: right; color: #333333; font-size: 8.5pt; white-space: nowrap; }
+.bar-table { border-collapse: collapse; height: 8px; width: 100%; }
+.bar-table td { padding: 0; height: 8px; font-size: 1px; line-height: 1px; }
+.bar-fill { background: #444444; }
+.bar-empty { background: #CCCCCC; }
+.goal-pct { width: 28px; text-align: right; font-size: 8.5pt; font-weight: bold; }
+
+/* Two-column */
+.split-table { width: 100%; border-collapse: collapse; margin-bottom: 2px; }
+.split-table td { vertical-align: top; padding: 0; }
+.split-left { width: 50%; padding-right: 2px; }
+.split-right { width: 50%; padding-left: 2px; }
+
+/* Weekly goals */
+.weekly-table { width: 100%; border-collapse: collapse; }
+.weekly-table td { padding: 1px 2px; font-size: 8.5pt; vertical-align: middle; }
+.weekly-icon { width: 22px; text-align: center; font-weight: bold; }
+.weekly-values { text-align: right; color: #333333; font-size: 8.5pt; white-space: nowrap; }
+.weekly-status { width: 16px; text-align: center; font-weight: bold; }
+.weekly-summary { font-size: 8.5pt; padding: 1px 2px; border-top: 1px solid #CCCCCC; color: #333333; }
+
+/* Key metrics */
+.metrics-table { width: 100%; border-collapse: collapse; }
+.metrics-table td { padding: 1px 2px; font-size: 8.5pt; vertical-align: top; }
+.metric-label { font-weight: bold; width: 45px; }
+.metric-value { color: #333333; }
+.metric-arrow { width: 12px; text-align: center; font-weight: bold; font-size: 8pt; }
+
+/* Year progress */
+.progress-table { width: 100%; border-collapse: collapse; }
+.progress-table td { padding: 1px 3px; font-size: 8.5pt; vertical-align: middle; }
+.progress-label { font-weight: bold; width: 70px; }
+.progress-bar-table { border-collapse: collapse; height: 8px; width: 100%; max-width: 500px; }
+.progress-bar-table td { padding: 0; height: 8px; font-size: 1px; line-height: 1px; }
+.progress-pct { width: 35px; text-align: right; font-size: 8pt; }
+
+/* Race countdown - BIG */
+.countdown-box { text-align: center; padding: 6px; border: 2px solid #444444; margin: 2px 0; }
+.countdown-days { font-size: 24pt; font-weight: bold; line-height: 1.2; }
+.countdown-label { font-size: 10pt; color: #333333; }
+
+/* Training plan */
+.training-table { width: 100%; border-collapse: collapse; }
+.training-table td { padding: 2px 3px; font-size: 9pt; }
+.train-day { width: 26px; font-weight: bold; }
+.train-icon { width: 20px; text-align: center; font-weight: bold; }
+.train-desc { color: #333333; }
+.train-rest { color: #888888; font-style: italic; }
+.train-today { background: #DDDDDD; }
+
+/* Weekly trend */
+.trend-table { width: 100%; border-collapse: collapse; }
+.trend-table td { padding: 0px 2px; font-size: 8pt; vertical-align: middle; font-family: "Courier New", monospace; }
+.trend-sport { width: 24px; font-weight: bold; font-family: "Georgia", serif; font-size: 8.5pt; }
+.trend-label { width: 22px; text-align: center; color: #333333; }
+.trend-bar { color: #333333; letter-spacing: 0px; font-size: 7.5pt; }
+.trend-value { width: 38px; text-align: right; color: #333333; font-family: "Georgia", serif; font-size: 7.5pt; }
+
+/* Utility */
+.separator { border-top: 1px solid #CCCCCC; margin: 1px 0; }
+
+/* Nav bar - 3 tabs */
+.nav-bar { position: absolute; bottom: 0; left: 0; width: 758px; border-top: 1px solid #888888; background: #FFFFFF; text-align: center; padding: 4px 0; }
+.nav-item { display: inline-block; width: 240px; font-size: 10pt; color: #333333; text-decoration: none; padding: 2px 0; }
+.nav-item.active { font-weight: bold; text-decoration: underline; color: #000000; }
 </style>
 </head>
 <body>
@@ -400,14 +113,22 @@ html, body {
 <!-- ===== HEADER ===== -->
 <table class="header-table">
   <tr>
-    <td class="header-left">Eric Lin's Dashboard</td>
-    <td class="header-right">2026.06.27 </td>
+    <td class="header-left">Eric Lin · 运动</td>
+    <td class="header-right">2026.06.27</td>
   </tr>
 </table>
 
-<!-- ===== ANNUAL GOALS ===== -->
+<!-- ===== AI 训练建议（置顶突出）===== -->
+
+<div class="ai-tip">
+  <span class="ai-tip-label">AI 建议</span><br>
+  5km轻松跑 @5:40/km
+</div>
+
+
+<!-- ===== 年度目标（带进度条）===== -->
 <div class="box">
-  <p class="section-title">ANNUAL GOALS</p>
+  <p class="section-title">年度目标</p>
   <table class="goals-table">
     
     <tr>
@@ -420,45 +141,45 @@ html, body {
         <table class="bar-table">
           <tr>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
           </tr>
         </table>
@@ -476,45 +197,45 @@ html, body {
         <table class="bar-table">
           <tr>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
           </tr>
         </table>
@@ -532,45 +253,45 @@ html, body {
         <table class="bar-table">
           <tr>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
           </tr>
         </table>
@@ -588,45 +309,45 @@ html, body {
         <table class="bar-table">
           <tr>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-fill" width="5%"></td>
+            <td class="bar-fill"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
-            <td class="bar-empty" width="5%"></td>
+            <td class="bar-empty"></td>
             
           </tr>
         </table>
@@ -637,12 +358,12 @@ html, body {
   </table>
 </div>
 
-<!-- ===== THIS WEEK + KEY METRICS (two-column) ===== -->
+<!-- ===== 本周目标 + 关键指标（双栏）===== -->
 <table class="split-table">
   <tr>
     <td class="split-left">
       <div class="box">
-        <p class="section-title">THIS WEEK</p>
+        <p class="section-title">本周目标</p>
         <table class="weekly-table">
           
           <tr>
@@ -668,8 +389,7 @@ html, body {
           
           <tr>
             <td colspan="4" class="weekly-summary">
-              Done: 1/3
-               [!]
+              1/3 完成 ⏳
             </td>
           </tr>
         </table>
@@ -677,7 +397,7 @@ html, body {
     </td>
     <td class="split-right">
       <div class="box">
-        <p class="section-title">KEY METRICS</p>
+        <p class="section-title">关键指标</p>
         <table class="metrics-table">
           
           <tr>
@@ -720,127 +440,27 @@ html, body {
   </tr>
 </table>
 
-<!-- ===== YEAR PROGRESS ===== -->
+<!-- ===== 年度进度 ===== -->
 <div class="box">
-  <p class="section-title">YEAR PROGRESS</p>
+  <p class="section-title">年度进度</p>
   <table class="progress-table">
     <tr>
-      <td class="progress-label">Time</td>
+      <td class="progress-label">时间</td>
       <td>
         
         
         <table class="progress-bar-table">
-          <tr>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-          </tr>
+          <tr><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td></tr>
         </table>
       </td>
       <td class="progress-pct">48.8%</td>
     </tr>
     <tr>
-      <td class="progress-label">Goals</td>
+      <td class="progress-label">目标</td>
       <td>
         
         <table class="progress-bar-table">
-          <tr>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-fill" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-            <td class="bar-empty" width="4%"></td>
-            
-          </tr>
+          <tr><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td></tr>
         </table>
       </td>
       <td class="progress-pct">23.4%</td>
@@ -848,10 +468,88 @@ html, body {
   </table>
 </div>
 
-<!-- ===== WEEKLY TREND ===== -->
+<!-- ===== 赛事倒计时（大字突出）===== -->
 
 <div class="box">
-  <p class="section-title">WEEKLY TREND</p>
+  <p class="section-title">即将到来</p>
+  
+  <div class="countdown-box">
+    <div class="countdown-days">119</div>
+    <div class="countdown-label">距 Challenge铁人三项 (10/24)</div>
+  </div>
+  
+  
+</div>
+
+
+<!-- ===== 本周训练 ===== -->
+
+<div class="box">
+  <p class="section-title">本周训练</p>
+  <table class="training-table">
+    
+    <tr>
+      <td class="train-day">Mon</td>
+      
+      <td class="train-rest" colspan="2">休息/轻度拉伸</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="train-day">Tue</td>
+      
+      <td class="train-icon">[R]</td>
+      <td class="train-desc">5km轻松跑 @5:40/km</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="train-day">Wed</td>
+      
+      <td class="train-icon">[B]</td>
+      <td class="train-desc">MyWhoosh 60min Z2耐力</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="train-day">Thu</td>
+      
+      <td class="train-icon">[W]</td>
+      <td class="train-desc">力量训练（全身）</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="train-day">Fri</td>
+      
+      <td class="train-rest" colspan="2">休息或5km慢跑</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="train-day">Sat</td>
+      
+      <td class="train-icon">[B]</td>
+      <td class="train-desc">户外骑行 50-70km Z2-Z3</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="train-day">Sun</td>
+      
+      <td class="train-icon">[R]</td>
+      <td class="train-desc">8km长跑 @5:20/km</td>
+      
+    </tr>
+    
+  </table>
+</div>
+
+
+<!-- ===== 周趋势 ===== -->
+
+<div class="box">
+  <p class="section-title">周趋势</p>
   
   <table class="trend-table">
     
@@ -980,264 +678,13 @@ html, body {
 </div>
 
 
-<!-- ===== MONTHLY TREND ===== -->
-
-<div class="box">
-  <p class="section-title">MONTHLY TREND</p>
-  
-  <table class="trend-table">
-    
-    <tr>
-      
-      <td class="trend-sport" rowspan="6">[B]</td>
-      
-      <td class="trend-label">1月</td>
-      <td class="trend-bar">######                </td>
-      <td class="trend-value">157.4k</td>
-    </tr>
-    
-    <tr>
-      
-      <td class="trend-label">2月</td>
-      <td class="trend-bar">##################    </td>
-      <td class="trend-value">437k</td>
-    </tr>
-    
-    <tr>
-      
-      <td class="trend-label">3月</td>
-      <td class="trend-bar">###############       </td>
-      <td class="trend-value">371.7k</td>
-    </tr>
-    
-    <tr>
-      
-      <td class="trend-label">4月</td>
-      <td class="trend-bar">##################### </td>
-      <td class="trend-value">520.6k</td>
-    </tr>
-    
-    <tr>
-      
-      <td class="trend-label">5月</td>
-      <td class="trend-bar">######################</td>
-      <td class="trend-value">539.5k</td>
-    </tr>
-    
-    <tr>
-      
-      <td class="trend-label">6月</td>
-      <td class="trend-bar">###########           </td>
-      <td class="trend-value">272.3k</td>
-    </tr>
-    
-  </table>
-  
-  <table class="trend-table">
-    
-    <tr>
-      
-      <td class="trend-sport" rowspan="6">[R]</td>
-      
-      <td class="trend-label">1月</td>
-      <td class="trend-bar">                      </td>
-      <td class="trend-value">0k</td>
-    </tr>
-    
-    <tr>
-      
-      <td class="trend-label">2月</td>
-      <td class="trend-bar">                      </td>
-      <td class="trend-value">0.9k</td>
-    </tr>
-    
-    <tr>
-      
-      <td class="trend-label">3月</td>
-      <td class="trend-bar">######################</td>
-      <td class="trend-value">71.2k</td>
-    </tr>
-    
-    <tr>
-      
-      <td class="trend-label">4月</td>
-      <td class="trend-bar">####                  </td>
-      <td class="trend-value">14.1k</td>
-    </tr>
-    
-    <tr>
-      
-      <td class="trend-label">5月</td>
-      <td class="trend-bar">############          </td>
-      <td class="trend-value">38k</td>
-    </tr>
-    
-    <tr>
-      
-      <td class="trend-label">6月</td>
-      <td class="trend-bar">#################     </td>
-      <td class="trend-value">56.1k</td>
-    </tr>
-    
-  </table>
-  
 </div>
 
-
-<!-- ===== RECENT ACTIVITIES ===== -->
-
-<div class="box">
-  <p class="section-title">RECENT ACTIVITIES</p>
-  <table class="recent-table">
-    
-    <tr>
-      <td class="recent-icon">[W]</td>
-      <td class="recent-name">午间锻炼💪</td>
-      <td class="recent-dist">0.0km</td>
-      <td class="recent-date">6/25</td>
-    </tr>
-    
-    <tr>
-      <td class="recent-icon">[B]</td>
-      <td class="recent-name">午间骑行</td>
-      <td class="recent-dist">15.6km</td>
-      <td class="recent-date">6/24</td>
-    </tr>
-    
-    <tr>
-      <td class="recent-icon">[B]</td>
-      <td class="recent-name">午间骑行</td>
-      <td class="recent-dist">15.6km</td>
-      <td class="recent-date">6/24</td>
-    </tr>
-    
-    <tr>
-      <td class="recent-icon">[R]</td>
-      <td class="recent-name">午间跑步</td>
-      <td class="recent-dist">5.0km</td>
-      <td class="recent-date">6/23</td>
-    </tr>
-    
-    <tr>
-      <td class="recent-icon">[R]</td>
-      <td class="recent-name">午间跑步</td>
-      <td class="recent-dist">5.0km</td>
-      <td class="recent-date">6/23</td>
-    </tr>
-    
-    <tr>
-      <td class="recent-icon">[W]</td>
-      <td class="recent-name">晨间锻炼 ☀️</td>
-      <td class="recent-dist">0.0km</td>
-      <td class="recent-date">6/23</td>
-    </tr>
-    
-    <tr>
-      <td class="recent-icon">[R]</td>
-      <td class="recent-name">午间跑步</td>
-      <td class="recent-dist">5.5km</td>
-      <td class="recent-date">6/22</td>
-    </tr>
-    
-  </table>
-</div>
-
-
-<!-- ===== UPCOMING RACES ===== -->
-
-<div class="box">
-  <p class="section-title">UPCOMING RACES</p>
-  <table class="races-table">
-    
-    <tr>
-      <td class="race-bullet">*</td>
-      <td class="race-name">Challenge铁人三项</td>
-      <td class="race-days">119d (10/24)</td>
-    </tr>
-    
-  </table>
-</div>
-
-
-<!-- ===== THIS WEEK'S TRAINING ===== -->
-
-<div class="box">
-  <p class="section-title">THIS WEEK'S TRAINING</p>
-  <table class="training-table">
-    
-    <tr>
-      <td class="train-day">Mon</td>
-      
-      <td class="train-rest" colspan="2">休息/轻度拉伸</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Tue</td>
-      
-      <td class="train-icon">[R]</td>
-      <td class="train-desc">5km轻松跑 @5:40/km</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Wed</td>
-      
-      <td class="train-icon">[B]</td>
-      <td class="train-desc">MyWhoosh 60min Z2耐力</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Thu</td>
-      
-      <td class="train-icon">[W]</td>
-      <td class="train-desc">力量训练（全身）</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Fri</td>
-      
-      <td class="train-rest" colspan="2">休息或5km慢跑</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Sat</td>
-      
-      <td class="train-icon">[B]</td>
-      <td class="train-desc">户外骑行 50-70km Z2-Z3</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Sun</td>
-      
-      <td class="train-icon">[R]</td>
-      <td class="train-desc">8km长跑 @5:20/km</td>
-      
-    </tr>
-    
-  </table>
-</div>
-
-
-<!-- ===== AI TIP ===== -->
-
-<div class="ai-tip">
-  <span class="ai-tip-label">AI:</span> 5km轻松跑 @5:40/km
-</div>
-
-
-</div>
-
-<!-- ===== BOTTOM NAVIGATION ===== -->
+<!-- ===== 底部导航（3 Tab）===== -->
 <div class="nav-bar">
+  <a href="work.html" class="nav-item">工作</a>
+  <a href="life.html" class="nav-item">生活</a>
   <a href="index.html" class="nav-item active">运动</a>
-  <a href="weather.html" class="nav-item">天气</a>
-  <a href="todo.html" class="nav-item">待办</a>
-  <a href="guide.html" class="nav-item">指导</a>
 </div>
 
 </body>
