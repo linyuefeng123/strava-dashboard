@@ -1,11 +1,22 @@
 {
   "id": 161692262,
+  "id_str": "161692262",
+  "username": null,
+  "resource_state": 2,
   "firstname": "Eric",
   "lastname": "Lin",
-  "measurement_preference": "Metric",
-  "gender": "Man",
-  "weight": 68,
+  "bio": null,
   "city": "Shanghai",
   "state": "China",
-  "country": "Japan"
+  "country": "Japan",
+  "sex": "M",
+  "premium": true,
+  "summit": true,
+  "created_at": "2025-03-16T15:40:48Z",
+  "updated_at": "2026-05-08T01:50:29Z",
+  "badge_type_id": 1,
+  "profile_medium": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/161692262/36172196/4/medium.jpg",
+  "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/161692262/36172196/4/large.jpg",
+  "friend": null,
+  "follower": null
 }
