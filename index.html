@@ -15,96 +15,104 @@ html, body {
 }
 .page { width: 758px; height: 1024px; padding: 3px 5px; box-sizing: border-box; }
 .box { border: 1px solid #888888; margin-bottom: 2px; padding: 2px 4px; }
-
-/* Header */
 .header-table { width: 100%; border-collapse: collapse; border: 1px solid #888888; margin-bottom: 2px; }
 .header-table td { padding: 2px 5px; font-size: 11pt; font-weight: bold; }
 .header-left { text-align: left; }
 .header-right { text-align: right; font-weight: normal; font-size: 9.5pt; color: #333333; }
+.section-title { font-size: 8.5pt; font-weight: bold; margin: 0 0 1px 0; padding: 0; letter-spacing: 0.5px; color: #555555; }
 
-/* Section titles */
-.section-title { font-size: 9pt; font-weight: bold; margin: 0 0 1px 0; padding: 0; letter-spacing: 0.5px; }
-
-/* AI Tip - prominent */
-.ai-tip {
-  border: 2px solid #444444;
+/* Key metrics big row */
+.metrics-big {
+  width: 100%;
+  border-collapse: collapse;
   margin-bottom: 2px;
-  padding: 4px 6px;
-  font-size: 9pt;
-  color: #000000;
 }
-.ai-tip-label { font-weight: bold; font-size: 8.5pt; color: #555555; }
+.metrics-big td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 3px 2px;
+  width: 33.3%;
+}
+.metrics-big .metric-value {
+  font-size: 16pt;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.metrics-big .metric-label {
+  font-size: 8pt;
+  color: #555555;
+  font-weight: bold;
+}
+.metrics-big .metric-unit {
+  font-size: 9pt;
+  color: #333333;
+}
+.metric-divider {
+  width: 1px;
+  border-left: 1px solid #CCCCCC;
+}
 
-/* Goals with progress bars */
+/* Progress bars */
 .goals-table { width: 100%; border-collapse: collapse; }
 .goals-table td { padding: 1px 2px; font-size: 9pt; vertical-align: middle; }
 .goal-icon { width: 22px; text-align: center; font-weight: bold; }
 .goal-sport { width: 32px; font-weight: bold; }
-.goal-values { width: 90px; text-align: right; color: #333333; font-size: 8.5pt; white-space: nowrap; }
-.bar-table { border-collapse: collapse; height: 8px; width: 100%; }
-.bar-table td { padding: 0; height: 8px; font-size: 1px; line-height: 1px; }
+.goal-values { width: 80px; text-align: right; color: #333333; font-size: 8.5pt; white-space: nowrap; }
+.bar-table { border-collapse: collapse; height: 10px; width: 100%; }
+.bar-table td { padding: 0; height: 10px; font-size: 1px; line-height: 1px; }
 .bar-fill { background: #444444; }
 .bar-empty { background: #CCCCCC; }
 .goal-pct { width: 28px; text-align: right; font-size: 8.5pt; font-weight: bold; }
 
-/* Two-column */
-.split-table { width: 100%; border-collapse: collapse; margin-bottom: 2px; }
-.split-table td { vertical-align: top; padding: 0; }
-.split-left { width: 50%; padding-right: 2px; }
-.split-right { width: 50%; padding-left: 2px; }
+/* SVG charts side by side */
+.chart-row { width: 100%; }
+.chart-row td { vertical-align: top; padding: 0; }
+.chart-cell { width: 50%; }
 
-/* Weekly goals */
-.weekly-table { width: 100%; border-collapse: collapse; }
-.weekly-table td { padding: 1px 2px; font-size: 8.5pt; vertical-align: middle; }
-.weekly-icon { width: 22px; text-align: center; font-weight: bold; }
-.weekly-values { text-align: right; color: #333333; font-size: 8.5pt; white-space: nowrap; }
-.weekly-status { width: 16px; text-align: center; font-weight: bold; }
-.weekly-summary { font-size: 8.5pt; padding: 1px 2px; border-top: 1px solid #CCCCCC; color: #333333; }
+/* AI training plan */
+.ai-plan {
+  border: 2px solid #444444;
+  margin-bottom: 2px;
+  padding: 3px 5px;
+}
+.ai-plan-title {
+  font-size: 8.5pt;
+  font-weight: bold;
+  color: #555555;
+  margin-bottom: 2px;
+}
+.ai-today {
+  font-size: 10pt;
+  font-weight: bold;
+  padding: 2px 0;
+  border-bottom: 1px dashed #CCCCCC;
+  margin-bottom: 2px;
+}
+.ai-weekly td {
+  padding: 1px 2px;
+  font-size: 8.5pt;
+  vertical-align: middle;
+}
+.ai-weekly .day { width: 28px; font-weight: bold; }
+.ai-weekly .rest { color: #888888; font-style: italic; }
 
-/* Key metrics */
-.metrics-table { width: 100%; border-collapse: collapse; }
-.metrics-table td { padding: 1px 2px; font-size: 8.5pt; vertical-align: top; }
-.metric-label { font-weight: bold; width: 45px; }
-.metric-value { color: #333333; }
-.metric-arrow { width: 12px; text-align: center; font-weight: bold; font-size: 8pt; }
+/* Race countdown */
+.countdown-box { text-align: center; padding: 5px; border: 2px solid #444444; margin: 1px 0; }
+.countdown-days { font-size: 22pt; font-weight: bold; line-height: 1.2; }
+.countdown-label { font-size: 9pt; color: #333333; }
 
-/* Year progress */
-.progress-table { width: 100%; border-collapse: collapse; }
-.progress-table td { padding: 1px 3px; font-size: 8.5pt; vertical-align: middle; }
-.progress-label { font-weight: bold; width: 70px; }
-.progress-bar-table { border-collapse: collapse; height: 8px; width: 100%; max-width: 500px; }
-.progress-bar-table td { padding: 0; height: 8px; font-size: 1px; line-height: 1px; }
-.progress-pct { width: 35px; text-align: right; font-size: 8pt; }
-
-/* Race countdown - BIG */
-.countdown-box { text-align: center; padding: 6px; border: 2px solid #444444; margin: 2px 0; }
-.countdown-days { font-size: 24pt; font-weight: bold; line-height: 1.2; }
-.countdown-label { font-size: 10pt; color: #333333; }
-
-/* Training plan */
-.training-table { width: 100%; border-collapse: collapse; }
-.training-table td { padding: 2px 3px; font-size: 9pt; }
-.train-day { width: 26px; font-weight: bold; }
-.train-icon { width: 20px; text-align: center; font-weight: bold; }
-.train-desc { color: #333333; }
-.train-rest { color: #888888; font-style: italic; }
-.train-today { background: #DDDDDD; }
-
-/* Weekly trend */
-.trend-table { width: 100%; border-collapse: collapse; }
-.trend-table td { padding: 0px 2px; font-size: 8pt; vertical-align: middle; font-family: "Courier New", monospace; }
-.trend-sport { width: 24px; font-weight: bold; font-family: "Georgia", serif; font-size: 8.5pt; }
-.trend-label { width: 22px; text-align: center; color: #333333; }
-.trend-bar { color: #333333; letter-spacing: 0px; font-size: 7.5pt; }
-.trend-value { width: 38px; text-align: right; color: #333333; font-family: "Georgia", serif; font-size: 7.5pt; }
-
-/* Utility */
-.separator { border-top: 1px solid #CCCCCC; margin: 1px 0; }
-
-/* Nav bar - 3 tabs */
+/* Nav */
 .nav-bar { position: absolute; bottom: 0; left: 0; width: 758px; border-top: 1px solid #888888; background: #FFFFFF; text-align: center; padding: 4px 0; }
 .nav-item { display: inline-block; width: 240px; font-size: 10pt; color: #333333; text-decoration: none; padding: 2px 0; }
 .nav-item.active { font-weight: bold; text-decoration: underline; color: #000000; }
+
+/* Misc */
+.upcoming-table { width: 100%; border-collapse: collapse; }
+.upcoming-table td { padding: 1px 3px; font-size: 9pt; }
+.event-bullet { width: 12px; text-align: center; }
+.event-name { font-weight: bold; }
+.event-days { text-align: right; color: #333333; white-space: nowrap; }
+.separator { border-top: 1px solid #CCCCCC; margin: 1px 0; }
 </style>
 </head>
 <body>
@@ -118,443 +126,91 @@ html, body {
   </tr>
 </table>
 
-<!-- ===== AI 训练建议（置顶突出）===== -->
+<!-- ===== 关键指标（大字）===== -->
+<table class="metrics-big">
+  <tr>
+    <td>
+      <div class="metric-value">--</div>
+      <div class="metric-label">FTP</div>
+      <div class="metric-unit"></div>
+    </td>
+    <td class="metric-divider" rowspan="2"></td>
+    <td>
+      <div class="metric-value">--:--</div>
+      <div class="metric-label">10K 跑步</div>
+      <div class="metric-unit"></div>
+    </td>
+    <td class="metric-divider" rowspan="2"></td>
+    <td>
+      <div class="metric-value">--:--</div>
+      <div class="metric-label">1.5km 游泳</div>
+      <div class="metric-unit"></div>
+    </td>
+  </tr>
+</table>
 
-<div class="ai-tip">
-  <span class="ai-tip-label">AI 建议</span><br>
-  5km轻松跑 @5:40/km
-</div>
-
-
-<!-- ===== 年度目标（带进度条）===== -->
+<!-- ===== 本周进度 ===== -->
 <div class="box">
-  <p class="section-title">年度目标</p>
+  <p class="section-title">本周进度</p>
   <table class="goals-table">
     
     <tr>
       <td class="goal-icon">[B]</td>
       <td class="goal-sport">Ride</td>
-      <td class="goal-values">2298.5/5000km</td>
+      <td class="goal-values">31.2/100</td>
       <td>
         
         
         <table class="bar-table">
-          <tr>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-          </tr>
+          <tr><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td></tr>
         </table>
       </td>
-      <td class="goal-pct">46%</td>
+      <td class="goal-pct">31%</td>
     </tr>
     
     <tr>
       <td class="goal-icon">[R]</td>
       <td class="goal-sport">Run</td>
-      <td class="goal-values">180.3/800km</td>
+      <td class="goal-values">15.5/20</td>
       <td>
         
         
         <table class="bar-table">
-          <tr>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-          </tr>
+          <tr><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td></tr>
         </table>
       </td>
-      <td class="goal-pct">23%</td>
-    </tr>
-    
-    <tr>
-      <td class="goal-icon">[S]</td>
-      <td class="goal-sport">Swim</td>
-      <td class="goal-values">0.8/20km</td>
-      <td>
-        
-        
-        <table class="bar-table">
-          <tr>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-          </tr>
-        </table>
-      </td>
-      <td class="goal-pct">4%</td>
+      <td class="goal-pct">77%</td>
     </tr>
     
     <tr>
       <td class="goal-icon">[W]</td>
       <td class="goal-sport">Lift</td>
-      <td class="goal-values">21/100x</td>
+      <td class="goal-values">2/2</td>
       <td>
         
         
         <table class="bar-table">
-          <tr>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-fill"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-            <td class="bar-empty"></td>
-            
-          </tr>
+          <tr><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td></tr>
         </table>
       </td>
-      <td class="goal-pct">21%</td>
+      <td class="goal-pct">100%</td>
     </tr>
     
   </table>
 </div>
 
-<!-- ===== 本周目标 + 关键指标（双栏）===== -->
-<table class="split-table">
-  <tr>
-    <td class="split-left">
-      <div class="box">
-        <p class="section-title">本周目标</p>
-        <table class="weekly-table">
-          
-          <tr>
-            <td class="weekly-icon">[B]</td>
-            <td>Ride</td>
-            <td class="weekly-values">31.2/100</td>
-            <td class="weekly-status">[x]</td>
-          </tr>
-          
-          <tr>
-            <td class="weekly-icon">[R]</td>
-            <td>Run</td>
-            <td class="weekly-values">15.5/20</td>
-            <td class="weekly-status">[x]</td>
-          </tr>
-          
-          <tr>
-            <td class="weekly-icon">[W]</td>
-            <td>Lift</td>
-            <td class="weekly-values">2/2</td>
-            <td class="weekly-status">[v]</td>
-          </tr>
-          
-          <tr>
-            <td colspan="4" class="weekly-summary">
-              1/3 完成 ⏳
-            </td>
-          </tr>
-        </table>
-      </div>
-    </td>
-    <td class="split-right">
-      <div class="box">
-        <p class="section-title">关键指标</p>
-        <table class="metrics-table">
-          
-          <tr>
-            <td class="metric-label">FTP</td>
-            <td class="metric-value">--W</td>
-            
-            <td class="metric-arrow">&rarr;</td>
-            <td class="metric-value">250W</td>
-            
-          </tr>
-          
-          <tr>
-            <td class="metric-label">5K</td>
-            <td class="metric-value">25:02</td>
-            
-            <td class="metric-arrow">&rarr;</td>
-            <td class="metric-value">4:30/km</td>
-            
-          </tr>
-          
-          <tr>
-            <td class="metric-label">PRs</td>
-            <td class="metric-value">135</td>
-            
-            <td colspan="2"></td>
-            
-          </tr>
-          
-          <tr>
-            <td class="metric-label">Streak</td>
-            <td class="metric-value">0d</td>
-            
-            <td colspan="2"></td>
-            
-          </tr>
-          
-        </table>
-      </div>
-    </td>
-  </tr>
-</table>
+<!-- ===== 周跑量 / 周骑行量（双栏折线图）===== -->
 
-<!-- ===== 年度进度 ===== -->
-<div class="box">
-  <p class="section-title">年度进度</p>
-  <table class="progress-table">
+<div class="box" style="padding:1px 2px;">
+  <p class="section-title" style="margin-bottom:0;">周跑量 / 周骑行量</p>
+  <table class="chart-row">
     <tr>
-      <td class="progress-label">时间</td>
-      <td>
+    
+      <td class="chart-cell" style="">
         
-        
-        <table class="progress-bar-table">
-          <tr><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td></tr>
-        </table>
-      </td>
-      <td class="progress-pct">48.8%</td>
-    </tr>
-    <tr>
-      <td class="progress-label">目标</td>
-      <td>
-        
-        <table class="progress-bar-table">
-          <tr><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-fill"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td><td class="bar-empty"></td></tr>
-        </table>
-      </td>
-      <td class="progress-pct">23.4%</td>
-    </tr>
-  </table>
-</div>
-
-<!-- ===== 赛事倒计时（大字突出）===== -->
-
-<div class="box">
-  <p class="section-title">即将到来</p>
-  
-  <div class="countdown-box">
-    <div class="countdown-days">119</div>
-    <div class="countdown-label">距 Challenge铁人三项 (10/24)</div>
-  </div>
-  
-  
-</div>
-
-
-<!-- ===== 本周训练 ===== -->
-
-<div class="box">
-  <p class="section-title">本周训练</p>
-  <table class="training-table">
-    
-    <tr>
-      <td class="train-day">Mon</td>
-      
-      <td class="train-rest" colspan="2">休息/轻度拉伸</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Tue</td>
-      
-      <td class="train-icon">[R]</td>
-      <td class="train-desc">5km轻松跑 @5:40/km</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Wed</td>
-      
-      <td class="train-icon">[B]</td>
-      <td class="train-desc">MyWhoosh 60min Z2耐力</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Thu</td>
-      
-      <td class="train-icon">[W]</td>
-      <td class="train-desc">力量训练（全身）</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Fri</td>
-      
-      <td class="train-rest" colspan="2">休息或5km慢跑</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Sat</td>
-      
-      <td class="train-icon">[B]</td>
-      <td class="train-desc">户外骑行 50-70km Z2-Z3</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="train-day">Sun</td>
-      
-      <td class="train-icon">[R]</td>
-      <td class="train-desc">8km长跑 @5:20/km</td>
-      
-    </tr>
-    
-  </table>
-</div>
-
-
-<!-- ===== 周趋势 ===== -->
-
-<div class="box">
-  <p class="section-title">周跑量 / 周骑行量</p>
-  
-  
-  <div style="margin-bottom:2px;">
-    <span style="font-size:8pt;color:#555555;">[B] Ride (km)</span>
-    <div><svg width="320" height="100" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF;">
+        <div style="text-align:center;">
+          <span style="font-size:7pt;color:#555555;">[B] Ride</span>
+          <div><svg width="320" height="100" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF;">
 <line x1="8" y1="12" x2="312" y2="12" stroke="#DDDDDD" stroke-width="1"/>
 <line x1="8" y1="36" x2="312" y2="36" stroke="#DDDDDD" stroke-width="1"/>
 <line x1="8" y1="60" x2="312" y2="60" stroke="#DDDDDD" stroke-width="1"/>
@@ -581,13 +237,15 @@ html, body {
 <text x="268" y="98" fill="#888888" font-size="6" text-anchor="middle">W25</text>
 <text x="312" y="98" fill="#888888" font-size="6" text-anchor="middle">W26</text>
 </svg></div>
-  </div>
-  
-  
-  
-  <div style="margin-bottom:2px;">
-    <span style="font-size:8pt;color:#555555;">[R] Run (km)</span>
-    <div><svg width="320" height="100" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF;">
+        </div>
+        
+      </td>
+    
+      <td class="chart-cell" style="border-left:1px solid #CCCCCC;">
+        
+        <div style="text-align:center;">
+          <span style="font-size:7pt;color:#555555;">[R] Run</span>
+          <div><svg width="320" height="100" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF;">
 <line x1="8" y1="12" x2="312" y2="12" stroke="#DDDDDD" stroke-width="1"/>
 <line x1="8" y1="36" x2="312" y2="36" stroke="#DDDDDD" stroke-width="1"/>
 <line x1="8" y1="60" x2="312" y2="60" stroke="#DDDDDD" stroke-width="1"/>
@@ -614,6 +272,92 @@ html, body {
 <text x="268" y="98" fill="#888888" font-size="6" text-anchor="middle">W25</text>
 <text x="312" y="98" fill="#888888" font-size="6" text-anchor="middle">W26</text>
 </svg></div>
+        </div>
+        
+      </td>
+    
+    </tr>
+  </table>
+</div>
+
+
+<!-- ===== AI 训练建议 ===== -->
+
+<div class="ai-plan">
+  <div class="ai-plan-title">AI 训练建议</div>
+  
+  <div class="ai-today">今日: 户外骑行 60km Z2-Z3</div>
+  
+  
+  <table class="ai-weekly">
+    
+    <tr>
+      <td class="day">周六</td>
+      
+      <td>户外骑行 60km Z2-Z3</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="day">周日</td>
+      
+      <td>长跑 8km @5:20/km</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="day">周一</td>
+      
+      <td class="rest">休息</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="day">周二</td>
+      
+      <td>阈值训练 3×8min @260W</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="day">周三</td>
+      
+      <td>轻松跑 5km</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="day">周四</td>
+      
+      <td>MyWhoosh 间歇 6×3min 高功率</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="day">周五</td>
+      
+      <td>力量训练（全身）</td>
+      
+    </tr>
+    
+  </table>
+  
+  
+  <div style="font-size:8pt;color:#888888;font-style:italic;margin-top:2px;border-top:1px solid #CCCCCC;padding-top:2px;">
+    规则引擎生成 · 暂用基础训练模板
+  </div>
+  
+</div>
+
+
+<!-- ===== 赛事倒计时 ===== -->
+
+<div class="box">
+  <p class="section-title">即将到来</p>
+  
+  <div class="countdown-box">
+    <div class="countdown-days">119</div>
+    <div class="countdown-label">距 Challenge铁人三项 (10/24)</div>
   </div>
   
   
@@ -622,7 +366,6 @@ html, body {
 
 </div>
 
-<!-- ===== 底部导航（3 Tab）===== -->
 <div class="nav-bar">
   <a href="work.html" class="nav-item">工作</a>
   <a href="life.html" class="nav-item">生活</a>
