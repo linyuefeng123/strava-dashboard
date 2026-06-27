@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="3600">
+<title>天气日历</title>
+<style>
+/* ===== E-ink Base: 758x1024, 16-gray, table layout ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 758px;
+  height: 1024px;
+  background: #FFFFFF;
+  color: #000000;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 10pt;
+  line-height: 1.25;
+  -webkit-text-size-adjust: none;
+}
+
+/* --- Layout container --- */
+.page {
+  width: 758px;
+  height: 1024px;
+  padding: 4px 6px;
+  box-sizing: border-box;
+}
+
+/* --- Section box --- */
+.box {
+  border: 1px solid #888888;
+  margin-bottom: 3px;
+  padding: 3px 5px;
+}
+
+/* --- Header --- */
+.header-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #888888;
+  margin-bottom: 3px;
+}
+.header-table td {
+  padding: 3px 6px;
+  font-size: 12pt;
+  font-weight: bold;
+}
+.header-left {
+  text-align: left;
+}
+.header-right {
+  text-align: right;
+  font-weight: normal;
+  font-size: 10pt;
+  color: #333333;
+}
+
+/* --- Section titles --- */
+.section-title {
+  font-size: 10pt;
+  font-weight: bold;
+  margin: 0 0 2px 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+}
+
+/* --- Two-column layout --- */
+.split-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 3px;
+}
+.split-table td {
+  vertical-align: top;
+  padding: 0;
+}
+.split-left {
+  width: 50%;
+  padding-right: 2px;
+}
+.split-right {
+  width: 50%;
+  padding-left: 2px;
+}
+
+/* --- Progress bar (table-based) --- */
+.bar-table {
+  border-collapse: collapse;
+  height: 8px;
+}
+.bar-table td {
+  padding: 0;
+  height: 8px;
+  font-size: 1px;
+  line-height: 1px;
+}
+.bar-fill {
+  background: #444444;
+}
+.bar-empty {
+  background: #CCCCCC;
+}
+
+/* --- Generic data table --- */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.data-table td {
+  padding: 1px 3px;
+  font-size: 9pt;
+  vertical-align: middle;
+}
+
+/* --- Todo list --- */
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.todo-table td {
+  padding: 1px 3px;
+  font-size: 9pt;
+  vertical-align: middle;
+}
+.todo-check {
+  width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.todo-done {
+  color: #888888;
+  text-decoration: line-through;
+}
+.todo-summary {
+  font-size: 9pt;
+  padding: 2px 3px;
+  border-top: 1px solid #CCCCCC;
+  color: #333333;
+}
+
+/* --- Training plan --- */
+.training-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.training-table td {
+  padding: 1px 3px;
+  font-size: 9pt;
+}
+.train-day {
+  width: 28px;
+  font-weight: bold;
+}
+.train-desc {
+  color: #333333;
+}
+.train-rest {
+  color: #888888;
+  font-style: italic;
+}
+.train-today {
+  font-weight: bold;
+  border: 1px solid #444444;
+  padding: 2px 4px;
+}
+
+/* --- Weather --- */
+.weather-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.weather-table td {
+  padding: 1px 3px;
+  font-size: 9pt;
+  vertical-align: middle;
+}
+.weather-icon {
+  width: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 10pt;
+}
+.weather-temp {
+  font-weight: bold;
+  font-size: 14pt;
+}
+.weather-desc {
+  color: #333333;
+}
+
+/* --- Forecast --- */
+.forecast-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.forecast-table td {
+  padding: 1px 3px;
+  font-size: 9pt;
+  vertical-align: middle;
+}
+.forecast-day {
+  width: 48px;
+  color: #333333;
+}
+.forecast-icon {
+  width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.forecast-range {
+  text-align: right;
+  color: #333333;
+  white-space: nowrap;
+}
+
+/* --- Countdown --- */
+.countdown-box {
+  text-align: center;
+  padding: 6px;
+  border: 2px solid #444444;
+  margin: 3px 0;
+}
+.countdown-days {
+  font-size: 24pt;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.countdown-label {
+  font-size: 10pt;
+  color: #333333;
+}
+
+/* --- Zones reference --- */
+.zone-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.zone-table td {
+  padding: 1px 3px;
+  font-size: 8.5pt;
+  vertical-align: middle;
+}
+.zone-label {
+  font-weight: bold;
+  width: 50px;
+}
+.zone-value {
+  color: #333333;
+  white-space: nowrap;
+}
+
+/* --- Quote --- */
+.quote-text {
+  font-style: italic;
+  color: #333333;
+  font-size: 9pt;
+  padding: 2px 0;
+}
+.quote-from {
+  text-align: right;
+  color: #888888;
+  font-size: 8pt;
+}
+
+/* --- Goals progress --- */
+.goals-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.goals-table td {
+  padding: 1px 3px;
+  font-size: 9.5pt;
+  vertical-align: middle;
+}
+.goal-icon {
+  width: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+.goal-sport {
+  width: 36px;
+  font-weight: bold;
+}
+.goal-values {
+  width: 110px;
+  text-align: right;
+  color: #333333;
+  font-size: 9pt;
+  white-space: nowrap;
+}
+.goal-pct {
+  width: 30px;
+  text-align: right;
+  font-size: 9pt;
+  font-weight: bold;
+}
+
+/* --- Upcoming events --- */
+.upcoming-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.upcoming-table td {
+  padding: 1px 3px;
+  font-size: 9pt;
+}
+.event-bullet {
+  width: 12px;
+  text-align: center;
+}
+.event-name {
+  font-weight: bold;
+}
+.event-days {
+  text-align: right;
+  color: #333333;
+  white-space: nowrap;
+}
+
+/* --- Utility --- */
+.separator {
+  border-top: 1px solid #CCCCCC;
+  margin: 1px 0;
+}
+
+/* --- Bottom navigation bar --- */
+.nav-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 758px;
+  border-top: 1px solid #888888;
+  background: #FFFFFF;
+  text-align: center;
+  padding: 4px 0;
+}
+.nav-item {
+  display: inline-block;
+  width: 180px;
+  font-size: 10pt;
+  color: #333333;
+  text-decoration: none;
+  padding: 2px 0;
+}
+.nav-item.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #000000;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ===== HEADER ===== -->
+<table class="header-table">
+  <tr>
+    <td class="header-left">天气日历</td>
+    <td class="header-right">2026.06.27</td>
+  </tr>
+</table>
+
+<!-- ===== PAGE CONTENT ===== -->
+
+
+<!-- ===== 当前天气 ===== -->
+
+<div class="box">
+  <p class="section-title">当前天气</p>
+  <table class="weather-table">
+    <tr>
+      <td class="weather-icon">.</td>
+      <td class="weather-temp">27°C</td>
+      <td class="weather-desc">毛雨</td>
+      <td style="text-align:right; color:#888888; font-size:9pt;">上海</td>
+    </tr>
+  </table>
+</div>
+
+
+<!-- ===== 3天预报 ===== -->
+
+<div class="box">
+  <p class="section-title">3天预报</p>
+  <table class="forecast-table">
+    
+    <tr>
+      <td class="forecast-day">明天</td>
+      <td class="forecast-icon">~</td>
+      <td class="weather-desc">多云</td>
+      <td class="forecast-range">30/21°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day">后天</td>
+      <td class="forecast-icon">.</td>
+      <td class="weather-desc">小毛雨</td>
+      <td class="forecast-range">28/22°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day">大后天</td>
+      <td class="forecast-icon">!</td>
+      <td class="weather-desc">雷暴+冰雹</td>
+      <td class="forecast-range">26/24°C</td>
+    </tr>
+    
+  </table>
+</div>
+
+
+<!-- ===== 今日日期 ===== -->
+<div class="box">
+  <p class="section-title">今日</p>
+  <table class="data-table">
+    <tr>
+      <td style="font-weight:bold;">2026年6月27日 星期五</td>
+    </tr>
+    <tr>
+      <td style="color:#333333;">农历丙午年 五月十三</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ===== 赛事日历 ===== -->
+
+<div class="box">
+  <p class="section-title">赛事日历</p>
+  <table class="upcoming-table">
+    
+    <tr>
+      <td class="event-bullet">*</td>
+      <td class="event-name">Challenge铁人三项</td>
+      
+      <td class="event-days">119d 后</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="event-bullet">*</td>
+      <td class="event-name">松江田园铁三</td>
+      
+      <td class="event-days" style="color:#888888;">已完赛</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="event-bullet">*</td>
+      <td class="event-name">上海铁三</td>
+      
+      <td class="event-days" style="color:#888888;">已完赛</td>
+      
+    </tr>
+    
+    <tr>
+      <td class="event-bullet">*</td>
+      <td class="event-name">苏州半马</td>
+      
+      <td class="event-days" style="color:#888888;">已完赛</td>
+      
+    </tr>
+    
+  </table>
+</div>
+
+
+<!-- ===== 一言 ===== -->
+
+<div class="box">
+  <p class="section-title">一言</p>
+  <p class="quote-text">渺万里层云，千山暮雪，只影向谁去？</p>
+  
+  <p class="quote-from">—— 摸鱼儿·雁丘词 / 迈陂塘</p>
+  
+</div>
+
+
+
+
+</div>
+
+<!-- ===== BOTTOM NAVIGATION ===== -->
+<div class="nav-bar">
+  <a href="index.html" class="nav-item">运动</a>
+  <a href="weather.html" class="nav-item active">天气</a>
+  <a href="todo.html" class="nav-item">待办</a>
+  <a href="guide.html" class="nav-item">指导</a>
+</div>
+
+</body>
+</html>
