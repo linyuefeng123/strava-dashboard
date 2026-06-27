@@ -61,7 +61,8 @@ jobs:
             --output-dir data
 
       - name: Process Data
-        run: python -c "
+        run: |
+          python3 -c "
           import sys, json
           sys.path.insert(0, 'src')
           from process_data import process_data
