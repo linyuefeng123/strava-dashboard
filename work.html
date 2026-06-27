@@ -250,41 +250,6 @@ html, body {
   white-space: nowrap;
 }
 
-/* --- Meeting --- */
-.meeting-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.meeting-table td {
-  padding: 1px 2px;
-  font-size: 9pt;
-  vertical-align: middle;
-}
-.meeting-time {
-  width: 50px;
-  font-weight: bold;
-  color: #333333;
-}
-.meeting-title {
-  color: #333333;
-}
-.meeting-empty {
-  color: #888888;
-  font-style: italic;
-  text-align: center;
-  padding: 4px;
-  font-size: 8.5pt;
-}
-
-/* --- Rain alert --- */
-.rain-alert {
-  background: #DDDDDD;
-  padding: 2px 4px;
-  margin-top: 2px;
-  font-size: 8.5pt;
-  color: #333333;
-}
-
 /* --- Quote --- */
 .quote-text {
   font-style: italic;
@@ -372,7 +337,7 @@ html, body {
 }
 .nav-item {
   display: inline-block;
-  width: 240px;
+  width: 180px;
   font-size: 10pt;
   color: #333333;
   text-decoration: none;
@@ -401,28 +366,6 @@ html, body {
 
 <!-- ===== 今日待办 ===== -->
 
-<div class="box">
-  <p class="section-title">今日待办</p>
-  <table class="todo-table">
-    
-    <tr>
-      <td class="todo-check">[x]</td>
-      <td class="todo-done">周报</td>
-    </tr>
-    
-    <tr>
-      <td class="todo-check">[x]</td>
-      <td class="todo-done">周报</td>
-    </tr>
-    
-    <tr>
-      <td colspan="2" class="todo-summary">
-        完成: 2/2
-      </td>
-    </tr>
-  </table>
-</div>
-
 
 <!-- ===== 本周待办 ===== -->
 
@@ -446,9 +389,10 @@ html, body {
 
 <!-- ===== BOTTOM NAVIGATION ===== -->
 <div class="nav-bar">
-  <a href="work.html" class="nav-item active">工作</a>
-  <a href="life.html" class="nav-item">生活</a>
   <a href="index.html" class="nav-item">运动</a>
+  <a href="weather.html" class="nav-item">天气</a>
+  <a href="todo.html" class="nav-item">待办</a>
+  <a href="guide.html" class="nav-item">指导</a>
 </div>
 
 </body>
