@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="refresh" content="3600">
-<title>天气日历</title>
+<title>生活</title>
 <style>
 /* ===== E-ink Base: 758x1024, 16-gray, table layout ===== */
 html, body {
@@ -250,6 +250,41 @@ html, body {
   white-space: nowrap;
 }
 
+/* --- Meeting --- */
+.meeting-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.meeting-table td {
+  padding: 1px 2px;
+  font-size: 9pt;
+  vertical-align: middle;
+}
+.meeting-time {
+  width: 50px;
+  font-weight: bold;
+  color: #333333;
+}
+.meeting-title {
+  color: #333333;
+}
+.meeting-empty {
+  color: #888888;
+  font-style: italic;
+  text-align: center;
+  padding: 4px;
+  font-size: 8.5pt;
+}
+
+/* --- Rain alert --- */
+.rain-alert {
+  background: #DDDDDD;
+  padding: 2px 4px;
+  margin-top: 2px;
+  font-size: 8.5pt;
+  color: #333333;
+}
+
 /* --- Quote --- */
 .quote-text {
   font-style: italic;
@@ -337,7 +372,7 @@ html, body {
 }
 .nav-item {
   display: inline-block;
-  width: 180px;
+  width: 240px;
   font-size: 10pt;
   color: #333333;
   text-decoration: none;
@@ -356,7 +391,7 @@ html, body {
 <!-- ===== HEADER ===== -->
 <table class="header-table">
   <tr>
-    <td class="header-left">天气日历</td>
+    <td class="header-left">生活</td>
     <td class="header-right">2026.06.27</td>
   </tr>
 </table>
@@ -364,13 +399,79 @@ html, body {
 <!-- ===== PAGE CONTENT ===== -->
 
 
-<!-- ===== 当前天气 ===== -->
+<!-- ===== 天气 ===== -->
+
+<div class="box">
+  <p class="section-title">天气</p>
+  <table class="weather-table">
+    <tr>
+      <td class="weather-icon">*</td>
+      <td class="weather-temp">26°C</td>
+      <td class="weather-desc">大部晴</td>
+      <td style="text-align:right; color:#888888; font-size:9pt;">上海</td>
+    </tr>
+  </table>
+  
+  <table class="forecast-table">
+    
+    <tr>
+      <td class="forecast-day">周日</td>
+      <td class="forecast-icon">*</td>
+      <td class="weather-desc">大部晴</td>
+      <td class="forecast-range">30/21°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day">周一</td>
+      <td class="forecast-icon">.</td>
+      <td class="weather-desc">小毛雨</td>
+      <td class="forecast-range">28/22°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day">周二</td>
+      <td class="forecast-icon">!</td>
+      <td class="weather-desc">雷暴+冰雹</td>
+      <td class="forecast-range">26/24°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day">周三</td>
+      <td class="forecast-icon">|</td>
+      <td class="weather-desc">阵雨</td>
+      <td class="forecast-range">27/22°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day">周四</td>
+      <td class="forecast-icon">!</td>
+      <td class="weather-desc">雷暴</td>
+      <td class="forecast-range">26/23°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day">周五</td>
+      <td class="forecast-icon">!</td>
+      <td class="weather-desc">雷暴</td>
+      <td class="forecast-range">26/23°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day">周六</td>
+      <td class="forecast-icon">!</td>
+      <td class="weather-desc">雷暴</td>
+      <td class="forecast-range">29/24°C</td>
+    </tr>
+    
+  </table>
+  
+  
+  <div class="rain-alert">! 周一/周二/周三/周四/周五/周六 有雨，注意带伞</div>
+  
+</div>
 
 
-<!-- ===== 3天预报 ===== -->
-
-
-<!-- ===== 今日日期 ===== -->
+<!-- ===== 今日 ===== -->
 <div class="box">
   <p class="section-title">今日</p>
   <table class="data-table">
@@ -383,42 +484,172 @@ html, body {
   </table>
 </div>
 
-<!-- ===== 赛事日历 ===== -->
+<!-- ===== 生活待办 ===== -->
 
 <div class="box">
-  <p class="section-title">赛事日历</p>
+  <p class="section-title">生活待办</p>
+  <table class="todo-table">
+    
+    <tr>
+      <td class="todo-check">[ ]</td>
+      <td>每月2本书</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[ ]</td>
+      <td>每天拉伸10分钟</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[ ]</td>
+      <td>鼠标</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">🍑🍈🥭🥑🥑🥑🥑🍊🍊🍊🍊¥。京 俄国的小程序陈冲存在的耳朵v🍊在 ＤＲＤｆａ…………。 v🍇🥭🐀🐓</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">云山湖风景区地处k远离公路yyu、y</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">一ru</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">武警uyjun</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">好亦是不想喜欢yu、也没看到ui</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">周一和监察部交流</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">这</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">这</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">江</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">签证冯</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">ss、投影仪也好</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">对nverif7. Cc.</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">面试</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">面试</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">PPT周二准备</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">Yiu j j in u</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">yiz</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">新提醒事项</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">保险咨询</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">PPT周二准备</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">Yiu j j in u</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">yiz</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">老婆生日</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">金桥演讲</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">F1卡丁车</td>
+    </tr>
+    
+    <tr>
+      <td class="todo-check">[x]</td>
+      <td class="todo-done">保险咨询的动力</td>
+    </tr>
+    
+    
+  </table>
+</div>
+
+
+<!-- ===== 生日 / 纪念日 ===== -->
+
+<div class="box">
+  <p class="section-title">生日 / 纪念日</p>
   <table class="upcoming-table">
     
     <tr>
       <td class="event-bullet">*</td>
-      <td class="event-name">Challenge铁人三项</td>
-      
-      <td class="event-days">119d 后</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">松江田园铁三</td>
-      
-      <td class="event-days" style="color:#888888;">已完赛</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">上海铁三</td>
-      
-      <td class="event-days" style="color:#888888;">已完赛</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">苏州半马</td>
-      
-      <td class="event-days" style="color:#888888;">已完赛</td>
-      
+      <td class="event-name">老婆生日</td>
+      <td class="event-days">2025-  95天后天后</td>
     </tr>
     
   </table>
@@ -429,9 +660,9 @@ html, body {
 
 <div class="box">
   <p class="section-title">一言</p>
-  <p class="quote-text">千里之行，始于足下。</p>
+  <p class="quote-text">博观而约取，厚积而薄发。</p>
   
-  <p class="quote-from">—— 老子</p>
+  <p class="quote-from">—— 苏轼</p>
   
 </div>
 
@@ -442,10 +673,9 @@ html, body {
 
 <!-- ===== BOTTOM NAVIGATION ===== -->
 <div class="nav-bar">
+  <a href="work.html" class="nav-item">工作</a>
+  <a href="life.html" class="nav-item active">生活</a>
   <a href="index.html" class="nav-item">运动</a>
-  <a href="weather.html" class="nav-item active">天气</a>
-  <a href="todo.html" class="nav-item">待办</a>
-  <a href="guide.html" class="nav-item">指导</a>
 </div>
 
 </body>
