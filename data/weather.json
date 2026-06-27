@@ -1,24 +1,15 @@
 {
   "current": {
-    "temperature": 27,
-    "weather_code": 53,
-    "description": "毛雨",
-    "icon": "."
+    "temperature": 24,
+    "weather_code": 1,
+    "description": "大部晴",
+    "icon": "*"
   },
   "forecast": [
     {
-      "date": "2026-06-28",
-      "day_label": "明天",
-      "high": 30,
-      "low": 21,
-      "weather_code": 2,
-      "description": "多云",
-      "icon": "~"
-    },
-    {
       "date": "2026-06-29",
-      "day_label": "后天",
-      "high": 28,
+      "day_label": "明天",
+      "high": 29,
       "low": 22,
       "weather_code": 51,
       "description": "小毛雨",
@@ -26,13 +17,22 @@
     },
     {
       "date": "2026-06-30",
-      "day_label": "大后天",
+      "day_label": "后天",
       "high": 26,
+      "low": 24,
+      "weather_code": 99,
+      "description": "强雷暴+冰雹",
+      "icon": "!"
+    },
+    {
+      "date": "2026-07-01",
+      "day_label": "大后天",
+      "high": 28,
       "low": 24,
       "weather_code": 96,
       "description": "雷暴+冰雹",
       "icon": "!"
     }
   ],
-  "fetched_at": "2026-06-27T07:20:55.311248"
+  "fetched_at": "2026-06-27T23:10:04.662846"
 }
