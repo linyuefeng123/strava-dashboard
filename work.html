@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="refresh" content="3600">
-<title>天气日历</title>
+<title>工作</title>
 <style>
 /* ===== E-ink Base: 758x1024, 16-gray, table layout ===== */
 html, body {
@@ -356,83 +356,37 @@ html, body {
 <!-- ===== HEADER ===== -->
 <table class="header-table">
   <tr>
-    <td class="header-left">天气日历</td>
-    <td class="header-right">2026.06.27</td>
+    <td class="header-left">工作</td>
+    <td class="header-right">2026.06.28</td>
   </tr>
 </table>
 
 <!-- ===== PAGE CONTENT ===== -->
 
 
-<!-- ===== 当前天气 ===== -->
+<!-- ===== 今日待办 ===== -->
 
 
-<!-- ===== 3天预报 ===== -->
+<!-- ===== 本周待办 ===== -->
 
 
-<!-- ===== 今日日期 ===== -->
-<div class="box">
-  <p class="section-title">今日</p>
-  <table class="data-table">
-    <tr>
-      <td style="font-weight:bold;">2026年6月27日 星期五</td>
-    </tr>
-    <tr>
-      <td style="color:#333333;">农历丙午年 五月十三</td>
-    </tr>
-  </table>
-</div>
-
-<!-- ===== 赛事日历 ===== -->
+<!-- ===== 本周会议 ===== -->
 
 <div class="box">
-  <p class="section-title">赛事日历</p>
-  <table class="upcoming-table">
+  <p class="section-title">本周会议</p>
+  <table class="meeting-table">
     
     <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">Challenge铁人三项</td>
-      
-      <td class="event-days">119d 后</td>
-      
+      <td class="meeting-time">周三</td>
+      <td class="meeting-title">技术方案讨论</td>
     </tr>
     
     <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">松江田园铁三</td>
-      
-      <td class="event-days" style="color:#888888;">已完赛</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">上海铁三</td>
-      
-      <td class="event-days" style="color:#888888;">已完赛</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">苏州半马</td>
-      
-      <td class="event-days" style="color:#888888;">已完赛</td>
-      
+      <td class="meeting-time">周五</td>
+      <td class="meeting-title">Sprint Review</td>
     </tr>
     
   </table>
-</div>
-
-
-<!-- ===== 一言 ===== -->
-
-<div class="box">
-  <p class="section-title">一言</p>
-  <p class="quote-text">千里之行，始于足下。</p>
-  
-  <p class="quote-from">—— 老子</p>
-  
 </div>
 
 
@@ -442,10 +396,9 @@ html, body {
 
 <!-- ===== BOTTOM NAVIGATION ===== -->
 <div class="nav-bar">
+  <a href="work.html" class="nav-item active">工作</a>
+  <a href="life.html" class="nav-item">生活</a>
   <a href="index.html" class="nav-item">运动</a>
-  <a href="weather.html" class="nav-item active">天气</a>
-  <a href="todo.html" class="nav-item">待办</a>
-  <a href="guide.html" class="nav-item">指导</a>
 </div>
 
 </body>

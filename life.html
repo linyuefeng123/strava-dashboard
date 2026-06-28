@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="refresh" content="3600">
-<title>天气日历</title>
+<title>生活</title>
 <style>
 /* ===== E-ink Base: 758x1024, 16-gray, table layout ===== */
 html, body {
@@ -356,82 +356,112 @@ html, body {
 <!-- ===== HEADER ===== -->
 <table class="header-table">
   <tr>
-    <td class="header-left">天气日历</td>
-    <td class="header-right">2026.06.27</td>
+    <td class="header-left">生活</td>
+    <td class="header-right">2026.06.28</td>
   </tr>
 </table>
 
 <!-- ===== PAGE CONTENT ===== -->
 
 
-<!-- ===== 当前天气 ===== -->
+<!-- ===== 天气 ===== -->
+
+<div class="box">
+  <p class="section-title">天气</p>
+  <table class="weather-table">
+    <tr>
+      <td class="weather-icon" style="font-size:12pt;">*</td>
+      <td class="weather-temp" style="font-size:16pt;">24°C</td>
+      <td class="weather-desc" style="font-size:10pt;">大部晴</td>
+      <td style="text-align:right; color:#888888; font-size:9pt;">上海</td>
+    </tr>
+  </table>
+  
+  <table class="forecast-table">
+    
+    <tr>
+      <td class="forecast-day" style="font-size:10pt;">周一</td>
+      <td class="forecast-icon" style="font-size:11pt;">.</td>
+      <td style="font-size:10pt;">小毛雨</td>
+      <td class="forecast-range" style="font-size:10pt;">29/22°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day" style="font-size:10pt;">周二</td>
+      <td class="forecast-icon" style="font-size:11pt;">!</td>
+      <td style="font-size:10pt;">强雷暴+冰雹</td>
+      <td class="forecast-range" style="font-size:10pt;">26/24°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day" style="font-size:10pt;">周三</td>
+      <td class="forecast-icon" style="font-size:11pt;">!</td>
+      <td style="font-size:10pt;">雷暴+冰雹</td>
+      <td class="forecast-range" style="font-size:10pt;">28/24°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day" style="font-size:10pt;">周四</td>
+      <td class="forecast-icon" style="font-size:11pt;">!</td>
+      <td style="font-size:10pt;">雷暴+冰雹</td>
+      <td class="forecast-range" style="font-size:10pt;">27/23°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day" style="font-size:10pt;">周五</td>
+      <td class="forecast-icon" style="font-size:11pt;">.</td>
+      <td style="font-size:10pt;">小毛雨</td>
+      <td class="forecast-range" style="font-size:10pt;">29/24°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day" style="font-size:10pt;">周六</td>
+      <td class="forecast-icon" style="font-size:11pt;">!</td>
+      <td style="font-size:10pt;">雷暴</td>
+      <td class="forecast-range" style="font-size:10pt;">30/24°C</td>
+    </tr>
+    
+    <tr>
+      <td class="forecast-day" style="font-size:10pt;">周日</td>
+      <td class="forecast-icon" style="font-size:11pt;">!</td>
+      <td style="font-size:10pt;">雷暴</td>
+      <td class="forecast-range" style="font-size:10pt;">32/26°C</td>
+    </tr>
+    
+  </table>
+  
+  
+  <div class="rain-alert" style="font-size:10pt;">! 周一/周二/周三/周四/周五/周六/周日 有雨，注意带伞</div>
+  
+</div>
 
 
-<!-- ===== 3天预报 ===== -->
-
-
-<!-- ===== 今日日期 ===== -->
+<!-- ===== 今日 ===== -->
 <div class="box">
   <p class="section-title">今日</p>
   <table class="data-table">
     <tr>
-      <td style="font-weight:bold;">2026年6月27日 星期五</td>
+      <td style="font-weight:bold; font-size:11pt;">2026年6月28日 星期六</td>
     </tr>
     <tr>
-      <td style="color:#333333;">农历丙午年 五月十三</td>
+      <td style="color:#333333; font-size:10pt;">农历丙午年 五月十四</td>
     </tr>
   </table>
 </div>
 
-<!-- ===== 赛事日历 ===== -->
+<!-- ===== 生活待办（只显示未完成，大字）===== -->
 
-<div class="box">
-  <p class="section-title">赛事日历</p>
-  <table class="upcoming-table">
-    
-    <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">Challenge铁人三项</td>
-      
-      <td class="event-days">119d 后</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">松江田园铁三</td>
-      
-      <td class="event-days" style="color:#888888;">已完赛</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">上海铁三</td>
-      
-      <td class="event-days" style="color:#888888;">已完赛</td>
-      
-    </tr>
-    
-    <tr>
-      <td class="event-bullet">*</td>
-      <td class="event-name">苏州半马</td>
-      
-      <td class="event-days" style="color:#888888;">已完赛</td>
-      
-    </tr>
-    
-  </table>
-</div>
+
+<!-- ===== 生日 / 纪念日 ===== -->
 
 
 <!-- ===== 一言 ===== -->
 
 <div class="box">
   <p class="section-title">一言</p>
-  <p class="quote-text">千里之行，始于足下。</p>
+  <p class="quote-text" style="font-size:10pt;">相顾惟有泪千行，料得年年愁断肠。</p>
   
-  <p class="quote-from">—— 老子</p>
+  <p class="quote-from" style="font-size:9pt;">—— 戏愁</p>
   
 </div>
 
@@ -442,10 +472,9 @@ html, body {
 
 <!-- ===== BOTTOM NAVIGATION ===== -->
 <div class="nav-bar">
+  <a href="work.html" class="nav-item">工作</a>
+  <a href="life.html" class="nav-item active">生活</a>
   <a href="index.html" class="nav-item">运动</a>
-  <a href="weather.html" class="nav-item active">天气</a>
-  <a href="todo.html" class="nav-item">待办</a>
-  <a href="guide.html" class="nav-item">指导</a>
 </div>
 
 </body>
