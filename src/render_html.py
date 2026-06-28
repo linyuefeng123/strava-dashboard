@@ -1012,7 +1012,10 @@ def _prepare_guide_context(data: dict, config: dict) -> dict:
 def _prepare_work_context(data: dict, config: dict, reminders: dict) -> dict:
     """Build template context for the work page."""
     today = date.today()
+    # Try Apple Reminders first, fallback to config.yaml
     todos_raw = reminders.get("todos", [])
+    if not todos_raw:
+        todos_raw = config.get("todos", [])
 
     today_todos = []
     week_todos = []
@@ -1021,12 +1024,12 @@ def _prepare_work_context(data: dict, config: dict, reminders: dict) -> dict:
                "代码", "技术", "方案", "需求", "bug", "Bug", "提测"]
 
     for t in todos_raw:
-        text = t.get("text", "")
+        text = t.get("text", "") if isinstance(t, dict) else str(t)
         if not text.strip():
             continue
         if not any(kw in text for kw in work_kw):
             continue
-        is_done = t.get("done", False)
+        is_done = t.get("done", False) if isinstance(t, dict) else False
 
         due = t.get("due_date", "")
         if due:
@@ -1083,16 +1086,19 @@ def _prepare_life_context(data: dict, config: dict, weather: dict, reminders: di
     # Life todos (non-work items)
     work_kw = ["周报", "汇报", "会议", "评审", "项目", "面谈", "复盘",
                "代码", "技术", "方案", "需求", "bug", "Bug", "提测"]
+    # Try Apple Reminders first, fallback to config.yaml
     todos_raw = reminders.get("todos", [])
+    if not todos_raw:
+        todos_raw = config.get("todos", [])
     life_todos = []
     birthdays = []
     streak = data.get("streak", 0)
 
     for t in todos_raw:
-        text = t.get("text", "")
+        text = t.get("text", "") if isinstance(t, dict) else str(t)
         if not text.strip():
             continue
-        is_done = t.get("done", False)
+        is_done = t.get("done", False) if isinstance(t, dict) else False
 
         if any(kw in text for kw in ["生日", "纪念日", "结婚"]):
             due = t.get("due_date", "")

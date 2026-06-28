@@ -123,7 +123,27 @@ python3 src/fetch_quotes.py      # 刷新一言
 python3 src/render_html.py --all # 重新渲染
 ```
 
-## 五、需要一台服务器吗？
+## 五、Mac 关机时待办怎么更新？
+
+Mac 经常关机时，还有 **2 种方式**更新待办：
+
+### 方式 A：iPhone 编辑 GitHub（推荐，最简单）
+
+1. iPhone 打开 Safari → 登录 `github.com` → 打开 `linyuefeng123/strava-dashboard` 仓库
+2. 点 `config.yaml` → 编辑 → 修改 `todos:` 下的内容
+3. 提交（commit）→ 自动触发 GitHub Actions 构建
+4. 约 2 分钟后首页自动更新
+
+**优点**：无需安装任何 app，iPhone 自带的 Safari 就行
+
+### 方式 B：飞书任务（需要配置）
+
+配置 `FEISHU_APP_ID` / `FEISHU_APP_SECRET` 后，iPhone 安装飞书 App →
+在飞书上创建/完成任务 → GitHub Actions 每天自动读取。
+
+`fetch_feishu.py` 已就绪，配置好即可用。
+
+## 六、需要一台服务器吗？
 
 **不需要买服务器。** 整个系统的运行依赖：
 
