@@ -66,3 +66,17 @@ No test suite, linter, or formatter is configured.
 ## Deployment
 
 GitHub Actions deploys `output/` to the `gh-pages` branch via `peaceiris/actions-gh-pages@v4`. The workflow triggers daily at 06:00 Beijing time, on `workflow_dispatch`, and on pushes to `config.yaml`.
+
+## Lessons Learned (see lessons.md for details)
+
+### Git operations
+- `git reset --hard origin/main` **destroys all uncommitted changes** including templates, code, and data files. Always `git stash` or `git commit` first.
+- After any git reset/checkout, **re-fetch data files**: `python3 src/fetch_reminders.py && python3 src/fetch_weather.py && python3 src/fetch_quotes.py`
+
+### Code changes must reach main
+- Template/code changes must be **committed and pushed to main** BEFORE deploying gh-pages. Otherwise GitHub Actions will use old code and overwrite the correct pages.
+- Always verify gh-pages branch: `git ls-tree -r origin/gh-pages --name-only`
+
+### Launchd
+- After setting up launchd plist, run `launchctl load ~/Library/LaunchAgents/com.strava-dashboard.local-build.plist`
+- Check status: `launchctl list | grep strava-dashboard`
