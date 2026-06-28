@@ -115,7 +115,7 @@ def ascii_bar_chart(values: list, labels: list, max_width: int = 20) -> list:
     return rows
 
 
-def svg_line_chart(values: list, labels: list, width: int = 350, height: int = 110) -> str:
+def svg_line_chart(values: list, labels: list, width: int = 350, height: int = 130) -> str:
     """Generate an SVG line chart for e-ink display.
 
     Args:
@@ -130,10 +130,10 @@ def svg_line_chart(values: list, labels: list, width: int = 350, height: int = 1
     if not values or max(values) <= 0:
         return ""
 
-    padding_top = 12
-    padding_left = 8
-    padding_bottom = 16
-    padding_right = 8
+    padding_top = 14
+    padding_left = 10
+    padding_bottom = 18
+    padding_right = 10
 
     chart_w = width - padding_left - padding_right
     chart_h = height - padding_top - padding_bottom
@@ -161,21 +161,21 @@ def svg_line_chart(values: list, labels: list, width: int = 350, height: int = 1
     for gi in range(4):
         gy = padding_top + int(chart_h * gi / 3)
         val = max_val - (val_range * gi / 3)
-        lines.append(f'<text x="{padding_left - 2}" y="{gy + 3}" fill="#888888" font-size="7" text-anchor="end">{val:.0f}</text>')
+        lines.append(f'<text x="{padding_left - 2}" y="{gy + 4}" fill="#888888" font-size="9" text-anchor="end">{val:.0f}</text>')
 
     # Line
     polyline_pts = " ".join(f"{px},{py}" for px, py in points)
-    lines.append(f'<polyline points="{polyline_pts}" fill="none" stroke="#444444" stroke-width="2" stroke-linejoin="round"/>')
+    lines.append(f'<polyline points="{polyline_pts}" fill="none" stroke="#444444" stroke-width="3" stroke-linejoin="round"/>')
 
     # Data points
     for px, py in points:
-        lines.append(f'<circle cx="{px}" cy="{py}" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>')
+        lines.append(f'<circle cx="{px}" cy="{py}" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>')
 
     # X-axis labels - show all, use compact format
     for i, (px, py) in enumerate(points):
         if i < len(labels):
             label = labels[i].replace("W", "")  # "W1" -> "1"
-            lines.append(f'<text x="{px}" y="{height - 2}" fill="#888888" font-size="6" text-anchor="middle">{label}</text>')
+            lines.append(f'<text x="{px}" y="{height - 2}" fill="#888888" font-size="8" text-anchor="middle">{label}</text>')
 
     lines.append('</svg>')
     return "\n".join(lines)
@@ -444,7 +444,7 @@ def prepare_weekly_trends(data: dict) -> list:
 
         if labels and any(d > 0 for d in distances):
             chart = ascii_bar_chart(distances, labels, max_width=22)
-            svg = svg_line_chart(distances, labels, width=350, height=110)
+            svg = svg_line_chart(distances, labels, width=350, height=130)
             result.append({
                 "sport": display_name,
                 "icon": icon,

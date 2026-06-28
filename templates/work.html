@@ -8,12 +8,12 @@
 <!-- ===== 今日待办 ===== -->
 {% if today_todos %}
 <div class="box">
-  <p class="section-title">今日待办</p>
+  <p class="section-title">📌 今日待办</p>
   <table class="todo-table">
     {% for todo in today_todos %}
     <tr>
-      <td class="todo-check">{% if todo.done %}[x]{% else %}[ ]{% endif %}</td>
-      <td{% if todo.done %} class="todo-done"{% endif %}>{{ todo.text }}</td>
+      <td class="todo-check" style="font-size:14pt;">{% if todo.done %}☑{% else %}☐{% endif %}</td>
+      <td style="font-size:13pt;{% if todo.done %}color:#888888;text-decoration:line-through;{% endif %}">{{ todo.text }}</td>
     </tr>
     {% endfor %}
     <tr>
@@ -28,12 +28,12 @@
 <!-- ===== 本周待办 ===== -->
 {% if week_todos %}
 <div class="box">
-  <p class="section-title">本周待办</p>
+  <p class="section-title">📋 本周待办</p>
   <table class="todo-table">
     {% for todo in week_todos %}
     <tr>
-      <td class="todo-check">{% if todo.done %}[x]{% else %}[ ]{% endif %}</td>
-      <td{% if todo.done %} class="todo-done"{% endif %}>{{ todo.text }}</td>
+      <td class="todo-check" style="font-size:14pt;">{% if todo.done %}☑{% else %}☐{% endif %}</td>
+      <td style="font-size:13pt;{% if todo.done %}color:#888888;text-decoration:line-through;{% endif %}">{{ todo.text }}</td>
     </tr>
     {% endfor %}
   </table>
@@ -43,19 +43,19 @@
 <!-- ===== 本周会议 ===== -->
 {% if week_meetings %}
 <div class="box">
-  <p class="section-title">本周会议</p>
+  <p class="section-title">📅 本周会议</p>
   <table class="meeting-table">
     {% for m in week_meetings %}
     <tr>
-      <td class="meeting-time">{{ m.time }}</td>
-      <td class="meeting-title">{{ m.title }}</td>
+      <td class="meeting-time" style="font-size:13pt;">{{ m.time }}</td>
+      <td class="meeting-title" style="font-size:13pt;">{{ m.title }}</td>
     </tr>
     {% endfor %}
   </table>
 </div>
 {% else %}
 <div class="box">
-  <p class="section-title">本周会议</p>
+  <p class="section-title">📅 本周会议</p>
   <table class="meeting-table">
     <tr><td colspan="2" class="meeting-empty">本周暂无会议安排</td></tr>
   </table>
