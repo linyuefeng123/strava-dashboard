@@ -10,75 +10,65 @@ html, body {
   width: 758px; height: 1024px;
   background: #FFFFFF; color: #000000;
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 10pt; line-height: 1.25;
+  font-size: 12pt; line-height: 1.3;
   -webkit-text-size-adjust: none;
 }
-.page { width: 758px; min-height: 1024px; padding: 3px 5px 40px 5px; box-sizing: border-box; }
-.box { border: 1px solid #888888; margin-bottom: 2px; padding: 2px 4px; }
-
-/* Header */
-.header-table { width: 100%; border-collapse: collapse; border: 1px solid #888888; margin-bottom: 2px; }
-.header-table td { padding: 2px 5px; font-size: 11pt; font-weight: bold; }
+.page { width: 758px; min-height: 1024px; padding: 4px 6px 44px 6px; box-sizing: border-box; }
+.box { border: 1px solid #888888; margin-bottom: 3px; padding: 3px 5px; }
+.header-table { width: 100%; border-collapse: collapse; border: 1px solid #888888; margin-bottom: 3px; }
+.header-table td { padding: 3px 6px; font-size: 13pt; font-weight: bold; }
 .header-left { text-align: left; }
-.header-right { text-align: right; font-weight: normal; font-size: 9.5pt; color: #333333; }
+.header-right { text-align: right; font-weight: normal; font-size: 11pt; color: #333333; }
+.section-title { font-size: 11pt; font-weight: bold; margin: 0 0 2px 0; padding: 0; color: #555555; }
 
-.section-title { font-size: 9pt; font-weight: bold; margin: 0 0 1px 0; padding: 0; letter-spacing: 0.3px; color: #555555; }
+/* Key metrics row - 3 items equal */
+.metrics-row { width: 100%; border-collapse: collapse; margin-bottom: 3px; }
+.metrics-row td { width: 33.3%; text-align: center; vertical-align: middle; padding: 5px 2px; border-left: 1px solid #CCCCCC; }
+.metrics-row td:first-child { border-left: none; }
+.metric-val { font-size: 28pt; font-weight: bold; line-height: 1.1; }
+.metric-lbl { font-size: 10pt; color: #555555; font-weight: bold; margin-top: 1px; }
+.metric-sub { font-size: 11pt; color: #333333; }
 
-/* === 3 Key metrics - equal width === */
-.metrics-table { width: 100%; border-collapse: collapse; margin-bottom: 2px; }
-.metrics-table td { width: 33.3%; text-align: center; vertical-align: middle; padding: 4px 2px; border-left: 1px solid #CCCCCC; }
-.metrics-table td:first-child { border-left: none; }
-.metric-val { font-size: 20pt; font-weight: bold; line-height: 1.2; }
-.metric-lbl { font-size: 8pt; color: #555555; font-weight: bold; margin-top: 1px; }
-.metric-sub { font-size: 9pt; color: #333333; }
-
-/* === Weekly progress === */
+/* Weekly progress */
 .progress-table { width: 100%; border-collapse: collapse; }
-.progress-table td { padding: 0 3px; }
-.progress-table .icon { width: 26px; text-align: center; font-weight: bold; font-size: 11pt; }
-.progress-table .label { width: 40px; font-weight: bold; font-size: 11pt; }
-.progress-table .value { text-align: right; color: #333333; font-size: 10pt; white-space: nowrap; }
-.bar-wrap { border-collapse: collapse; height: 12px; width: 100%; }
-.bar-wrap td { padding: 0; height: 10px; font-size: 1px; line-height: 1px; }
+.progress-table td { padding: 1px 4px; white-space: nowrap; }
+.progress-table .icon { width: 28px; text-align: center; font-weight: bold; font-size: 13pt; }
+.progress-table .label { width: 42px; font-weight: bold; font-size: 13pt; }
+.progress-table .value { text-align: right; color: #333333; font-size: 12pt; }
+.bar-wrap { border-collapse: collapse; height: 14px; width: 100%; }
+.bar-wrap td { padding: 0; height: 14px; font-size: 1px; line-height: 1px; }
 .bar-fill { background: #444444; }
 .bar-empty { background: #CCCCCC; }
-.progress-table .pct { width: 32px; text-align: right; font-size: 10pt; font-weight: bold; }
+.progress-table .pct { width: 36px; text-align: right; font-size: 12pt; font-weight: bold; }
 
-/* === SVG charts - 2 rows === */
-.chart-box { margin-bottom: 0; }
-.chart-label { font-size: 8pt; color: #555555; font-weight: bold; padding: 1px 0; }
+/* SVG chart area */
+.chart-cell { width: 50%; vertical-align: top; }
+.chart-label { font-size: 10pt; color: #555555; font-weight: bold; padding: 2px 0; text-align: center; }
 
-/* === AI Plan === */
-.ai-plan { border: 2px solid #444444; margin-bottom: 2px; padding: 3px 5px; }
-.ai-plan-title { font-size: 8pt; font-weight: bold; color: #555555; margin-bottom: 2px; }
-.ai-today { font-size: 14pt; font-weight: bold; padding: 5px 0; border-bottom: 1px dashed #CCCCCC; margin-bottom: 3px; text-align: center; }
+/* AI Plan */
+.ai-plan { border: 2px solid #444444; margin-bottom: 3px; padding: 4px 6px; }
+.ai-plan-title { font-size: 11pt; font-weight: bold; color: #555555; margin-bottom: 2px; }
+.ai-today { font-size: 16pt; font-weight: bold; padding: 5px 0; border-bottom: 1px dashed #CCCCCC; margin-bottom: 3px; text-align: center; }
 .ai-weekly { width: 100%; border-collapse: collapse; }
-.ai-weekly td { padding: 1px 3px; font-size: 8.5pt; vertical-align: middle; }
-.ai-weekly .day { width: 28px; font-weight: bold; }
+.ai-weekly td { padding: 2px 4px; font-size: 11pt; vertical-align: middle; }
+.ai-weekly .day { width: 32px; font-weight: bold; }
 .ai-weekly .rest { color: #888888; font-style: italic; }
-.ai-note { font-size: 7.5pt; color: #888888; font-style: italic; margin-top: 2px; border-top: 1px solid #CCCCCC; padding-top: 2px; }
+.ai-note { font-size: 9pt; color: #888888; font-style: italic; margin-top: 2px; border-top: 1px solid #CCCCCC; padding-top: 2px; }
 
-/* === Countdown === */
-.countdown-box { text-align: center; padding: 4px; border: 2px solid #444444; margin: 1px 0; }
-.countdown-days { font-size: 20pt; font-weight: bold; line-height: 1.1; }
-.countdown-label { font-size: 9pt; color: #333333; }
+/* Countdown */
+.countdown-box { text-align: center; padding: 6px; border: 2px solid #444444; margin: 2px 0; }
+.countdown-days { font-size: 24pt; font-weight: bold; line-height: 1.1; }
+.countdown-label { font-size: 12pt; color: #333333; }
 
 /* Nav */
-.nav-bar { position: absolute; bottom: 0; left: 0; width: 758px; border-top: 1px solid #888888; background: #FFFFFF; text-align: center; padding: 4px 0; }
-.nav-item { display: inline-block; width: 240px; font-size: 10pt; color: #333333; text-decoration: none; padding: 2px 0; }
+.nav-bar { position: absolute; bottom: 0; left: 0; width: 758px; border-top: 1px solid #888888; background: #FFFFFF; text-align: center; padding: 5px 0; }
+.nav-item { display: inline-block; width: 240px; font-size: 12pt; color: #333333; text-decoration: none; padding: 3px 0; }
 .nav-item.active { font-weight: bold; text-decoration: underline; color: #000000; }
-
-.upcoming-table { width: 100%; border-collapse: collapse; }
-.upcoming-table td { padding: 1px 3px; font-size: 9pt; }
-.event-bullet { width: 12px; text-align: center; }
-.event-name { font-weight: bold; }
-.event-days { text-align: right; color: #333333; white-space: nowrap; }
 </style>
 </head>
 <body>
 <div class="page">
 
-<!-- ===== HEADER ===== -->
 <table class="header-table">
   <tr>
     <td class="header-left">Eric Lin · 运动</td>
@@ -86,8 +76,8 @@ html, body {
   </tr>
 </table>
 
-<!-- ===== 关键指标（3项均分）===== -->
-<table class="metrics-table">
+<!-- Key metrics -->
+<table class="metrics-row">
   <tr>
     <td>
       <div class="metric-val">220</div>
@@ -100,14 +90,14 @@ html, body {
       <div class="metric-sub">目标配速</div>
     </td>
     <td>
-      <div class="metric-val" style="font-size:14pt;">待测量</div>
+      <div class="metric-val" style="font-size:18pt;">待测量</div>
       <div class="metric-lbl">1.5km 游泳</div>
       <div class="metric-sub">待测量</div>
     </td>
   </tr>
 </table>
 
-<!-- ===== 本周进度 ===== -->
+<!-- Weekly progress -->
 <div class="box">
   <p class="section-title">本周进度</p>
   <table class="progress-table">
@@ -148,77 +138,77 @@ html, body {
   </table>
 </div>
 
-<!-- ===== 周骑行量 / 周跑量（双栏）===== -->
+<!-- Charts side by side -->
 
-<div class="box chart-box" style="padding:1px 2px;">
+<div class="box" style="padding:2px;">
   <p class="section-title" style="margin-bottom:0;">周运动量趋势</p>
   <table style="width:100%;border-collapse:collapse;"><tr>
   
-    <td style="width:50%;vertical-align:top;">
+    <td class="chart-cell" style="">
       
       <div style="text-align:center;">
         <div class="chart-label">[B] Ride</div>
-        <div><svg width="350" height="110" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF;">
-<line x1="8" y1="12" x2="342" y2="12" stroke="#DDDDDD" stroke-width="1"/>
-<line x1="8" y1="39" x2="342" y2="39" stroke="#DDDDDD" stroke-width="1"/>
-<line x1="8" y1="66" x2="342" y2="66" stroke="#DDDDDD" stroke-width="1"/>
-<line x1="8" y1="94" x2="342" y2="94" stroke="#DDDDDD" stroke-width="1"/>
-<text x="6" y="15" fill="#888888" font-size="7" text-anchor="end">107</text>
-<text x="6" y="42" fill="#888888" font-size="7" text-anchor="end">81</text>
-<text x="6" y="69" fill="#888888" font-size="7" text-anchor="end">56</text>
-<text x="6" y="97" fill="#888888" font-size="7" text-anchor="end">31</text>
-<polyline points="8,30 55,74 103,70 151,51 198,47 246,62 294,12 342,94" fill="none" stroke="#444444" stroke-width="2" stroke-linejoin="round"/>
-<circle cx="8" cy="30" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="55" cy="74" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="103" cy="70" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="151" cy="51" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="198" cy="47" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="246" cy="62" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="294" cy="12" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="342" cy="94" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<text x="8" y="108" fill="#888888" font-size="6" text-anchor="middle">19</text>
-<text x="55" y="108" fill="#888888" font-size="6" text-anchor="middle">20</text>
-<text x="103" y="108" fill="#888888" font-size="6" text-anchor="middle">21</text>
-<text x="151" y="108" fill="#888888" font-size="6" text-anchor="middle">22</text>
-<text x="198" y="108" fill="#888888" font-size="6" text-anchor="middle">23</text>
-<text x="246" y="108" fill="#888888" font-size="6" text-anchor="middle">24</text>
-<text x="294" y="108" fill="#888888" font-size="6" text-anchor="middle">25</text>
-<text x="342" y="108" fill="#888888" font-size="6" text-anchor="middle">26</text>
+        <div><svg width="350" height="130" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF;">
+<line x1="10" y1="14" x2="340" y2="14" stroke="#DDDDDD" stroke-width="1"/>
+<line x1="10" y1="46" x2="340" y2="46" stroke="#DDDDDD" stroke-width="1"/>
+<line x1="10" y1="79" x2="340" y2="79" stroke="#DDDDDD" stroke-width="1"/>
+<line x1="10" y1="112" x2="340" y2="112" stroke="#DDDDDD" stroke-width="1"/>
+<text x="8" y="18" fill="#888888" font-size="9" text-anchor="end">107</text>
+<text x="8" y="50" fill="#888888" font-size="9" text-anchor="end">81</text>
+<text x="8" y="83" fill="#888888" font-size="9" text-anchor="end">56</text>
+<text x="8" y="116" fill="#888888" font-size="9" text-anchor="end">31</text>
+<polyline points="10,35 57,88 104,84 151,60 198,56 245,73 292,14 340,112" fill="none" stroke="#444444" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="10" cy="35" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="57" cy="88" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="104" cy="84" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="151" cy="60" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="198" cy="56" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="245" cy="73" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="292" cy="14" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="340" cy="112" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<text x="10" y="128" fill="#888888" font-size="8" text-anchor="middle">19</text>
+<text x="57" y="128" fill="#888888" font-size="8" text-anchor="middle">20</text>
+<text x="104" y="128" fill="#888888" font-size="8" text-anchor="middle">21</text>
+<text x="151" y="128" fill="#888888" font-size="8" text-anchor="middle">22</text>
+<text x="198" y="128" fill="#888888" font-size="8" text-anchor="middle">23</text>
+<text x="245" y="128" fill="#888888" font-size="8" text-anchor="middle">24</text>
+<text x="292" y="128" fill="#888888" font-size="8" text-anchor="middle">25</text>
+<text x="340" y="128" fill="#888888" font-size="8" text-anchor="middle">26</text>
 </svg></div>
       </div>
       
     </td>
   
-    <td style="width:50%;vertical-align:top;border-left:1px solid #CCCCCC;">
+    <td class="chart-cell" style="border-left:1px solid #CCCCCC;">
       
       <div style="text-align:center;">
         <div class="chart-label">[R] Run</div>
-        <div><svg width="350" height="110" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF;">
-<line x1="8" y1="12" x2="342" y2="12" stroke="#DDDDDD" stroke-width="1"/>
-<line x1="8" y1="39" x2="342" y2="39" stroke="#DDDDDD" stroke-width="1"/>
-<line x1="8" y1="66" x2="342" y2="66" stroke="#DDDDDD" stroke-width="1"/>
-<line x1="8" y1="94" x2="342" y2="94" stroke="#DDDDDD" stroke-width="1"/>
-<text x="6" y="15" fill="#888888" font-size="7" text-anchor="end">25</text>
-<text x="6" y="42" fill="#888888" font-size="7" text-anchor="end">17</text>
-<text x="6" y="69" fill="#888888" font-size="7" text-anchor="end">8</text>
-<text x="6" y="97" fill="#888888" font-size="7" text-anchor="end">0</text>
-<polyline points="8,83 55,80 103,12 151,94 198,94 246,22 294,34 342,43" fill="none" stroke="#444444" stroke-width="2" stroke-linejoin="round"/>
-<circle cx="8" cy="83" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="55" cy="80" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="103" cy="12" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="151" cy="94" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="198" cy="94" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="246" cy="22" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="294" cy="34" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<circle cx="342" cy="43" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>
-<text x="8" y="108" fill="#888888" font-size="6" text-anchor="middle">19</text>
-<text x="55" y="108" fill="#888888" font-size="6" text-anchor="middle">20</text>
-<text x="103" y="108" fill="#888888" font-size="6" text-anchor="middle">21</text>
-<text x="151" y="108" fill="#888888" font-size="6" text-anchor="middle">22</text>
-<text x="198" y="108" fill="#888888" font-size="6" text-anchor="middle">23</text>
-<text x="246" y="108" fill="#888888" font-size="6" text-anchor="middle">24</text>
-<text x="294" y="108" fill="#888888" font-size="6" text-anchor="middle">25</text>
-<text x="342" y="108" fill="#888888" font-size="6" text-anchor="middle">26</text>
+        <div><svg width="350" height="130" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF;">
+<line x1="10" y1="14" x2="340" y2="14" stroke="#DDDDDD" stroke-width="1"/>
+<line x1="10" y1="46" x2="340" y2="46" stroke="#DDDDDD" stroke-width="1"/>
+<line x1="10" y1="79" x2="340" y2="79" stroke="#DDDDDD" stroke-width="1"/>
+<line x1="10" y1="112" x2="340" y2="112" stroke="#DDDDDD" stroke-width="1"/>
+<text x="8" y="18" fill="#888888" font-size="9" text-anchor="end">25</text>
+<text x="8" y="50" fill="#888888" font-size="9" text-anchor="end">17</text>
+<text x="8" y="83" fill="#888888" font-size="9" text-anchor="end">8</text>
+<text x="8" y="116" fill="#888888" font-size="9" text-anchor="end">0</text>
+<polyline points="10,99 57,96 104,14 151,112 198,112 245,26 292,40 340,52" fill="none" stroke="#444444" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="10" cy="99" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="57" cy="96" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="104" cy="14" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="151" cy="112" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="198" cy="112" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="245" cy="26" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="292" cy="40" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="340" cy="52" r="4" fill="#444444" stroke="#FFFFFF" stroke-width="2"/>
+<text x="10" y="128" fill="#888888" font-size="8" text-anchor="middle">19</text>
+<text x="57" y="128" fill="#888888" font-size="8" text-anchor="middle">20</text>
+<text x="104" y="128" fill="#888888" font-size="8" text-anchor="middle">21</text>
+<text x="151" y="128" fill="#888888" font-size="8" text-anchor="middle">22</text>
+<text x="198" y="128" fill="#888888" font-size="8" text-anchor="middle">23</text>
+<text x="245" y="128" fill="#888888" font-size="8" text-anchor="middle">24</text>
+<text x="292" y="128" fill="#888888" font-size="8" text-anchor="middle">25</text>
+<text x="340" y="128" fill="#888888" font-size="8" text-anchor="middle">26</text>
 </svg></div>
       </div>
       
@@ -228,7 +218,7 @@ html, body {
 </div>
 
 
-<!-- ===== AI 训练建议 ===== -->
+<!-- AI Training Plan -->
 
 <div class="ai-plan">
   <div class="ai-plan-title">AI 训练建议</div>
@@ -295,7 +285,7 @@ html, body {
 </div>
 
 
-<!-- ===== 赛事倒计时 ===== -->
+<!-- Countdown -->
 
 <div class="box">
   <p class="section-title">即将到来</p>
