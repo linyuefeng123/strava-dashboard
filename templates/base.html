@@ -15,7 +15,7 @@ html, body {
   -webkit-text-size-adjust: none;
 }
 
-.page { width: 758px; min-height: 1024px; padding: 4px 6px 44px 6px; box-sizing: border-box; }
+.page { width: 758px; min-height: 1024px; padding: 4px 6px 70px 6px; box-sizing: border-box; }
 .box { border: 1px solid #888888; margin-bottom: 3px; padding: 3px 5px; }
 
 /* Header */
@@ -75,10 +75,12 @@ html, body {
 .data-table { width: 100%; border-collapse: collapse; }
 .data-table td { padding: 2px 3px; font-size: 12pt; vertical-align: middle; }
 
-/* Nav bar */
-.nav-bar { position: absolute; bottom: 0; left: 0; width: 758px; border-top: 1px solid #888888; background: #FFFFFF; text-align: center; padding: 5px 0; }
-.nav-item { display: inline-block; width: 240px; font-size: 12pt; color: #333333; text-decoration: none; padding: 3px 0; }
-.nav-item.active { font-weight: bold; text-decoration: underline; color: #000000; }
+/* Nav bar - extra large for touch */
+.nav-bar { position: absolute; bottom: 0; left: 0; width: 758px; border-top: 2px solid #444444; background: #FFFFFF; text-align: center; padding: 0; }
+.nav-item { display: inline-block; width: 240px; font-size: 32pt; color: #333333; text-decoration: none; padding: 8px 0; line-height: 1.4; }
+.nav-item.active { font-weight: bold; color: #000000; }
+.nav-item:not(.active) { color: #888888; font-size: 28pt; }
+.nav-divider { display: inline-block; width: 1px; height: 40px; background: #CCCCCC; vertical-align: middle; }
 </style>
 </head>
 <body>
@@ -96,8 +98,8 @@ html, body {
 </div>
 
 <div class="nav-bar">
-  <a href="work.html" class="nav-item{% if page == 'work' %} active{% endif %}">工作</a>
-  <a href="life.html" class="nav-item{% if page == 'life' %} active{% endif %}">生活</a>
+  <a href="work.html" class="nav-item{% if page == 'work' %} active{% endif %}">工作</a><span class="nav-divider"></span>
+  <a href="life.html" class="nav-item{% if page == 'life' %} active{% endif %}">生活</a><span class="nav-divider"></span>
   <a href="index.html" class="nav-item{% if page == 'sports' %} active{% endif %}">运动</a>
 </div>
 
