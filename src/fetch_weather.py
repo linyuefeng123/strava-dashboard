@@ -86,9 +86,9 @@ def fetch_weather(
         "latitude": latitude,
         "longitude": longitude,
         "current": "temperature_2m,weather_code",
-        "daily": "weather_code,temperature_2m_max,temperature_2m_min",
+        "daily": "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max",
         "timezone": timezone,
-        "forecast_days": 4,  # today + 3 days
+        "forecast_days": 8,  # today + 7 days
     }
 
     try:
@@ -119,28 +119,38 @@ def fetch_weather(
         "icon": _weather_icon(current_code),
     }
 
-    # Parse forecast (skip today, take next 3 days)
+    # Parse forecast (skip today, take next 7 days)
     daily = raw.get("daily", {})
     forecast = []
+    rain_days = []
     dates = daily.get("time", [])
     codes = daily.get("weather_code", [])
     highs = daily.get("temperature_2m_max", [])
     lows = daily.get("temperature_2m_min", [])
+    precip_probs = daily.get("precipitation_probability_max", [])
+
+    weekday_cn = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
 
     for i in range(len(dates)):
-        # Skip today (index 0), take next 3 days
         if i == 0:
             continue
-        if i > 3:
+        if i > 7:
             break
 
         code = codes[i] if i < len(codes) else 0
         high = round(highs[i]) if i < len(highs) else 0
         low = round(lows[i]) if i < len(lows) else 0
+        precip = round(precip_probs[i]) if i < len(precip_probs) else 0
+        is_rain = precip > 40 or code in (61, 63, 65, 80, 81, 82, 95, 96, 99)
 
-        # Day label: 明天, 后天, 大后天
-        day_labels = ["明天", "后天", "大后天"]
-        day_label = day_labels[i - 1] if i - 1 < len(day_labels) else dates[i]
+        try:
+            d = datetime.strptime(dates[i], "%Y-%m-%d")
+            day_label = weekday_cn[d.weekday()]
+        except (ValueError, TypeError):
+            day_label = dates[i]
+
+        if is_rain:
+            rain_days.append(day_label)
 
         forecast.append({
             "date": dates[i],
@@ -150,11 +160,17 @@ def fetch_weather(
             "weather_code": code,
             "description": _weather_desc(code),
             "icon": _weather_icon(code),
+            "precip_prob": precip,
         })
+
+    rain_alert = ""
+    if rain_days:
+        rain_alert = "! " + "/".join(rain_days) + " 有雨，注意带伞"
 
     result = {
         "current": current,
         "forecast": forecast,
+        "rain_alert": rain_alert,
         "fetched_at": datetime.now().isoformat(),
     }
 

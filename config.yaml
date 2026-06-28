@@ -61,3 +61,11 @@ todos:
 quotes:
   categories: [d, i, k]  # hitokoto: 诗词/名言/哲理
   fallback: true          # API 失败时使用硬编码备用
+
+# 会议日程（可从飞书同步）
+meetings:
+  week:
+    - time: "周三"
+      title: "技术方案讨论"
+    - time: "周五"
+      title: "Sprint Review"

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}工作{% endblock %}
+{% block header %}工作{% endblock %}
+
+{% block content %}
+
+<!-- ===== 今日待办 ===== -->
+{% if today_todos %}
+<div class="box">
+  <p class="section-title">今日待办</p>
+  <table class="todo-table">
+    {% for todo in today_todos %}
+    <tr>
+      <td class="todo-check">{% if todo.done %}[x]{% else %}[ ]{% endif %}</td>
+      <td{% if todo.done %} class="todo-done"{% endif %}>{{ todo.text }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="2" class="todo-summary">
+        完成: {{ today_done_count }}/{{ today_total_count }}
+      </td>
+    </tr>
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 本周待办 ===== -->
+{% if week_todos %}
+<div class="box">
+  <p class="section-title">本周待办</p>
+  <table class="todo-table">
+    {% for todo in week_todos %}
+    <tr>
+      <td class="todo-check">{% if todo.done %}[x]{% else %}[ ]{% endif %}</td>
+      <td{% if todo.done %} class="todo-done"{% endif %}>{{ todo.text }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 本周会议 ===== -->
+{% if week_meetings %}
+<div class="box">
+  <p class="section-title">本周会议</p>
+  <table class="meeting-table">
+    {% for m in week_meetings %}
+    <tr>
+      <td class="meeting-time">{{ m.time }}</td>
+      <td class="meeting-title">{{ m.title }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% else %}
+<div class="box">
+  <p class="section-title">本周会议</p>
+  <table class="meeting-table">
+    <tr><td colspan="2" class="meeting-empty">本周暂无会议安排</td></tr>
+  </table>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -13,7 +13,7 @@ import math
 import os
 import sys
 import time
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -113,6 +113,72 @@ def ascii_bar_chart(values: list, labels: list, max_width: int = 20) -> list:
             "value": _fmt_trend_value(val),
         })
     return rows
+
+
+def svg_line_chart(values: list, labels: list, width: int = 350, height: int = 110) -> str:
+    """Generate an SVG line chart for e-ink display.
+
+    Args:
+        values: List of numeric values (e.g. weekly distances in km).
+        labels: List of x-axis labels (e.g. week names).
+        width: SVG canvas width.
+        height: SVG canvas height.
+
+    Returns:
+        SVG string with line chart.
+    """
+    if not values or max(values) <= 0:
+        return ""
+
+    padding_top = 12
+    padding_left = 8
+    padding_bottom = 16
+    padding_right = 8
+
+    chart_w = width - padding_left - padding_right
+    chart_h = height - padding_top - padding_bottom
+
+    max_val = max(values)
+    min_val = min(values)
+    val_range = max_val - min_val if max_val > min_val else 1
+
+    n = len(values)
+    points = []
+    for i, v in enumerate(values):
+        x = padding_left + int((i / (n - 1)) * chart_w) if n > 1 else padding_left + chart_w // 2
+        y = padding_top + int(chart_h - ((v - min_val) / val_range) * chart_h)
+        points.append((x, y))
+
+    # Build SVG
+    lines = [f'<svg width="{width}" height="{height}" xmlns="http://www.w3.org/2000/svg" style="background:#FFFFFF;">']
+
+    # Grid lines (3 horizontal lines)
+    for gi in range(4):
+        gy = padding_top + int(chart_h * gi / 3)
+        lines.append(f'<line x1="{padding_left}" y1="{gy}" x2="{width - padding_right}" y2="{gy}" stroke="#DDDDDD" stroke-width="1"/>')
+
+    # Y-axis value labels
+    for gi in range(4):
+        gy = padding_top + int(chart_h * gi / 3)
+        val = max_val - (val_range * gi / 3)
+        lines.append(f'<text x="{padding_left - 2}" y="{gy + 3}" fill="#888888" font-size="7" text-anchor="end">{val:.0f}</text>')
+
+    # Line
+    polyline_pts = " ".join(f"{px},{py}" for px, py in points)
+    lines.append(f'<polyline points="{polyline_pts}" fill="none" stroke="#444444" stroke-width="2" stroke-linejoin="round"/>')
+
+    # Data points
+    for px, py in points:
+        lines.append(f'<circle cx="{px}" cy="{py}" r="3" fill="#444444" stroke="#FFFFFF" stroke-width="1"/>')
+
+    # X-axis labels - show all, use compact format
+    for i, (px, py) in enumerate(points):
+        if i < len(labels):
+            label = labels[i].replace("W", "")  # "W1" -> "1"
+            lines.append(f'<text x="{px}" y="{height - 2}" fill="#888888" font-size="6" text-anchor="middle">{label}</text>')
+
+    lines.append('</svg>')
+    return "\n".join(lines)
 
 
 # ---------------------------------------------------------------------------
@@ -359,7 +425,7 @@ def prepare_monthly_trends(data: dict) -> list:
 
 
 def prepare_weekly_trends(data: dict) -> list:
-    """Build weekly trend ASCII bar charts from processed data."""
+    """Build weekly trend ASCII bar charts and SVG line charts from processed data."""
     weekly_trend = data.get("weekly_trend", [])
     result = []
 
@@ -369,7 +435,6 @@ def prepare_weekly_trends(data: dict) -> list:
     ]:
         labels = []
         distances = []
-        # weekly_trend is sorted most recent first; reverse for chart
         for week in reversed(weekly_trend):
             week_num = week.get("week_num", 0)
             sport_data = week.get("sports", {}).get(sport_key, {})
@@ -379,10 +444,12 @@ def prepare_weekly_trends(data: dict) -> list:
 
         if labels and any(d > 0 for d in distances):
             chart = ascii_bar_chart(distances, labels, max_width=22)
+            svg = svg_line_chart(distances, labels, width=350, height=110)
             result.append({
                 "sport": display_name,
                 "icon": icon,
                 "chart": chart,
+                "svg": svg,
             })
 
     return result
@@ -939,6 +1006,140 @@ def _prepare_guide_context(data: dict, config: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Work page
+# ---------------------------------------------------------------------------
+
+def _prepare_work_context(data: dict, config: dict, reminders: dict) -> dict:
+    """Build template context for the work page."""
+    today = date.today()
+    todos_raw = reminders.get("todos", [])
+
+    today_todos = []
+    week_todos = []
+
+    work_kw = ["周报", "汇报", "会议", "评审", "项目", "面谈", "复盘",
+               "代码", "技术", "方案", "需求", "bug", "Bug", "提测"]
+
+    for t in todos_raw:
+        text = t.get("text", "")
+        if not text.strip():
+            continue
+        if not any(kw in text for kw in work_kw):
+            continue
+        is_done = t.get("done", False)
+
+        due = t.get("due_date", "")
+        if due:
+            try:
+                due_date = datetime.strptime(due, "%Y-%m-%d").date()
+                week_start = today - timedelta(days=today.weekday())
+                week_end = week_start + timedelta(days=6)
+                if week_start <= due_date <= week_end:
+                    week_todos.append({"text": text, "done": is_done})
+                elif due_date < week_start:
+                    today_todos.append({"text": text, "done": is_done})
+            except (ValueError, TypeError):
+                today_todos.append({"text": text, "done": is_done})
+        else:
+            today_todos.append({"text": text, "done": is_done})
+
+    today_todos.sort(key=lambda x: x["done"])
+    week_todos.sort(key=lambda x: x["done"])
+    today_done = sum(1 for t in today_todos if t["done"])
+
+    # Meetings from config (will be fed by Feishu CLI later)
+    week_meetings = config.get("meetings", {}).get("week", [])
+
+    return {
+        "page": "work",
+        "date": today.strftime("%Y.%m.%d"),
+        "today_todos": today_todos,
+        "today_done_count": today_done,
+        "today_total_count": len(today_todos),
+        "week_todos": week_todos,
+        "week_meetings": week_meetings,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Life page
+# ---------------------------------------------------------------------------
+
+def _prepare_life_context(data: dict, config: dict, weather: dict, reminders: dict) -> dict:
+    """Build template context for the life page."""
+    today = date.today()
+
+    # Lunar
+    try:
+        from lunar import solar_to_lunar, format_solar_date
+        lunar = solar_to_lunar(today)
+        solar_date = format_solar_date(today)
+        lunar_date = lunar["date_cn"]
+    except Exception:
+        wd = ["星期一","星期二","星期三","星期四","星期五","星期六","星期日"]
+        solar_date = f"{today.year}年{today.month}月{today.day}日 {wd[today.weekday()]}"
+        lunar_date = ""
+
+    # Life todos (non-work items)
+    work_kw = ["周报", "汇报", "会议", "评审", "项目", "面谈", "复盘",
+               "代码", "技术", "方案", "需求", "bug", "Bug", "提测"]
+    todos_raw = reminders.get("todos", [])
+    life_todos = []
+    birthdays = []
+    streak = data.get("streak", 0)
+
+    for t in todos_raw:
+        text = t.get("text", "")
+        if not text.strip():
+            continue
+        is_done = t.get("done", False)
+
+        if any(kw in text for kw in ["生日", "纪念日", "结婚"]):
+            due = t.get("due_date", "")
+            bday_display = due[:5] if len(due) >= 5 else ""
+            bday_countdown = ""
+            if due:
+                try:
+                    parts = due.split("-")
+                    if len(parts) == 3:
+                        ed = date(today.year, int(parts[1]), int(parts[2]))
+                        if ed < today:
+                            ed = date(today.year + 1, int(parts[1]), int(parts[2]))
+                        days = (ed - today).days
+                        if 0 < days <= 365:
+                            bday_countdown = f"{days}天后"
+                except (ValueError, TypeError):
+                    pass
+            birthdays.append({
+                "name": text,
+                "date": bday_display,
+                "countdown": bday_countdown,
+            })
+            continue
+
+        if any(kw in text for kw in work_kw):
+            continue
+        life_todos.append({"text": text, "done": is_done})
+
+    life_todos.sort(key=lambda x: x["done"])
+    quote_data = config.get("_quotes", {}).get("quote")
+    rain_alert = weather.get("rain_alert", "") if weather else ""
+
+    return {
+        "page": "life",
+        "date": today.strftime("%Y.%m.%d"),
+        "solar_date": solar_date,
+        "lunar_date": lunar_date,
+        "weather": weather,
+        "life_todos": life_todos,
+        "streak": streak,
+        "birthdays": birthdays,
+        "quote": quote_data,
+        "rain_alert": rain_alert,
+    }
+
+
+# ---------------------------------------------------------------------------
 # Multi-page renderer
 # ---------------------------------------------------------------------------
 
@@ -984,6 +1185,9 @@ def render_all_pages(
     # Set up Jinja2
     env = _get_jinja_env(template_dir)
 
+    # Load reminders for todos
+    reminders = _load_json_safe(os.path.join(data_dir, "reminders.json"))
+
     # Define pages to render
     pages = [
         {
@@ -993,22 +1197,16 @@ def render_all_pages(
             "context_fn": lambda: _prepare_sports_context(data, config, athlete_name, training_plan_data),
         },
         {
-            "name": "weather",
-            "template": "weather.html",
-            "output": os.path.join(output_dir, "weather.html"),
-            "context_fn": lambda: _prepare_weather_context(data, config, weather),
+            "name": "work",
+            "template": "work.html",
+            "output": os.path.join(output_dir, "work.html"),
+            "context_fn": lambda: _prepare_work_context(data, config, reminders),
         },
         {
-            "name": "todo",
-            "template": "todo.html",
-            "output": os.path.join(output_dir, "todo.html"),
-            "context_fn": lambda: _prepare_todo_context(data, config),
-        },
-        {
-            "name": "guide",
-            "template": "guide.html",
-            "output": os.path.join(output_dir, "guide.html"),
-            "context_fn": lambda: _prepare_guide_context(data, config),
+            "name": "life",
+            "template": "life.html",
+            "output": os.path.join(output_dir, "life.html"),
+            "context_fn": lambda: _prepare_life_context(data, config, weather, reminders),
         },
     ]
 
@@ -1028,33 +1226,243 @@ def render_all_pages(
 def _prepare_sports_context(
     data: dict, config: dict, athlete_name: str, training_plan_data: dict
 ) -> dict:
-    """Build template context for the sports dashboard page."""
+    """Build template context for the sports dashboard page (simplified layout)."""
     today = date.today()
+
+    # --- Key metrics: hardcoded for now ---
+    ftp = 220
+    run_10k = "45:00"
+    swim_1500 = "待测量"
+
+    # --- AI Training Plan ---
+    ai_plan = _generate_ai_training_plan(data, config, ftp)
+
+    # --- Weekly progress ---
+    weekly = data.get("weekly_summary", {})
+    goals_config = config.get("goals", {}).get("weekly", {})
+
+    goal_defs = [
+        {
+            "sport": "Ride", "icon": "[B]",
+            "current_km": weekly.get("ride", {}).get("distance_km", 0),
+            "target_km": goals_config.get("ride_km", 100),
+        },
+        {
+            "sport": "Run", "icon": "[R]",
+            "current_km": weekly.get("run", {}).get("distance_km", 0),
+            "target_km": goals_config.get("run_km", 20),
+        },
+        {
+            "sport": "Lift", "icon": "[W]",
+            "current": weekly.get("workout", {}).get("count", 0),
+            "target": goals_config.get("workout_count", 2),
+        },
+    ]
+
+    weekly_goals = []
+    for g in goal_defs:
+        if "current_km" in g:
+            cd = f"{g['current_km']:.1f}"
+            td = f"{g['target_km']:.0f}"
+            pct = int(min(100, g["current_km"] / g["target_km"] * 100)) if g["target_km"] > 0 else 0
+        else:
+            cd = str(g["current"])
+            td = str(g["target"])
+            pct = int(min(100, g["current"] / g["target"] * 100)) if g["target"] > 0 else 0
+        weekly_goals.append({
+            "sport": g["sport"], "icon": g["icon"],
+            "current_disp": cd, "target_disp": td, "pct": pct,
+        })
 
     template_data = {
         "page": "sports",
         "athlete_name": athlete_name,
         "date": today.strftime("%Y.%m.%d"),
-        "timestamp": str(int(time.time())),
         "streak": data.get("streak", 0),
-        "annual_goals": prepare_annual_goals(data, config),
-        "key_metrics": prepare_key_metrics(data, config),
-        "monthly_trends": prepare_monthly_trends(data),
+        "ftp": ftp,
+        "run_10k": run_10k,
+        "swim_1500": swim_1500,
+        "weekly_goals": weekly_goals,
         "weekly_trends": prepare_weekly_trends(data),
-        "recent_activities": prepare_recent_activities(data),
         "upcoming_races": prepare_upcoming_races(data),
-        "year_progress": prepare_year_progress(data, config),
-        "training_plan": prepare_training_plan({"training_plan": training_plan_data}),
-        "ai_tip": prepare_ai_tip({"training_plan": training_plan_data}),
+        "ai_plan": ai_plan,
     }
 
-    # Weekly goals (with done count)
-    weekly_goals, done_count, total_count = prepare_weekly_goals(data, config)
-    template_data["weekly_goals"] = weekly_goals
-    template_data["weekly_done"] = done_count
-    template_data["weekly_total"] = total_count
-
     return template_data
+
+
+def _generate_ai_training_plan(data: dict, config: dict, ftp: int = None) -> dict:
+    """Generate AI training suggestions based on goals and recent activity.
+
+    Calls the Anthropic API (via Baidu Qianfan proxy) to produce personalized advice.
+    Falls back to rule-based plan on API failure.
+    """
+    import requests as reqs
+    import json as j
+
+    today = date.today()
+    weekday_cn = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+
+    # Build context from recent data
+    weekly = data.get("weekly_summary", {})
+    annual = data.get("annual_summary", {})
+
+    context_lines = [
+        f"今天是{today.year}年{today.month}月{today.day}日 星期{['一','二','三','四','五','六','日'][today.weekday()]}",
+        "",
+        "=== 运动目标 ===",
+        f"FTP: {ftp if ftp else 220}W → 目标 250W",
+        "10公里跑步: 当前待测 → 目标 40分钟",
+        "1.5公里游泳: 当前待测 → 目标 待定",
+        "",
+        "=== 本周运动量 ===",
+        f"骑行: {weekly.get('ride', {}).get('distance_km', 0):.1f}km / {weekly.get('ride', {}).get('time_hours', 0):.1f}h",
+        f"跑步: {weekly.get('run', {}).get('distance_km', 0):.1f}km / {weekly.get('run', {}).get('time_hours', 0):.1f}h",
+        f"力量: {weekly.get('workout', {}).get('count', 0)}次",
+        "",
+        "=== 年度累计 ===",
+        f"骑行: {annual.get('ride', {}).get('distance_km', 0):.0f}km / {annual.get('ride', {}).get('time_hours', 0):.0f}h",
+        f"跑步: {annual.get('run', {}).get('distance_km', 0):.0f}km / {annual.get('run', {}).get('time_hours', 0):.0f}h",
+        f"游泳: {annual.get('swim', {}).get('distance_km', 0):.1f}km",
+        f"力量: {annual.get('workout', {}).get('count', 0)}次",
+    ]
+
+    prompt = (
+        "你是一个铁人三项训练教练。请根据以下运动员数据，制定今日训练建议和本周训练计划。\n"
+        + "\n".join(context_lines)
+        + "\n\n"
+        "请严格按照以下 JSON 格式回复，不要加任何其他文字：\n"
+        "{\n"
+        '  "today": "今日具体训练内容和强度",\n'
+        '  "weekly": [\n'
+        '    {"day": "周一", "description": "训练内容", "rest": false},\n'
+        '    {"day": "周二", "description": "训练内容", "rest": false},\n'
+        '    ...\n'
+        '  ],\n'
+        '  "note": "训练说明或注意事项"\n'
+        "}\n\n"
+        "要求：\n"
+        "1. today 是今日的具体训练安排，包含运动类型、距离/时间、强度（心率区间/功率区间）\n"
+        "2. weekly 是从今天开始的7天计划，包含骑行/跑步/力量/休息的合理安排\n"
+        "3. 有氧、阈值、间歇训练要合理搭配\n"
+        "4. 如果当天是休息日，rest 设为 true\n"
+        "5. 用中文回复"
+    )
+
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    base_url = os.environ.get("ANTHROPIC_BASE_URL", "https://qianfan.baidubce.com/anthropic/coding")
+    model = os.environ.get("ANTHROPIC_DEFAULT_HAIKU_MODEL", "qianfan-code-latest")
+
+    if not api_key:
+        # Fallback rule-based plan
+        return _rule_based_training_plan(weekly, weekday_cn[today.weekday()])
+
+    try:
+        resp = reqs.post(
+            f"{base_url}/v1/messages",
+            headers={
+                "x-api-key": api_key,
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json",
+            },
+            json={
+                "model": model,
+                "max_tokens": 1024,
+                "messages": [{"role": "user", "content": prompt}],
+            },
+            timeout=30,
+        )
+        resp.raise_for_status()
+        raw = resp.json()
+        content = raw.get("content", [])
+        if content and isinstance(content, list):
+            text = content[0].get("text", "")
+            # Parse JSON from response
+            start = text.find("{")
+            end = text.rfind("}") + 1
+            if start >= 0 and end > start:
+                plan = j.loads(text[start:end])
+                # Ensure weekly has today's index
+                today_idx = today.weekday()
+                ordered_weekdays = weekday_cn[today_idx:] + weekday_cn[:today_idx]
+                plan_weekly = []
+                for day_name in ordered_weekdays:
+                    found = False
+                    for item in plan.get("weekly", []):
+                        if item.get("day") == day_name:
+                            plan_weekly.append(item)
+                            found = True
+                            break
+                    if not found:
+                        plan_weekly.append({"day": day_name, "description": "休息/轻度活动", "rest": True})
+                plan["weekly"] = plan_weekly
+                return plan
+
+    except Exception as e:
+        print(f"AI training plan failed: {e}", file=sys.stderr)
+
+    return _rule_based_training_plan(weekly, weekday_cn[today.weekday()])
+
+
+def _rule_based_training_plan(weekly: dict, today_cn: str) -> dict:
+    """Rule-based fallback training plan."""
+    ride_km = weekly.get("ride", {}).get("distance_km", 0)
+    run_km = weekly.get("run", {}).get("distance_km", 0)
+
+    # Simple weekly plan based on remaining goals
+    if run_km < 10:
+        # Run deficit - focus on running
+        plan = [
+            ("周一", "休息/拉伸", True),
+            ("周二", "轻松跑 5km @5:40/km", False),
+            ("周三", "MyWhoosh 有氧 45min Z2", False),
+            ("周四", "间歇跑 6×800m @4:30/km", False),
+            ("周五", "力量训练（上肢+核心）", False),
+            ("周六", "长距离跑 10km @5:20/km", False),
+            ("周日", "放松跑 5km", False),
+        ]
+    elif ride_km < 50:
+        # Ride deficit
+        plan = [
+            ("周一", "休息", True),
+            ("周二", "阈值训练 3×8min @260W", False),
+            ("周三", "轻松跑 5km", False),
+            ("周四", "MyWhoosh 间歇 6×3min 高功率", False),
+            ("周五", "力量训练（全身）", False),
+            ("周六", "户外骑行 60km Z2-Z3", False),
+            ("周日", "长跑 8km @5:20/km", False),
+        ]
+    else:
+        plan = [
+            ("周一", "休息", True),
+            ("周二", "阈值间歇 5×1000m @4:00/km", False),
+            ("周三", "有氧骑行 60min Z2", False),
+            ("周四", "游泳技术练习 1km", False),
+            ("周五", "力量训练", False),
+            ("周六", "长距离骑行 80km Z2", False),
+            ("周日", "长跑 10km @5:00/km", False),
+        ]
+
+    # Rotate so today comes first
+    day_names = [p[0] for p in plan]
+    if today_cn in day_names:
+        idx = day_names.index(today_cn)
+        plan = plan[idx:] + plan[:idx]
+
+    today_desc = ""
+    for day, desc, _ in plan[:1]:
+        today_desc = desc
+
+    weekly_list = [
+        {"day": d, "description": desc, "rest": rest}
+        for d, desc, rest in plan
+    ]
+
+    return {
+        "today": f"今日: {today_desc}",
+        "weekly": weekly_list,
+        "note": "规则引擎生成 · 暂用基础训练模板",
+    }
 
 
 # ---------------------------------------------------------------------------

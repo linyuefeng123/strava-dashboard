@@ -3,395 +3,76 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="refresh" content="3600">
-<title>{{ athlete_name }}'s Sports Dashboard</title>
+<title>{{ athlete_name }} · 运动仪表盘</title>
 <style>
-/* ===== E-ink Dashboard: 758x1024, 16-gray, table layout ===== */
 html, body {
-  margin: 0;
-  padding: 0;
-  width: 758px;
-  height: 1024px;
-  background: #FFFFFF;
-  color: #000000;
+  margin: 0; padding: 0;
+  width: 758px; height: 1024px;
+  background: #FFFFFF; color: #000000;
   font-family: "Georgia", "Times New Roman", serif;
-  font-size: 10pt;
-  line-height: 1.25;
+  font-size: 10pt; line-height: 1.25;
   -webkit-text-size-adjust: none;
 }
+.page { width: 758px; min-height: 1024px; padding: 3px 5px 40px 5px; box-sizing: border-box; }
+.box { border: 1px solid #888888; margin-bottom: 2px; padding: 2px 4px; }
 
-/* --- Layout container --- */
-.page {
-  width: 758px;
-  height: 1024px;
-  padding: 3px 5px;
-  box-sizing: border-box;
-}
+/* Header */
+.header-table { width: 100%; border-collapse: collapse; border: 1px solid #888888; margin-bottom: 2px; }
+.header-table td { padding: 2px 5px; font-size: 11pt; font-weight: bold; }
+.header-left { text-align: left; }
+.header-right { text-align: right; font-weight: normal; font-size: 9.5pt; color: #333333; }
 
-/* --- Section box --- */
-.box {
-  border: 1px solid #888888;
-  margin-bottom: 2px;
-  padding: 2px 4px;
-}
+.section-title { font-size: 9pt; font-weight: bold; margin: 0 0 1px 0; padding: 0; letter-spacing: 0.3px; color: #555555; }
 
-/* --- Header --- */
-.header-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #888888;
-  margin-bottom: 2px;
-}
-.header-table td {
-  padding: 2px 5px;
-  font-size: 11pt;
-  font-weight: bold;
-}
-.header-left {
-  text-align: left;
-}
-.header-right {
-  text-align: right;
-  font-weight: normal;
-  font-size: 9.5pt;
-  color: #333333;
-}
-.header-streak {
-  font-weight: normal;
-  font-size: 9pt;
-  color: #555555;
-}
+/* === 3 Key metrics - equal width === */
+.metrics-table { width: 100%; border-collapse: collapse; margin-bottom: 2px; }
+.metrics-table td { width: 33.3%; text-align: center; vertical-align: middle; padding: 4px 2px; border-left: 1px solid #CCCCCC; }
+.metrics-table td:first-child { border-left: none; }
+.metric-val { font-size: 20pt; font-weight: bold; line-height: 1.2; }
+.metric-lbl { font-size: 8pt; color: #555555; font-weight: bold; margin-top: 1px; }
+.metric-sub { font-size: 9pt; color: #333333; }
 
-/* --- Section titles --- */
-.section-title {
-  font-size: 9pt;
-  font-weight: bold;
-  margin: 0 0 1px 0;
-  padding: 0;
-  letter-spacing: 0.5px;
-}
+/* === Weekly progress === */
+.progress-table { width: 100%; border-collapse: collapse; }
+.progress-table td { padding: 0 3px; }
+.progress-table .icon { width: 26px; text-align: center; font-weight: bold; font-size: 11pt; }
+.progress-table .label { width: 40px; font-weight: bold; font-size: 11pt; }
+.progress-table .value { text-align: right; color: #333333; font-size: 10pt; white-space: nowrap; }
+.bar-wrap { border-collapse: collapse; height: 12px; width: 100%; }
+.bar-wrap td { padding: 0; height: 10px; font-size: 1px; line-height: 1px; }
+.bar-fill { background: #444444; }
+.bar-empty { background: #CCCCCC; }
+.progress-table .pct { width: 32px; text-align: right; font-size: 10pt; font-weight: bold; }
 
-/* --- Annual goals table --- */
-.goals-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.goals-table td {
-  padding: 1px 2px;
-  font-size: 9pt;
-  vertical-align: middle;
-}
-.goal-icon {
-  width: 22px;
-  text-align: center;
-  font-weight: bold;
-}
-.goal-sport {
-  width: 32px;
-  font-weight: bold;
-}
-.goal-values {
-  width: 90px;
-  text-align: right;
-  color: #333333;
-  font-size: 8.5pt;
-  white-space: nowrap;
-}
+/* === SVG charts - 2 rows === */
+.chart-box { margin-bottom: 0; }
+.chart-label { font-size: 8pt; color: #555555; font-weight: bold; padding: 1px 0; }
 
-/* --- Progress bar (table-based) --- */
-.bar-table {
-  border-collapse: collapse;
-  height: 8px;
-}
-.bar-table td {
-  padding: 0;
-  height: 8px;
-  font-size: 1px;
-  line-height: 1px;
-}
-.bar-fill {
-  background: #444444;
-}
-.bar-empty {
-  background: #CCCCCC;
-}
+/* === AI Plan === */
+.ai-plan { border: 2px solid #444444; margin-bottom: 2px; padding: 3px 5px; }
+.ai-plan-title { font-size: 8pt; font-weight: bold; color: #555555; margin-bottom: 2px; }
+.ai-today { font-size: 14pt; font-weight: bold; padding: 5px 0; border-bottom: 1px dashed #CCCCCC; margin-bottom: 3px; text-align: center; }
+.ai-weekly { width: 100%; border-collapse: collapse; }
+.ai-weekly td { padding: 1px 3px; font-size: 8.5pt; vertical-align: middle; }
+.ai-weekly .day { width: 28px; font-weight: bold; }
+.ai-weekly .rest { color: #888888; font-style: italic; }
+.ai-note { font-size: 7.5pt; color: #888888; font-style: italic; margin-top: 2px; border-top: 1px solid #CCCCCC; padding-top: 2px; }
 
-.goal-pct {
-  width: 28px;
-  text-align: right;
-  font-size: 8.5pt;
-  font-weight: bold;
-}
+/* === Countdown === */
+.countdown-box { text-align: center; padding: 4px; border: 2px solid #444444; margin: 1px 0; }
+.countdown-days { font-size: 20pt; font-weight: bold; line-height: 1.1; }
+.countdown-label { font-size: 9pt; color: #333333; }
 
-/* --- Two-column layout --- */
-.split-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2px;
-}
-.split-table td {
-  vertical-align: top;
-  padding: 0;
-}
-.split-left {
-  width: 50%;
-  padding-right: 2px;
-}
-.split-right {
-  width: 50%;
-  padding-left: 2px;
-}
+/* Nav */
+.nav-bar { position: absolute; bottom: 0; left: 0; width: 758px; border-top: 1px solid #888888; background: #FFFFFF; text-align: center; padding: 4px 0; }
+.nav-item { display: inline-block; width: 240px; font-size: 10pt; color: #333333; text-decoration: none; padding: 2px 0; }
+.nav-item.active { font-weight: bold; text-decoration: underline; color: #000000; }
 
-/* --- Key metrics table --- */
-.metrics-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.metrics-table td {
-  padding: 1px 2px;
-  font-size: 8.5pt;
-  vertical-align: top;
-}
-.metric-label {
-  font-weight: bold;
-  width: 50px;
-}
-.metric-value {
-  color: #333333;
-}
-.metric-arrow {
-  width: 12px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 8pt;
-}
-
-/* --- Weekly goals table --- */
-.weekly-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.weekly-table td {
-  padding: 1px 2px;
-  font-size: 8.5pt;
-  vertical-align: middle;
-}
-.weekly-icon {
-  width: 22px;
-  text-align: center;
-  font-weight: bold;
-}
-.weekly-values {
-  text-align: right;
-  color: #333333;
-  font-size: 8.5pt;
-  white-space: nowrap;
-}
-.weekly-status {
-  width: 16px;
-  text-align: center;
-  font-weight: bold;
-}
-.weekly-summary {
-  font-size: 8.5pt;
-  padding: 1px 2px;
-  border-top: 1px solid #CCCCCC;
-  color: #333333;
-}
-
-/* --- Year progress --- */
-.progress-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.progress-table td {
-  padding: 1px 3px;
-  font-size: 8.5pt;
-  vertical-align: middle;
-}
-.progress-label {
-  font-weight: bold;
-  width: 70px;
-}
-.progress-bar-table {
-  border-collapse: collapse;
-  height: 8px;
-}
-.progress-bar-table td {
-  padding: 0;
-  height: 8px;
-  font-size: 1px;
-  line-height: 1px;
-}
-.progress-pct {
-  width: 35px;
-  text-align: right;
-  font-size: 8pt;
-}
-
-/* --- Trend tables (weekly & monthly) --- */
-.trend-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.trend-table td {
-  padding: 0px 2px;
-  font-size: 8pt;
-  vertical-align: middle;
-  font-family: "Courier New", monospace;
-}
-.trend-sport {
-  width: 24px;
-  font-weight: bold;
-  font-family: "Georgia", serif;
-  font-size: 8.5pt;
-}
-.trend-label {
-  width: 22px;
-  text-align: center;
-  color: #333333;
-}
-.trend-bar {
-  color: #333333;
-  letter-spacing: 0px;
-  font-size: 7.5pt;
-}
-.trend-value {
-  width: 38px;
-  text-align: right;
-  color: #333333;
-  font-family: "Georgia", serif;
-  font-size: 7.5pt;
-}
-
-/* --- Recent activities --- */
-.recent-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.recent-table td {
-  padding: 1px 2px;
-  font-size: 8.5pt;
-  vertical-align: middle;
-}
-.recent-icon {
-  width: 22px;
-  text-align: center;
-  font-weight: bold;
-}
-.recent-name {
-  font-weight: normal;
-  max-width: 300px;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.recent-dist {
-  width: 50px;
-  text-align: right;
-  color: #333333;
-}
-.recent-date {
-  width: 35px;
-  text-align: right;
-  color: #555555;
-  font-size: 8pt;
-}
-
-/* --- Upcoming races --- */
-.races-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.races-table td {
-  padding: 1px 3px;
-  font-size: 9pt;
-}
-.race-bullet {
-  width: 12px;
-  text-align: center;
-}
-.race-name {
-  font-weight: bold;
-}
-.race-days {
-  text-align: right;
-  color: #333333;
-  white-space: nowrap;
-}
-
-/* --- Training plan --- */
-.training-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.training-table td {
-  padding: 2px 3px;
-  font-size: 9pt;
-}
-.train-day {
-  width: 26px;
-  font-weight: bold;
-}
-.train-icon {
-  width: 20px;
-  text-align: center;
-  font-weight: bold;
-}
-.train-desc {
-  color: #333333;
-}
-.train-rest {
-  color: #888888;
-  font-style: italic;
-}
-.train-today {
-  background: #DDDDDD;
-}
-
-/* --- AI Tip --- */
-.ai-tip {
-  border: 1px solid #888888;
-  margin-bottom: 2px;
-  padding: 3px 5px;
-  font-size: 8.5pt;
-  color: #333333;
-  font-style: italic;
-}
-.ai-tip-label {
-  font-weight: bold;
-  font-style: normal;
-  font-size: 8pt;
-}
-
-/* --- Utility --- */
-.separator {
-  border-top: 1px solid #CCCCCC;
-  margin: 1px 0;
-}
-
-/* --- Bottom navigation bar --- */
-.nav-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 758px;
-  border-top: 1px solid #888888;
-  background: #FFFFFF;
-  text-align: center;
-  padding: 4px 0;
-}
-.nav-item {
-  display: inline-block;
-  width: 180px;
-  font-size: 10pt;
-  color: #333333;
-  text-decoration: none;
-  padding: 2px 0;
-}
-.nav-item.active {
-  font-weight: bold;
-  text-decoration: underline;
-  color: #000000;
-}
+.upcoming-table { width: 100%; border-collapse: collapse; }
+.upcoming-table td { padding: 1px 3px; font-size: 9pt; }
+.event-bullet { width: 12px; text-align: center; }
+.event-name { font-weight: bold; }
+.event-days { text-align: right; color: #333333; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -400,229 +81,127 @@ html, body {
 <!-- ===== HEADER ===== -->
 <table class="header-table">
   <tr>
-    <td class="header-left">{{ athlete_name }}'s Dashboard</td>
-    <td class="header-right">{{ date }} {% if streak > 0 %}| Streak: {{ streak }}d{% endif %}</td>
+    <td class="header-left">{{ athlete_name }} · 运动</td>
+    <td class="header-right">{{ date }}{% if streak > 0 %}  · 🔥{{ streak }}d{% endif %}</td>
   </tr>
 </table>
 
-<!-- ===== ANNUAL GOALS ===== -->
-<div class="box">
-  <p class="section-title">ANNUAL GOALS</p>
-  <table class="goals-table">
-    {% for goal in annual_goals %}
-    <tr>
-      <td class="goal-icon">{{ goal.icon }}</td>
-      <td class="goal-sport">{{ goal.sport }}</td>
-      <td class="goal-values">{{ goal.current_disp }}/{{ goal.target_disp }}{{ goal.unit }}</td>
-      <td>
-        {% set bar_total = 20 %}
-        {% set bar_filled = (goal.pct * bar_total / 100) | int %}
-        <table class="bar-table">
-          <tr>
-            {% for i in range(bar_total) %}
-            <td class="{% if i < bar_filled %}bar-fill{% else %}bar-empty{% endif %}" width="{{ 100 // bar_total }}%"></td>
-            {% endfor %}
-          </tr>
-        </table>
-      </td>
-      <td class="goal-pct">{{ goal.pct }}%</td>
-    </tr>
-    {% endfor %}
-  </table>
-</div>
-
-<!-- ===== THIS WEEK + KEY METRICS (two-column) ===== -->
-<table class="split-table">
+<!-- ===== 关键指标（3项均分）===== -->
+<table class="metrics-table">
   <tr>
-    <td class="split-left">
-      <div class="box">
-        <p class="section-title">THIS WEEK</p>
-        <table class="weekly-table">
-          {% for w in weekly_goals %}
-          <tr>
-            <td class="weekly-icon">{{ w.icon }}</td>
-            <td>{{ w.sport }}</td>
-            <td class="weekly-values">{{ w.current_disp }}/{{ w.target_disp }}</td>
-            <td class="weekly-status">{% if w.done %}[v]{% else %}[x]{% endif %}</td>
-          </tr>
-          {% endfor %}
-          <tr>
-            <td colspan="4" class="weekly-summary">
-              Done: {{ weekly_done }}/{{ weekly_total }}
-              {% if weekly_done < weekly_total %} [!]{% endif %}
-            </td>
-          </tr>
-        </table>
-      </div>
+    <td>
+      <div class="metric-val">{{ ftp }}</div>
+      <div class="metric-lbl">FTP</div>
+      <div class="metric-sub">W</div>
     </td>
-    <td class="split-right">
-      <div class="box">
-        <p class="section-title">KEY METRICS</p>
-        <table class="metrics-table">
-          {% for m in key_metrics %}
-          <tr>
-            <td class="metric-label">{{ m.label }}</td>
-            <td class="metric-value">{{ m.current }}</td>
-            {% if m.target %}
-            <td class="metric-arrow">&rarr;</td>
-            <td class="metric-value">{{ m.target }}</td>
-            {% else %}
-            <td colspan="2"></td>
-            {% endif %}
-          </tr>
-          {% endfor %}
-        </table>
-      </div>
+    <td>
+      <div class="metric-val">{{ run_10k }}</div>
+      <div class="metric-lbl">10K 跑步</div>
+      <div class="metric-sub">目标配速</div>
+    </td>
+    <td>
+      <div class="metric-val" style="font-size:14pt;">{{ swim_1500 }}</div>
+      <div class="metric-lbl">1.5km 游泳</div>
+      <div class="metric-sub">待测量</div>
     </td>
   </tr>
 </table>
 
-<!-- ===== YEAR PROGRESS ===== -->
+<!-- ===== 本周进度 ===== -->
 <div class="box">
-  <p class="section-title">YEAR PROGRESS</p>
+  <p class="section-title">本周进度</p>
   <table class="progress-table">
+    {% for g in weekly_goals %}
     <tr>
-      <td class="progress-label">Time</td>
-      <td>
-        {% set bar_total = 24 %}
-        {% set time_filled = (year_progress.elapsed_pct * bar_total / 100) | int %}
-        <table class="progress-bar-table">
-          <tr>
-            {% for i in range(bar_total) %}
-            <td class="{% if i < time_filled %}bar-fill{% else %}bar-empty{% endif %}" width="{{ 100 // bar_total }}%"></td>
-            {% endfor %}
-          </tr>
-        </table>
+      <td class="icon">{{ g.icon }}</td>
+      <td class="label">{{ g.sport }}</td>
+      <td class="value">{{ g.current_disp }}/{{ g.target_disp }}</td>
+      <td style="width:auto;">
+        {% set bt = 20 %}{% set v = (g.pct * bt / 100) | int %}
+        <table class="bar-wrap"><tr>{% for i in range(bt) %}<td class="{% if i < v %}bar-fill{% else %}bar-empty{% endif %}"></td>{% endfor %}</tr></table>
       </td>
-      <td class="progress-pct">{{ year_progress.elapsed_pct }}%</td>
+      <td class="pct">{{ g.pct }}%</td>
     </tr>
-    <tr>
-      <td class="progress-label">Goals</td>
-      <td>
-        {% set goal_filled = (year_progress.goal_pct * bar_total / 100) | int %}
-        <table class="progress-bar-table">
-          <tr>
-            {% for i in range(bar_total) %}
-            <td class="{% if i < goal_filled %}bar-fill{% else %}bar-empty{% endif %}" width="{{ 100 // bar_total }}%"></td>
-            {% endfor %}
-          </tr>
-        </table>
-      </td>
-      <td class="progress-pct">{{ year_progress.goal_pct }}%</td>
-    </tr>
+    {% endfor %}
   </table>
 </div>
 
-<!-- ===== WEEKLY TREND ===== -->
+<!-- ===== 周骑行量 / 周跑量（双栏）===== -->
 {% if weekly_trends %}
-<div class="box">
-  <p class="section-title">WEEKLY TREND</p>
+<div class="box chart-box" style="padding:1px 2px;">
+  <p class="section-title" style="margin-bottom:0;">周运动量趋势</p>
+  <table style="width:100%;border-collapse:collapse;"><tr>
   {% for trend in weekly_trends %}
-  <table class="trend-table">
-    {% for row in trend.chart %}
-    <tr>
-      {% if loop.first %}
-      <td class="trend-sport" rowspan="{{ trend.chart | length }}">{{ trend.icon }}</td>
+    <td style="width:50%;vertical-align:top;{% if not loop.first %}border-left:1px solid #CCCCCC;{% endif %}">
+      {% if trend.svg %}
+      <div style="text-align:center;">
+        <div class="chart-label">{{ trend.icon }} {{ trend.sport }}</div>
+        <div>{{ trend.svg|safe }}</div>
+      </div>
       {% endif %}
-      <td class="trend-label">{{ row.label }}</td>
-      <td class="trend-bar">{{ row.bar }}</td>
-      <td class="trend-value">{{ row.value }}</td>
-    </tr>
-    {% endfor %}
-  </table>
+    </td>
   {% endfor %}
+  </tr></table>
 </div>
 {% endif %}
 
-<!-- ===== MONTHLY TREND ===== -->
-{% if monthly_trends %}
-<div class="box">
-  <p class="section-title">MONTHLY TREND</p>
-  {% for trend in monthly_trends %}
-  <table class="trend-table">
-    {% for row in trend.chart %}
+<!-- ===== AI 训练建议 ===== -->
+{% if ai_plan %}
+<div class="ai-plan">
+  <div class="ai-plan-title">AI 训练建议</div>
+  {% if ai_plan.today %}
+  <div class="ai-today">{{ ai_plan.today }}</div>
+  {% endif %}
+  {% if ai_plan.weekly %}
+  <table class="ai-weekly">
+    {% for day in ai_plan.weekly %}
     <tr>
-      {% if loop.first %}
-      <td class="trend-sport" rowspan="{{ trend.chart | length }}">{{ trend.icon }}</td>
+      <td class="day">{{ day.day }}</td>
+      {% if day.rest %}
+      <td class="rest">{{ day.description }}</td>
+      {% else %}
+      <td>{{ day.description }}</td>
       {% endif %}
-      <td class="trend-label">{{ row.label }}</td>
-      <td class="trend-bar">{{ row.bar }}</td>
-      <td class="trend-value">{{ row.value }}</td>
     </tr>
     {% endfor %}
   </table>
-  {% endfor %}
+  {% endif %}
+  {% if ai_plan.note %}
+  <div class="ai-note">{{ ai_plan.note }}</div>
+  {% endif %}
 </div>
 {% endif %}
 
-<!-- ===== RECENT ACTIVITIES ===== -->
-{% if recent_activities %}
-<div class="box">
-  <p class="section-title">RECENT ACTIVITIES</p>
-  <table class="recent-table">
-    {% for act in recent_activities %}
-    <tr>
-      <td class="recent-icon">{{ act.sport_icon }}</td>
-      <td class="recent-name">{{ act.name }}</td>
-      <td class="recent-dist">{{ act.distance_km }}km</td>
-      <td class="recent-date">{{ act.date_short }}</td>
-    </tr>
-    {% endfor %}
-  </table>
-</div>
-{% endif %}
-
-<!-- ===== UPCOMING RACES ===== -->
+<!-- ===== 赛事倒计时 ===== -->
 {% if upcoming_races %}
 <div class="box">
-  <p class="section-title">UPCOMING RACES</p>
-  <table class="races-table">
-    {% for race in upcoming_races %}
+  <p class="section-title">即将到来</p>
+  {% for race in upcoming_races[:1] %}
+  <div class="countdown-box">
+    <div class="countdown-days">{{ race.days }}</div>
+    <div class="countdown-label">距 {{ race.name }} ({{ race.date }})</div>
+  </div>
+  {% endfor %}
+  {% if upcoming_races|length > 1 %}
+  <table class="upcoming-table">
+    {% for race in upcoming_races[1:] %}
     <tr>
-      <td class="race-bullet">*</td>
-      <td class="race-name">{{ race.name }}</td>
-      <td class="race-days">{{ race.days }}d ({{ race.date }})</td>
+      <td class="event-bullet">*</td>
+      <td class="event-name">{{ race.name }}</td>
+      <td class="event-days">{{ race.days }}d ({{ race.date }})</td>
     </tr>
     {% endfor %}
   </table>
-</div>
-{% endif %}
-
-<!-- ===== THIS WEEK'S TRAINING ===== -->
-{% if training_plan %}
-<div class="box">
-  <p class="section-title">THIS WEEK'S TRAINING</p>
-  <table class="training-table">
-    {% for day in training_plan %}
-    <tr>
-      <td class="train-day">{{ day.day }}</td>
-      {% if day.rest %}
-      <td class="train-rest" colspan="2">{{ day.description }}</td>
-      {% else %}
-      <td class="train-icon">{{ day.icon if day.icon else '' }}</td>
-      <td class="train-desc">{{ day.description }}</td>
-      {% endif %}
-    </tr>
-    {% endfor %}
-  </table>
-</div>
-{% endif %}
-
-<!-- ===== AI TIP ===== -->
-{% if ai_tip %}
-<div class="ai-tip">
-  <span class="ai-tip-label">AI:</span> {{ ai_tip }}
+  {% endif %}
 </div>
 {% endif %}
 
 </div>
 
-<!-- ===== BOTTOM NAVIGATION ===== -->
 <div class="nav-bar">
+  <a href="work.html" class="nav-item">工作</a>
+  <a href="life.html" class="nav-item">生活</a>
   <a href="index.html" class="nav-item active">运动</a>
-  <a href="weather.html" class="nav-item">天气</a>
-  <a href="todo.html" class="nav-item">待办</a>
-  <a href="guide.html" class="nav-item">指导</a>
 </div>
 
 </body>

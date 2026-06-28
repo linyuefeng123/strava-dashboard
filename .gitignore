@@ -1,8 +1,10 @@
 __pycache__/
 *.pyc
 
-# Output is regenerated every run
+# Output is regenerated every run (except screensaver images)
 output/
+!output/screensaver.png
+!output/screensaver.html
 
 # Secrets and helper scripts
 .env.secrets

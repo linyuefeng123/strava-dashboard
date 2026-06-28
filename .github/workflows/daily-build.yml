@@ -29,7 +29,10 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install playwright
+          playwright install chromium --with-deps
 
       - name: Refresh Strava Token
         id: strava_auth
@@ -95,11 +98,14 @@ jobs:
       - name: Render All Pages
         run: python src/render_html.py --all
 
+      - name: Render Screensaver PNG
+        run: python src/render_screensaver.py
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/ output/screensaver.png output/screensaver.html
           git diff --staged --quiet || git commit -m "chore: daily data update $(date +%Y-%m-%d)"
           git push origin main
 

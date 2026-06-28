@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}生活{% endblock %}
+{% block header %}生活{% endblock %}
+
+{% block content %}
+
+<!-- ===== 天气 ===== -->
+{% if weather and weather.current %}
+<div class="box">
+  <p class="section-title">天气</p>
+  <table class="weather-table">
+    <tr>
+      <td class="weather-icon" style="font-size:12pt;">{{ weather.current.icon }}</td>
+      <td class="weather-temp" style="font-size:16pt;">{{ weather.current.temperature }}°C</td>
+      <td class="weather-desc" style="font-size:10pt;">{{ weather.current.description }}</td>
+      <td style="text-align:right; color:#888888; font-size:9pt;">上海</td>
+    </tr>
+  </table>
+  {% if weather.forecast %}
+  <table class="forecast-table">
+    {% for day in weather.forecast %}
+    <tr>
+      <td class="forecast-day" style="font-size:10pt;">{{ day.day_label }}</td>
+      <td class="forecast-icon" style="font-size:11pt;">{{ day.icon }}</td>
+      <td style="font-size:10pt;">{{ day.description }}</td>
+      <td class="forecast-range" style="font-size:10pt;">{{ day.high }}/{{ day.low }}°C</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+  {% if rain_alert %}
+  <div class="rain-alert" style="font-size:10pt;">{{ rain_alert }}</div>
+  {% endif %}
+</div>
+{% endif %}
+
+<!-- ===== 今日 ===== -->
+<div class="box">
+  <p class="section-title">今日</p>
+  <table class="data-table">
+    <tr>
+      <td style="font-weight:bold; font-size:11pt;">{{ solar_date }}</td>
+    </tr>
+    <tr>
+      <td style="color:#333333; font-size:10pt;">农历{{ lunar_date }}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ===== 生活待办（只显示未完成，大字）===== -->
+{% if life_todos %}
+<div class="box">
+  <p class="section-title">生活待办</p>
+  <table class="todo-table">
+    {% for todo in life_todos %}
+    {% if not todo.done %}
+    <tr>
+      <td class="todo-check" style="font-size:11pt;">[ ]</td>
+      <td style="font-size:11pt;">{{ todo.text }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    {% if streak and streak > 0 %}
+    <tr>
+      <td colspan="2" class="todo-summary" style="font-size:10pt;">连续运动 {{ streak }} 天</td>
+    </tr>
+    {% endif %}
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 生日 / 纪念日 ===== -->
+{% if birthdays %}
+<div class="box">
+  <p class="section-title">生日 / 纪念日</p>
+  <table class="upcoming-table">
+    {% for b in birthdays %}
+    <tr>
+      <td class="event-bullet" style="font-size:11pt;">*</td>
+      <td class="event-name" style="font-size:11pt;">{{ b.name }}</td>
+      {% if b.countdown %}
+      <td class="event-days" style="font-size:11pt;">{{ b.countdown }}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endif %}
+
+<!-- ===== 一言 ===== -->
+{% if quote %}
+<div class="box">
+  <p class="section-title">一言</p>
+  <p class="quote-text" style="font-size:10pt;">{{ quote.text }}</p>
+  {% if quote.from %}
+  <p class="quote-from" style="font-size:9pt;">—— {{ quote.from }}</p>
+  {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}
