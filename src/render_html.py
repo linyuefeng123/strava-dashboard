@@ -1012,8 +1012,11 @@ def _prepare_guide_context(data: dict, config: dict) -> dict:
 def _prepare_work_context(data: dict, config: dict, reminders: dict) -> dict:
     """Build template context for the work page."""
     today = date.today()
-    # Try Apple Reminders first, fallback to config.yaml
+    # Try Apple Reminders → Feishu → config.yaml
     todos_raw = reminders.get("todos", [])
+    if not todos_raw:
+        feishu = _load_json_safe("data/feishu_tasks.json")
+        todos_raw = feishu.get("todos", [])
     if not todos_raw:
         todos_raw = config.get("todos", [])
 
@@ -1086,8 +1089,11 @@ def _prepare_life_context(data: dict, config: dict, weather: dict, reminders: di
     # Life todos (non-work items)
     work_kw = ["周报", "汇报", "会议", "评审", "项目", "面谈", "复盘",
                "代码", "技术", "方案", "需求", "bug", "Bug", "提测"]
-    # Try Apple Reminders first, fallback to config.yaml
+    # Try Apple Reminders → Feishu → config.yaml
     todos_raw = reminders.get("todos", [])
+    if not todos_raw:
+        feishu = _load_json_safe("data/feishu_tasks.json")
+        todos_raw = feishu.get("todos", [])
     if not todos_raw:
         todos_raw = config.get("todos", [])
     life_todos = []

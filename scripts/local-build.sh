@@ -30,7 +30,7 @@ python3 src/fetch_reminders.py 2>&1 || echo "[WARN] fetch_reminders 失败"
 python3 src/fetch_weather.py 2>&1 || echo "[WARN] fetch_weather 失败"
 python3 src/fetch_quotes.py 2>&1 || echo "[WARN] fetch_quotes 失败"
 
-# 3. 飞书任务 (可选)
+# 3. 飞书任务
 python3 src/fetch_feishu.py 2>&1 || echo "[WARN] fetch_feishu 失败"
 
 # 4. 渲染 3 个页面

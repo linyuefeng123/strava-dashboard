@@ -24,9 +24,10 @@ echo [%date% %time%] ==== Windows Build Start ====
 REM 1. 拉取最新代码（含 config.yaml 可能有的待办更新）
 git pull origin main
 
-REM 2. 获取天气 + 名言
+REM 2. 获取天气 + 名言 + 飞书任务
 python src\fetch_weather.py
 python src\fetch_quotes.py
+python src\fetch_feishu.py
 
 REM 3. 渲染 3 个页面
 python src\render_html.py --all
