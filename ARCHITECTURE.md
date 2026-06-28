@@ -123,25 +123,38 @@ python3 src/fetch_quotes.py      # 刷新一言
 python3 src/render_html.py --all # 重新渲染
 ```
 
-## 五、Mac 关机时待办怎么更新？
+## 五、24 小时运行方案
 
-Mac 经常关机时，还有 **2 种方式**更新待办：
+### 方案 A：Windows 24 小时开机（有 Windows 机器的首选）
 
-### 方式 A：iPhone 编辑 GitHub（推荐，最简单）
+如果你的 Windows 机器 24 小时开机，可以替代 Mac 的 launchd。
 
-1. iPhone 打开 Safari → 登录 `github.com` → 打开 `linyuefeng123/strava-dashboard` 仓库
-2. 点 `config.yaml` → 编辑 → 修改 `todos:` 下的内容
-3. 提交（commit）→ 自动触发 GitHub Actions 构建
-4. 约 2 分钟后首页自动更新
+**Windows 能跑的：** 天气/一言获取、页面渲染、git push、gh-pages 部署 ✅
+**Windows 不能跑的：** Apple 提醒事项（需要 macOS EventKit）
 
-**优点**：无需安装任何 app，iPhone 自带的 Safari 就行
+**设置步骤：**
+1. Windows 安装 Python 3.11+ 和 Git
+2. `git clone https://github.com/linyuefeng123/strava-dashboard.git`
+3. `pip install requests pyyaml jinja2`
+4. 搜索"任务计划程序"→ 创建任务 → 触发器每天重复 → 启动 `scripts/windows-task.bat`
 
-### 方式 B：飞书任务（需要配置）
+**待办更新方式：** iPhone 上 Safari 打开 `github.com` → 编辑 `config.yaml` 的 `todos:` → commit → 下次 Windows 任务自动拉取并部署
 
-配置 `FEISHU_APP_ID` / `FEISHU_APP_SECRET` 后，iPhone 安装飞书 App →
-在飞书上创建/完成任务 → GitHub Actions 每天自动读取。
+### 方案 B：Mac 自动唤醒（已配置 launchd）
 
-`fetch_feishu.py` 已就绪，配置好即可用。
+Mac 配置了每天 07:00 / 20:00 的任务。可以再加自动唤醒：
+
+```bash
+sudo pmset repeat wake MTWRFSU 07:55:00
+```
+
+这样 Mac 睡眠时也会在 07:55 自动醒来，留 5 分钟给 launchd 准备，08:00 运行脚本。
+
+### 方案 C：GitHub Actions（免费，无需自己机器）
+
+每天 06:00 CST 自动运行。局限是：
+- ❌ 不能读取 Apple 提醒事项
+- ✅ 其他数据（Strava、天气、名言）都正常
 
 ## 六、需要一台服务器吗？
 
