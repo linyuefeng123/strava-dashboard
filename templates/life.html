@@ -4,17 +4,52 @@
 {% block header %}生活{% endblock %}
 
 {% block content %}
+<style>
+/* Life page: extra large fonts for Kindle PW2 */
+.box { margin-bottom: 4px; padding: 4px 6px; }
+.section-title { font-size: 13pt !important; margin-bottom: 3px !important; }
+
+/* Weather - big */
+.weather-icon { font-size: 18pt !important; }
+.weather-temp { font-size: 28pt !important; }
+.weather-desc { font-size: 16pt !important; }
+.forecast-table td { font-size: 13pt !important; padding: 3px 4px !important; }
+.forecast-day { font-size: 14pt !important; }
+.forecast-icon { font-size: 16pt !important; }
+.forecast-range { font-size: 13pt !important; }
+.rain-alert { font-size: 13pt !important; padding: 4px 6px !important; margin-top: 3px !important; }
+
+/* Date */
+.data-table td { padding: 3px 4px !important; }
+.data-table tr:first-child td { font-size: 18pt !important; }
+.data-table tr:last-child td { font-size: 15pt !important; }
+
+/* Todos */
+.todo-table td { padding: 3px 4px !important; }
+.todo-check { font-size: 18pt !important; width: 32px !important; }
+.todo-table td:not(.todo-check) { font-size: 16pt !important; }
+.todo-summary { font-size: 14pt !important; padding: 4px 4px !important; }
+
+/* Birthdays */
+.upcoming-table td { padding: 3px 4px !important; }
+.event-bullet { font-size: 16pt !important; }
+.event-name { font-size: 15pt !important; }
+.event-days { font-size: 15pt !important; }
+
+/* Quote */
+.quote-text { font-size: 15pt !important; padding: 4px 0 !important; }
+.quote-from { font-size: 12pt !important; }
+</style>
 
 <!-- ===== 天气 ===== -->
 {% if weather and weather.current %}
 <div class="box">
-  <p class="section-title">☀ 天气</p>
+  <p class="section-title">☀ 天气 · 上海</p>
   <table class="weather-table">
     <tr>
       <td class="weather-icon">{{ weather.current.icon }}</td>
       <td class="weather-temp">{{ weather.current.temperature }}°C</td>
       <td class="weather-desc">{{ weather.current.description }}</td>
-      <td style="text-align:right; color:#888888; font-size:11pt;">上海</td>
     </tr>
   </table>
   {% if weather.forecast %}
@@ -23,7 +58,7 @@
     <tr>
       <td class="forecast-day">{{ day.day_label }}</td>
       <td class="forecast-icon">{{ day.icon }}</td>
-      <td style="font-size:11pt;">{{ day.description }}</td>
+      <td>{{ day.description }}</td>
       <td class="forecast-range">{{ day.high }}/{{ day.low }}°C</td>
     </tr>
     {% endfor %}
@@ -40,10 +75,10 @@
   <p class="section-title">📅 今日</p>
   <table class="data-table">
     <tr>
-      <td style="font-weight:bold; font-size:14pt;">{{ solar_date }}</td>
+      <td>{{ solar_date }}</td>
     </tr>
     <tr>
-      <td style="color:#333333; font-size:12pt;">农历{{ lunar_date }}</td>
+      <td>农历{{ lunar_date }}</td>
     </tr>
   </table>
 </div>
@@ -56,8 +91,8 @@
     {% for todo in life_todos %}
     {% if not todo.done %}
     <tr>
-      <td class="todo-check" style="font-size:13pt;">☐</td>
-      <td style="font-size:13pt;">{{ todo.text }}</td>
+      <td class="todo-check">☐</td>
+      <td>{{ todo.text }}</td>
     </tr>
     {% endif %}
     {% endfor %}
@@ -78,9 +113,9 @@
     {% for b in birthdays %}
     <tr>
       <td class="event-bullet">🎈</td>
-      <td class="event-name" style="font-size:12pt;">{{ b.name }}</td>
+      <td class="event-name">{{ b.name }}</td>
       {% if b.countdown %}
-      <td class="event-days" style="font-size:12pt;">{{ b.countdown }}</td>
+      <td class="event-days">{{ b.countdown }}</td>
       {% endif %}
     </tr>
     {% endfor %}
@@ -92,7 +127,7 @@
 {% if quote %}
 <div class="box">
   <p class="section-title">💬 一言</p>
-  <p class="quote-text" style="font-size:12pt;">{{ quote.text }}</p>
+  <p class="quote-text">{{ quote.text }}</p>
   {% if quote.from %}
   <p class="quote-from">—— {{ quote.from }}</p>
   {% endif %}
