@@ -82,6 +82,7 @@ jobs:
           ANTHROPIC_DEFAULT_HAIKU_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
         run: python src/generate_training.py
         # 如果 API 调用失败，会自动降级到规则引擎
+        continue-on-error: true
 
       - name: Fetch Weather
         run: python src/fetch_weather.py

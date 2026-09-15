@@ -58,7 +58,8 @@
 4. fetch_weather.py   # 获取7天天气 + 降雨提醒
 5. fetch_quotes.py    # 获取一言
 6. render_html.py --all  # 渲染3个页面
-7. Deploy to gh-pages     # 部署 Kindle 可访问
+7. render_screensaver.py # 渲染墨水屏锁屏页 screensaver.html/.png（2026-09 补全）
+8. Deploy to gh-pages     # 部署 Kindle 可访问
 ```
 
 **运行位置**：GitHub 服务器（Ubuntu），无需自备机器

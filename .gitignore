@@ -1,5 +1,6 @@
 __pycache__/
 *.pyc
+.venv/
 
 # Output is regenerated every run (except screensaver images)
 output/
