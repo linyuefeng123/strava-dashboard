@@ -1,38 +1,82 @@
 {
   "current": {
-    "temperature": 24,
+    "temperature": 26,
     "weather_code": 1,
     "description": "大部晴",
     "icon": "*"
   },
   "forecast": [
     {
-      "date": "2026-06-29",
-      "day_label": "明天",
-      "high": 29,
+      "date": "2026-09-16",
+      "day_label": "周三",
+      "high": 30,
+      "low": 21,
+      "weather_code": 3,
+      "description": "阴",
+      "icon": "~",
+      "precip_prob": 0
+    },
+    {
+      "date": "2026-09-17",
+      "day_label": "周四",
+      "high": 30,
       "low": 22,
+      "weather_code": 53,
+      "description": "毛雨",
+      "icon": ".",
+      "precip_prob": 51
+    },
+    {
+      "date": "2026-09-18",
+      "day_label": "周五",
+      "high": 30,
+      "low": 24,
+      "weather_code": 3,
+      "description": "阴",
+      "icon": "~",
+      "precip_prob": 29
+    },
+    {
+      "date": "2026-09-19",
+      "day_label": "周六",
+      "high": 32,
+      "low": 23,
       "weather_code": 51,
       "description": "小毛雨",
-      "icon": "."
+      "icon": ".",
+      "precip_prob": 47
     },
     {
-      "date": "2026-06-30",
-      "day_label": "后天",
-      "high": 26,
+      "date": "2026-09-20",
+      "day_label": "周日",
+      "high": 31,
       "low": 24,
-      "weather_code": 99,
-      "description": "强雷暴+冰雹",
-      "icon": "!"
+      "weather_code": 1,
+      "description": "大部晴",
+      "icon": "*",
+      "precip_prob": 21
     },
     {
-      "date": "2026-07-01",
-      "day_label": "大后天",
-      "high": 28,
-      "low": 24,
-      "weather_code": 96,
-      "description": "雷暴+冰雹",
-      "icon": "!"
+      "date": "2026-09-21",
+      "day_label": "周一",
+      "high": 30,
+      "low": 22,
+      "weather_code": 2,
+      "description": "多云",
+      "icon": "~",
+      "precip_prob": 2
+    },
+    {
+      "date": "2026-09-22",
+      "day_label": "周二",
+      "high": 30,
+      "low": 22,
+      "weather_code": 0,
+      "description": "晴",
+      "icon": "*",
+      "precip_prob": 6
     }
   ],
-  "fetched_at": "2026-06-27T23:10:04.662846"
+  "rain_alert": "! 周四/周六 有雨，注意带伞",
+  "fetched_at": "2026-09-15T00:39:35.670139"
 }

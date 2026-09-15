@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>训练屏保 · 09.15</title>
+<style>
+  body {
+    margin: 0; padding: 32px 28px;
+    background: #FFFFFF; color: #111111;
+    font-family: "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 20px;
+  }
+  .header {
+    border-bottom: 3px solid #111;
+    padding-bottom: 14px;
+    margin-bottom: 22px;
+  }
+  .header .date { font-size: 40px; font-weight: bold; letter-spacing: 1px; }
+  .header .sub { font-size: 18px; color: #555; margin-top: 6px; }
+  .header .streak { float: right; text-align: right; font-size: 22px; font-weight: bold; }
+  .block { margin-bottom: 24px; }
+  .block-title {
+    font-size: 17px; color: #666; letter-spacing: 2px;
+    border-bottom: 1px solid #ddd; padding-bottom: 6px; margin-bottom: 12px;
+  }
+  .today { font-size: 26px; font-weight: bold; line-height: 1.5; }
+  .goal-row {
+    display: table-row;
+    font-size: 22px; line-height: 1.9;
+  }
+  .goal-row span { display: table-cell; }
+  .goal-row .g-icon { width: 48px; }
+  .goal-row .g-val { padding-right: 12px; }
+  .goal-row .g-bar { display: inline-block; height: 16px; background: #ddd; vertical-align: middle; margin-right: 8px; }
+  .goal-row .g-bar i { display: block; height: 100%; background: #444; }
+  .goal-row .g-pct { font-size: 18px; color: #555; }
+  .race { margin-top: 8px; font-size: 24px; font-weight: bold; }
+  .race .race-days { float: right; color: #111; }
+  .footer {
+    margin-top: 30px; padding-top: 12px;
+    border-top: 1px solid #ddd;
+    font-size: 16px; color: #888; text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="date">09月15日 · 周二</div>
+    <div class="sub">2026年09月15日 · 丙午年 八月初五</div>
+    <div class="streak">连训 0 天</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">今日训练</div>
+    <div class="today">5km轻松跑 @5:40/km</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">本周目标</div>
+    <div class="goal-row"><span class="g-icon">[B]</span><span class="g-val">骑行 0.0 / 100</span><span class="g-bar"><i style="width:0%"></i></span><span class="g-pct">0%</span></div><div class="goal-row"><span class="g-icon">[R]</span><span class="g-val">跑步 0.0 / 20</span><span class="g-bar"><i style="width:0%"></i></span><span class="g-pct">0%</span></div><div class="goal-row"><span class="g-icon">[W]</span><span class="g-val">力量 0 次 / 2</span><span class="g-bar"><i style="width:0%"></i></span><span class="g-pct">0%</span></div>
+  </div>
+
+  <div class="block">
+    <div class="block-title">下一场比赛</div>
+    <div class="race"><span class="race-name">Challenge铁人三项</span><span class="race-days">39 天后</span></div>
+  </div>
+
+  <div class="footer">Strava Dashboard · 锁定屏 · 每日自动更新</div>
+</body>
+</html>

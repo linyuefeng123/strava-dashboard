@@ -1,32 +1,32 @@
 {
   "annual_summary": {
     "ride": {
-      "distance_km": 2305.8,
-      "time_hours": 84.0,
-      "count": 122,
+      "distance_km": 3258.8,
+      "time_hours": 121.9,
+      "count": 173,
       "calories": 3122,
-      "pr_count": 119
+      "pr_count": 159
     },
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 19.9,
-      "count": 21,
+      "time_hours": 62.1,
+      "count": 53,
+      "calories": 0,
+      "pr_count": 0
+    },
+    "swim": {
+      "distance_km": 16.5,
+      "time_hours": 6.2,
+      "count": 12,
       "calories": 0,
       "pr_count": 0
     },
     "run": {
-      "distance_km": 180.3,
-      "time_hours": 81.3,
-      "count": 36,
+      "distance_km": 210.2,
+      "time_hours": 84.7,
+      "count": 42,
       "calories": 1806,
       "pr_count": 17
-    },
-    "swim": {
-      "distance_km": 0.8,
-      "time_hours": 1.5,
-      "count": 2,
-      "calories": 0,
-      "pr_count": 0
     },
     "walk": {
       "distance_km": 7.7,
@@ -36,67 +36,51 @@
       "pr_count": 0
     }
   },
-  "weekly_summary": {
-    "ride": {
-      "distance_km": 38.5,
-      "time_hours": 1.3,
-      "count": 3
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 0.3,
-      "count": 2
-    },
-    "run": {
-      "distance_km": 15.5,
-      "time_hours": 1.6,
-      "count": 3
-    }
-  },
+  "weekly_summary": {},
   "weekly_goals": [
     {
       "label": "Ride Distance",
       "target": 100,
-      "current": 38.5,
-      "pct": 38.5
+      "current": 0,
+      "pct": 0.0
     },
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 15.5,
-      "pct": 77.5
+      "current": 0,
+      "pct": 0.0
     },
     {
       "label": "Workouts",
       "target": 2,
-      "current": 2,
-      "pct": 100.0
+      "current": 0,
+      "pct": 0.0
     }
   ],
   "annual_goals": [
     {
       "label": "Ride Distance",
       "target": 5000,
-      "current": 2305.8,
-      "pct": 46.1
+      "current": 3258.8,
+      "pct": 65.2
     },
     {
       "label": "Run Distance",
       "target": 800,
-      "current": 180.3,
-      "pct": 22.5
+      "current": 210.2,
+      "pct": 26.3
     },
     {
       "label": "Swim Distance",
       "target": 20,
-      "current": 0.8,
-      "pct": 4.0
+      "current": 16.5,
+      "pct": 82.5
     },
     {
       "label": "Workouts",
       "target": 100,
-      "current": 21,
-      "pct": 21.0
+      "current": 53,
+      "pct": 53.0
     }
   ],
   "monthly_trend": {
@@ -196,20 +180,76 @@
       }
     },
     "6": {
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 2.8,
+        "count": 4
+      },
       "ride": {
         "distance_km": 279.6,
         "time_hours": 10.6,
         "count": 23
       },
-      "workout": {
-        "distance_km": 0.0,
-        "time_hours": 2.7,
-        "count": 3
-      },
       "run": {
         "distance_km": 56.1,
         "time_hours": 64.1,
         "count": 13
+      }
+    },
+    "7": {
+      "ride": {
+        "distance_km": 368.3,
+        "time_hours": 16.3,
+        "count": 24
+      },
+      "run": {
+        "distance_km": 15.4,
+        "time_hours": 1.9,
+        "count": 4
+      },
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 40.6,
+        "count": 12
+      },
+      "swim": {
+        "distance_km": 8.6,
+        "time_hours": 2.5,
+        "count": 6
+      }
+    },
+    "8": {
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 0.8,
+        "count": 14
+      },
+      "ride": {
+        "distance_km": 332.5,
+        "time_hours": 12.9,
+        "count": 13
+      },
+      "swim": {
+        "distance_km": 7.1,
+        "time_hours": 2.2,
+        "count": 4
+      },
+      "run": {
+        "distance_km": 14.5,
+        "time_hours": 1.5,
+        "count": 2
+      }
+    },
+    "9": {
+      "ride": {
+        "distance_km": 252.3,
+        "time_hours": 8.7,
+        "count": 14
+      },
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 0.8,
+        "count": 5
       }
     }
   },
@@ -217,7 +257,7 @@
     "ftp": null,
     "best_5k_time": 1502,
     "best_half_marathon_time": null,
-    "total_prs": 136
+    "total_prs": 176
   },
   "races": {
     "upcoming": [
@@ -226,7 +266,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 119
+        "countdown_days": 39
       }
     ],
     "past": [
@@ -256,196 +296,185 @@
       }
     ]
   },
-  "streak": 1,
+  "streak": 0,
   "weekly_trend": [
     {
-      "week_num": 26,
-      "start_date": "2026-06-22",
-      "sports": {
-        "ride": {
-          "distance_km": 38.5,
-          "time_hours": 1.3,
-          "count": 3
-        },
-        "run": {
-          "distance_km": 15.5,
-          "time_hours": 1.6,
-          "count": 3
-        }
-      }
+      "week_num": 38,
+      "start_date": "2026-09-14",
+      "sports": {}
     },
     {
-      "week_num": 25,
-      "start_date": "2026-06-15",
-      "sports": {
-        "run": {
-          "distance_km": 18.5,
-          "time_hours": 1.7,
-          "count": 4
-        },
-        "ride": {
-          "distance_km": 106.6,
-          "time_hours": 4.6,
-          "count": 8
-        }
-      }
-    },
-    {
-      "week_num": 24,
-      "start_date": "2026-06-08",
-      "sports": {
-        "run": {
-          "distance_km": 22.1,
-          "time_hours": 2.7,
-          "count": 5
-        },
-        "ride": {
-          "distance_km": 60.6,
-          "time_hours": 2.0,
-          "count": 5
-        }
-      }
-    },
-    {
-      "week_num": 23,
-      "start_date": "2026-06-01",
+      "week_num": 37,
+      "start_date": "2026-09-07",
       "sports": {
         "ride": {
-          "distance_km": 73.9,
-          "time_hours": 2.6,
+          "distance_km": 126.5,
+          "time_hours": 4.4,
           "count": 7
-        },
-        "run": {
-          "distance_km": 0.0,
-          "time_hours": 57.9,
-          "count": 1
         }
       }
     },
     {
-      "week_num": 22,
-      "start_date": "2026-05-25",
+      "week_num": 36,
+      "start_date": "2026-08-31",
       "sports": {
         "ride": {
-          "distance_km": 70.7,
-          "time_hours": 2.8,
-          "count": 4
+          "distance_km": 125.7,
+          "time_hours": 4.2,
+          "count": 7
         }
       }
     },
     {
-      "week_num": 21,
-      "start_date": "2026-05-18",
+      "week_num": 35,
+      "start_date": "2026-08-24",
       "sports": {
         "ride": {
-          "distance_km": 52.5,
-          "time_hours": 2.1,
-          "count": 4
-        },
-        "run": {
-          "distance_km": 25.4,
-          "time_hours": 5.6,
-          "count": 3
-        }
-      }
-    },
-    {
-      "week_num": 20,
-      "start_date": "2026-05-11",
-      "sports": {
-        "ride": {
-          "distance_km": 49.2,
-          "time_hours": 2.2,
-          "count": 4
-        },
-        "run": {
-          "distance_km": 4.1,
-          "time_hours": 0.9,
-          "count": 1
-        }
-      }
-    },
-    {
-      "week_num": 19,
-      "start_date": "2026-05-04",
-      "sports": {
-        "ride": {
-          "distance_km": 89.8,
-          "time_hours": 4.1,
+          "distance_km": 89.3,
+          "time_hours": 3.4,
           "count": 5
+        }
+      }
+    },
+    {
+      "week_num": 34,
+      "start_date": "2026-08-17",
+      "sports": {
+        "ride": {
+          "distance_km": 98.3,
+          "time_hours": 3.6,
+          "count": 3
+        },
+        "swim": {
+          "distance_km": 3.6,
+          "time_hours": 1.0,
+          "count": 2
+        }
+      }
+    },
+    {
+      "week_num": 33,
+      "start_date": "2026-08-10",
+      "sports": {
+        "ride": {
+          "distance_km": 72.6,
+          "time_hours": 2.8,
+          "count": 1
         },
         "run": {
-          "distance_km": 3.2,
-          "time_hours": 0.3,
+          "distance_km": 10.0,
+          "time_hours": 1.0,
           "count": 1
+        }
+      }
+    },
+    {
+      "week_num": 32,
+      "start_date": "2026-08-03",
+      "sports": {
+        "ride": {
+          "distance_km": 59.6,
+          "time_hours": 2.5,
+          "count": 3
+        },
+        "run": {
+          "distance_km": 4.5,
+          "time_hours": 0.4,
+          "count": 1
+        },
+        "swim": {
+          "distance_km": 2.0,
+          "time_hours": 0.6,
+          "count": 1
+        }
+      }
+    },
+    {
+      "week_num": 31,
+      "start_date": "2026-07-27",
+      "sports": {
+        "ride": {
+          "distance_km": 78.1,
+          "time_hours": 3.2,
+          "count": 3
+        },
+        "swim": {
+          "distance_km": 2.8,
+          "time_hours": 1.0,
+          "count": 2
+        },
+        "run": {
+          "distance_km": 8.8,
+          "time_hours": 0.8,
+          "count": 2
         }
       }
     }
   ],
   "recent_activities": [
     {
-      "id": 19083566310,
+      "id": 20152050035,
+      "name": "苏州环阳澄湖骑游",
+      "sport_type": "Ride",
+      "sport_icon": "[B]",
+      "distance_km": 60.6,
+      "date_short": "9/13",
+      "moving_time_min": 104.0
+    },
+    {
+      "id": 20152045342,
+      "name": "晨间骑行",
+      "sport_type": "Ride",
+      "sport_icon": "[B]",
+      "distance_km": 1.9,
+      "date_short": "9/13",
+      "moving_time_min": 8.0
+    },
+    {
+      "id": 20125711627,
+      "name": "Afternoon workout 💪",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "9/11",
+      "moving_time_min": 1.0
+    },
+    {
+      "id": 20114454806,
+      "name": "Afternoon Ride",
+      "sport_type": "Ride",
+      "sport_icon": "[B]",
+      "distance_km": 11.7,
+      "date_short": "9/10",
+      "moving_time_min": 30.0
+    },
+    {
+      "id": 20111721232,
+      "name": "Morning workout ☀️",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "9/10",
+      "moving_time_min": 6.0
+    },
+    {
+      "id": 20110060478,
+      "name": "晨间骑行",
+      "sport_type": "Ride",
+      "sport_icon": "[B]",
+      "distance_km": 9.5,
+      "date_short": "9/10",
+      "moving_time_min": 26.0
+    },
+    {
+      "id": 20109779679,
       "name": "傍晚骑行",
       "sport_type": "Ride",
       "sport_icon": "[B]",
-      "distance_km": 7.3,
-      "date_short": "6/27",
-      "moving_time_min": 18.0
-    },
-    {
-      "id": 19058766628,
-      "name": "午间锻炼💪",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "6/25",
-      "moving_time_min": 3.0
-    },
-    {
-      "id": 19044298301,
-      "name": "午间骑行",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 15.6,
-      "date_short": "6/24",
-      "moving_time_min": 30.0
-    },
-    {
-      "id": "19044298301",
-      "name": "午间骑行",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 15.6,
-      "date_short": "6/24",
-      "moving_time_min": 30.0
-    },
-    {
-      "id": 19030509087,
-      "name": "午间跑步",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 5.0,
-      "date_short": "6/23",
-      "moving_time_min": 34.0
-    },
-    {
-      "id": "19030509087",
-      "name": "午间跑步",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 5.0,
-      "date_short": "6/23",
-      "moving_time_min": 34.0
-    },
-    {
-      "id": 19029000648,
-      "name": "晨间锻炼 ☀️",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "6/23",
-      "moving_time_min": 14.0
+      "distance_km": 11.9,
+      "date_short": "9/9",
+      "moving_time_min": 32.0
     }
   ],
-  "last_updated": "2026-06-27T23:10:00.136119"
+  "last_updated": "2026-09-15T00:39:32.455187"
 }
