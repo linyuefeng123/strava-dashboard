@@ -4,6 +4,7 @@ __pycache__/
 
 # Output is regenerated every run (except screensaver images)
 output/
+!output/
 !output/screensaver.png
 !output/screensaver.html
 
