@@ -1,5 +1,12 @@
 {
   "annual_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 62.8,
+      "count": 54,
+      "calories": 0,
+      "pr_count": 0
+    },
     "ride": {
       "distance_km": 3282.7,
       "time_hours": 122.9,
@@ -13,13 +20,6 @@
       "count": 43,
       "calories": 1806,
       "pr_count": 17
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 62.1,
-      "count": 53,
-      "calories": 0,
-      "pr_count": 0
     },
     "swim": {
       "distance_km": 16.5,
@@ -37,6 +37,11 @@
     }
   },
   "weekly_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 0.7,
+      "count": 1
+    },
     "ride": {
       "distance_km": 23.9,
       "time_hours": 1.0,
@@ -64,8 +69,8 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 0,
-      "pct": 0.0
+      "current": 1,
+      "pct": 50.0
     }
   ],
   "annual_goals": [
@@ -90,8 +95,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 53,
-      "pct": 53.0
+      "current": 54,
+      "pct": 54.0
     }
   ],
   "monthly_trend": {
@@ -252,6 +257,11 @@
       }
     },
     "9": {
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 1.5,
+        "count": 6
+      },
       "ride": {
         "distance_km": 276.1,
         "time_hours": 9.7,
@@ -261,11 +271,6 @@
         "distance_km": 6.1,
         "time_hours": 0.5,
         "count": 1
-      },
-      "workout": {
-        "distance_km": 0.0,
-        "time_hours": 0.8,
-        "count": 5
       }
     }
   },
@@ -282,7 +287,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 37
+        "countdown_days": 36
       }
     ],
     "past": [
@@ -312,7 +317,7 @@
       }
     ]
   },
-  "streak": 2,
+  "streak": 3,
   "weekly_trend": [
     {
       "week_num": 38,
@@ -440,6 +445,15 @@
   ],
   "recent_activities": [
     {
+      "id": 20209128349,
+      "name": "Morning workout ☀️",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "9/17",
+      "moving_time_min": 40.0
+    },
+    {
       "id": 20197764718,
       "name": "Evening Ride",
       "sport_type": "Ride",
@@ -492,16 +506,7 @@
       "distance_km": 0.0,
       "date_short": "9/11",
       "moving_time_min": 1.0
-    },
-    {
-      "id": 20114454806,
-      "name": "Afternoon Ride",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 11.7,
-      "date_short": "9/10",
-      "moving_time_min": 30.0
     }
   ],
-  "last_updated": "2026-09-17T00:16:30.894691"
+  "last_updated": "2026-09-18T00:02:06.318396"
 }
