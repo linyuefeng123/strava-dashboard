@@ -1,25 +1,25 @@
 {
   "annual_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 63.1,
+      "count": 55,
+      "calories": 0,
+      "pr_count": 0
+    },
+    "run": {
+      "distance_km": 220.5,
+      "time_hours": 85.5,
+      "count": 44,
+      "calories": 1806,
+      "pr_count": 17
+    },
     "ride": {
       "distance_km": 3294.6,
       "time_hours": 123.5,
       "count": 176,
       "calories": 3122,
       "pr_count": 159
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 62.8,
-      "count": 54,
-      "calories": 0,
-      "pr_count": 0
-    },
-    "run": {
-      "distance_km": 216.2,
-      "time_hours": 85.1,
-      "count": 43,
-      "calories": 1806,
-      "pr_count": 17
     },
     "swim": {
       "distance_km": 16.5,
@@ -37,20 +37,20 @@
     }
   },
   "weekly_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 1.0,
+      "count": 2
+    },
+    "run": {
+      "distance_km": 10.4,
+      "time_hours": 0.8,
+      "count": 2
+    },
     "ride": {
       "distance_km": 35.8,
       "time_hours": 1.5,
       "count": 3
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 0.7,
-      "count": 1
-    },
-    "run": {
-      "distance_km": 6.1,
-      "time_hours": 0.5,
-      "count": 1
     }
   },
   "weekly_goals": [
@@ -63,14 +63,14 @@
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 6.1,
-      "pct": 30.5
+      "current": 10.4,
+      "pct": 52.0
     },
     {
       "label": "Workouts",
       "target": 2,
-      "current": 1,
-      "pct": 50.0
+      "current": 2,
+      "pct": 100.0
     }
   ],
   "annual_goals": [
@@ -83,8 +83,8 @@
     {
       "label": "Run Distance",
       "target": 800,
-      "current": 216.2,
-      "pct": 27.0
+      "current": 220.5,
+      "pct": 27.6
     },
     {
       "label": "Swim Distance",
@@ -95,8 +95,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 54,
-      "pct": 54.0
+      "current": 55,
+      "pct": 55.0
     }
   ],
   "monthly_trend": {
@@ -257,20 +257,20 @@
       }
     },
     "9": {
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 1.8,
+        "count": 7
+      },
+      "run": {
+        "distance_km": 10.4,
+        "time_hours": 0.8,
+        "count": 2
+      },
       "ride": {
         "distance_km": 288.0,
         "time_hours": 10.2,
         "count": 17
-      },
-      "workout": {
-        "distance_km": 0.0,
-        "time_hours": 1.5,
-        "count": 6
-      },
-      "run": {
-        "distance_km": 6.1,
-        "time_hours": 0.5,
-        "count": 1
       }
     }
   },
@@ -287,7 +287,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 35
+        "countdown_days": 34
       }
     ],
     "past": [
@@ -317,21 +317,21 @@
       }
     ]
   },
-  "streak": 4,
+  "streak": 5,
   "weekly_trend": [
     {
       "week_num": 38,
       "start_date": "2026-09-14",
       "sports": {
+        "run": {
+          "distance_km": 10.4,
+          "time_hours": 0.8,
+          "count": 2
+        },
         "ride": {
           "distance_km": 35.8,
           "time_hours": 1.5,
           "count": 3
-        },
-        "run": {
-          "distance_km": 6.1,
-          "time_hours": 0.5,
-          "count": 1
         }
       }
     },
@@ -445,6 +445,24 @@
   ],
   "recent_activities": [
     {
+      "id": 20239770214,
+      "name": "Evening workout 🏋️",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "9/19",
+      "moving_time_min": 20.0
+    },
+    {
+      "id": 20239688039,
+      "name": "傍晚跑步",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 4.3,
+      "date_short": "9/19",
+      "moving_time_min": 21.0
+    },
+    {
       "id": 20225132801,
       "name": "Afternoon Ride",
       "sport_type": "Ride",
@@ -488,25 +506,7 @@
       "distance_km": 6.1,
       "date_short": "9/15",
       "moving_time_min": 29.0
-    },
-    {
-      "id": 20152050035,
-      "name": "苏州环阳澄湖骑游",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 60.6,
-      "date_short": "9/13",
-      "moving_time_min": 104.0
-    },
-    {
-      "id": 20152045342,
-      "name": "晨间骑行",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 1.9,
-      "date_short": "9/13",
-      "moving_time_min": 8.0
     }
   ],
-  "last_updated": "2026-09-19T00:05:31.814387"
+  "last_updated": "2026-09-20T00:01:10.720125"
 }
