@@ -1,5 +1,12 @@
 {
   "annual_summary": {
+    "ride": {
+      "distance_km": 3338.5,
+      "time_hours": 125.0,
+      "count": 178,
+      "calories": 3122,
+      "pr_count": 159
+    },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 63.1,
@@ -13,13 +20,6 @@
       "count": 44,
       "calories": 1806,
       "pr_count": 17
-    },
-    "ride": {
-      "distance_km": 3294.6,
-      "time_hours": 123.5,
-      "count": 176,
-      "calories": 3122,
-      "pr_count": 159
     },
     "swim": {
       "distance_km": 16.5,
@@ -37,48 +37,38 @@
     }
   },
   "weekly_summary": {
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 1.0,
-      "count": 2
-    },
-    "run": {
-      "distance_km": 10.4,
-      "time_hours": 0.8,
-      "count": 2
-    },
     "ride": {
-      "distance_km": 35.8,
-      "time_hours": 1.5,
-      "count": 3
+      "distance_km": 12.0,
+      "time_hours": 0.6,
+      "count": 1
     }
   },
   "weekly_goals": [
     {
       "label": "Ride Distance",
       "target": 100,
-      "current": 35.8,
-      "pct": 35.8
+      "current": 12.0,
+      "pct": 12.0
     },
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 10.4,
-      "pct": 52.0
+      "current": 0,
+      "pct": 0.0
     },
     {
       "label": "Workouts",
       "target": 2,
-      "current": 2,
-      "pct": 100.0
+      "current": 0,
+      "pct": 0.0
     }
   ],
   "annual_goals": [
     {
       "label": "Ride Distance",
       "target": 5000,
-      "current": 3294.6,
-      "pct": 65.9
+      "current": 3338.5,
+      "pct": 66.8
     },
     {
       "label": "Run Distance",
@@ -257,6 +247,11 @@
       }
     },
     "9": {
+      "ride": {
+        "distance_km": 332.0,
+        "time_hours": 11.8,
+        "count": 19
+      },
       "workout": {
         "distance_km": 0.0,
         "time_hours": 1.8,
@@ -266,11 +261,6 @@
         "distance_km": 10.4,
         "time_hours": 0.8,
         "count": 2
-      },
-      "ride": {
-        "distance_km": 288.0,
-        "time_hours": 10.2,
-        "count": 17
       }
     }
   },
@@ -287,7 +277,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 34
+        "countdown_days": 33
       }
     ],
     "past": [
@@ -317,21 +307,32 @@
       }
     ]
   },
-  "streak": 5,
+  "streak": 7,
   "weekly_trend": [
+    {
+      "week_num": 39,
+      "start_date": "2026-09-21",
+      "sports": {
+        "ride": {
+          "distance_km": 12.0,
+          "time_hours": 0.6,
+          "count": 1
+        }
+      }
+    },
     {
       "week_num": 38,
       "start_date": "2026-09-14",
       "sports": {
+        "ride": {
+          "distance_km": 67.7,
+          "time_hours": 2.5,
+          "count": 4
+        },
         "run": {
           "distance_km": 10.4,
           "time_hours": 0.8,
           "count": 2
-        },
-        "ride": {
-          "distance_km": 35.8,
-          "time_hours": 1.5,
-          "count": 3
         }
       }
     },
@@ -420,30 +421,27 @@
           "count": 1
         }
       }
-    },
-    {
-      "week_num": 31,
-      "start_date": "2026-07-27",
-      "sports": {
-        "ride": {
-          "distance_km": 78.1,
-          "time_hours": 3.2,
-          "count": 3
-        },
-        "swim": {
-          "distance_km": 2.8,
-          "time_hours": 1.0,
-          "count": 2
-        },
-        "run": {
-          "distance_km": 8.8,
-          "time_hours": 0.8,
-          "count": 2
-        }
-      }
     }
   ],
   "recent_activities": [
+    {
+      "id": 20261601464,
+      "name": "Morning Ride",
+      "sport_type": "Ride",
+      "sport_icon": "[B]",
+      "distance_km": 12.0,
+      "date_short": "9/21",
+      "moving_time_min": 33.0
+    },
+    {
+      "id": 20248559102,
+      "name": "MyWhoosh - Climbing Sustained Threshold #2",
+      "sport_type": "VirtualRide",
+      "sport_icon": "[B]",
+      "distance_km": 32.0,
+      "date_short": "9/20",
+      "moving_time_min": 60.0
+    },
     {
       "id": 20239770214,
       "name": "Evening workout 🏋️",
@@ -488,25 +486,7 @@
       "distance_km": 11.9,
       "date_short": "9/16",
       "moving_time_min": 32.0
-    },
-    {
-      "id": 20192932033,
-      "name": "晨间骑行",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 12.0,
-      "date_short": "9/16",
-      "moving_time_min": 30.0
-    },
-    {
-      "id": 20179685033,
-      "name": "Lunch Run",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 6.1,
-      "date_short": "9/15",
-      "moving_time_min": 29.0
     }
   ],
-  "last_updated": "2026-09-20T00:01:10.720125"
+  "last_updated": "2026-09-21T00:03:22.136670"
 }
