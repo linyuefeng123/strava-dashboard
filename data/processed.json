@@ -2,8 +2,8 @@
   "annual_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 63.2,
-      "count": 57,
+      "time_hours": 65.4,
+      "count": 58,
       "calories": 0,
       "pr_count": 0
     },
@@ -39,8 +39,8 @@
   "weekly_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 0.0,
-      "count": 2
+      "time_hours": 2.3,
+      "count": 3
     },
     "ride": {
       "distance_km": 24.6,
@@ -64,7 +64,7 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 2,
+      "current": 3,
       "pct": 100.0
     }
   ],
@@ -90,8 +90,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 57,
-      "pct": 57.0
+      "current": 58,
+      "pct": 58.0
     }
   ],
   "monthly_trend": {
@@ -254,8 +254,8 @@
     "9": {
       "workout": {
         "distance_km": 0.0,
-        "time_hours": 1.8,
-        "count": 9
+        "time_hours": 4.1,
+        "count": 10
       },
       "ride": {
         "distance_km": 344.6,
@@ -282,7 +282,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 30
+        "countdown_days": 29
       }
     ],
     "past": [
@@ -312,7 +312,7 @@
       }
     ]
   },
-  "streak": 1,
+  "streak": 2,
   "weekly_trend": [
     {
       "week_num": 39,
@@ -430,6 +430,15 @@
   ],
   "recent_activities": [
     {
+      "id": 20306332698,
+      "name": "午间锻炼💪",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "9/24",
+      "moving_time_min": 137.0
+    },
+    {
       "id": 20291405661,
       "name": "腿",
       "sport_type": "WeightTraining",
@@ -482,16 +491,7 @@
       "distance_km": 0.0,
       "date_short": "9/19",
       "moving_time_min": 20.0
-    },
-    {
-      "id": 20239688039,
-      "name": "傍晚跑步",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 4.3,
-      "date_short": "9/19",
-      "moving_time_min": 21.0
     }
   ],
-  "last_updated": "2026-09-24T00:21:28.596884"
+  "last_updated": "2026-09-25T00:24:25.635689"
 }
