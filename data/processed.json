@@ -36,24 +36,13 @@
       "pr_count": 0
     }
   },
-  "weekly_summary": {
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 2.3,
-      "count": 3
-    },
-    "ride": {
-      "distance_km": 24.6,
-      "time_hours": 1.1,
-      "count": 2
-    }
-  },
+  "weekly_summary": {},
   "weekly_goals": [
     {
       "label": "Ride Distance",
       "target": 100,
-      "current": 24.6,
-      "pct": 24.6
+      "current": 0,
+      "pct": 0.0
     },
     {
       "label": "Run Distance",
@@ -64,8 +53,8 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 3,
-      "pct": 100.0
+      "current": 0,
+      "pct": 0.0
     }
   ],
   "annual_goals": [
@@ -282,7 +271,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 27
+        "countdown_days": 26
       }
     ],
     "past": [
@@ -314,6 +303,11 @@
   },
   "streak": 0,
   "weekly_trend": [
+    {
+      "week_num": 40,
+      "start_date": "2026-09-28",
+      "sports": {}
+    },
     {
       "week_num": 39,
       "start_date": "2026-09-21",
@@ -405,27 +399,6 @@
           "count": 1
         }
       }
-    },
-    {
-      "week_num": 32,
-      "start_date": "2026-08-03",
-      "sports": {
-        "ride": {
-          "distance_km": 59.6,
-          "time_hours": 2.5,
-          "count": 3
-        },
-        "run": {
-          "distance_km": 4.5,
-          "time_hours": 0.4,
-          "count": 1
-        },
-        "swim": {
-          "distance_km": 2.0,
-          "time_hours": 0.6,
-          "count": 1
-        }
-      }
     }
   ],
   "recent_activities": [
@@ -493,5 +466,5 @@
       "moving_time_min": 20.0
     }
   ],
-  "last_updated": "2026-09-27T00:24:09.732584"
+  "last_updated": "2026-09-28T00:28:56.451418"
 }
