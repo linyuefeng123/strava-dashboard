@@ -271,7 +271,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 26
+        "countdown_days": 25
       }
     ],
     "past": [
@@ -466,5 +466,5 @@
       "moving_time_min": 20.0
     }
   ],
-  "last_updated": "2026-09-28T00:28:56.451418"
+  "last_updated": "2026-09-29T01:43:15.305791"
 }
