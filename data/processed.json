@@ -2,8 +2,8 @@
   "annual_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 65.4,
-      "count": 58,
+      "time_hours": 65.5,
+      "count": 59,
       "calories": 0,
       "pr_count": 0
     },
@@ -36,7 +36,13 @@
       "pr_count": 0
     }
   },
-  "weekly_summary": {},
+  "weekly_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 0.1,
+      "count": 1
+    }
+  },
   "weekly_goals": [
     {
       "label": "Ride Distance",
@@ -53,8 +59,8 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 0,
-      "pct": 0.0
+      "current": 1,
+      "pct": 50.0
     }
   ],
   "annual_goals": [
@@ -79,8 +85,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 58,
-      "pct": 58.0
+      "current": 59,
+      "pct": 59.0
     }
   ],
   "monthly_trend": {
@@ -243,8 +249,8 @@
     "9": {
       "workout": {
         "distance_km": 0.0,
-        "time_hours": 4.1,
-        "count": 10
+        "time_hours": 4.2,
+        "count": 11
       },
       "ride": {
         "distance_km": 344.6,
@@ -271,7 +277,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 25
+        "countdown_days": 24
       }
     ],
     "past": [
@@ -301,7 +307,7 @@
       }
     ]
   },
-  "streak": 0,
+  "streak": 1,
   "weekly_trend": [
     {
       "week_num": 40,
@@ -403,6 +409,15 @@
   ],
   "recent_activities": [
     {
+      "id": 20373112945,
+      "name": "晨间锻炼 ☀️",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "9/29",
+      "moving_time_min": 3.0
+    },
+    {
       "id": 20306332698,
       "name": "午间锻炼💪",
       "sport_type": "WeightTraining",
@@ -455,16 +470,7 @@
       "distance_km": 32.0,
       "date_short": "9/20",
       "moving_time_min": 60.0
-    },
-    {
-      "id": 20239770214,
-      "name": "Evening workout 🏋️",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "9/19",
-      "moving_time_min": 20.0
     }
   ],
-  "last_updated": "2026-09-29T01:43:15.305791"
+  "last_updated": "2026-09-30T01:11:24.951405"
 }
