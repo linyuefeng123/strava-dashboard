@@ -1,5 +1,12 @@
 {
   "annual_summary": {
+    "run": {
+      "distance_km": 226.5,
+      "time_hours": 86.5,
+      "count": 45,
+      "calories": 1806,
+      "pr_count": 17
+    },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 65.5,
@@ -13,13 +20,6 @@
       "count": 179,
       "calories": 3122,
       "pr_count": 159
-    },
-    "run": {
-      "distance_km": 220.5,
-      "time_hours": 85.5,
-      "count": 44,
-      "calories": 1806,
-      "pr_count": 17
     },
     "swim": {
       "distance_km": 16.5,
@@ -37,6 +37,11 @@
     }
   },
   "weekly_summary": {
+    "run": {
+      "distance_km": 6.0,
+      "time_hours": 1.0,
+      "count": 1
+    },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 0.1,
@@ -53,8 +58,8 @@
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 0,
-      "pct": 0.0
+      "current": 6.0,
+      "pct": 30.0
     },
     {
       "label": "Workouts",
@@ -73,8 +78,8 @@
     {
       "label": "Run Distance",
       "target": 800,
-      "current": 220.5,
-      "pct": 27.6
+      "current": 226.5,
+      "pct": 28.3
     },
     {
       "label": "Swim Distance",
@@ -247,6 +252,11 @@
       }
     },
     "9": {
+      "run": {
+        "distance_km": 16.4,
+        "time_hours": 1.9,
+        "count": 3
+      },
       "workout": {
         "distance_km": 0.0,
         "time_hours": 4.2,
@@ -256,13 +266,9 @@
         "distance_km": 344.6,
         "time_hours": 12.3,
         "count": 20
-      },
-      "run": {
-        "distance_km": 10.4,
-        "time_hours": 0.8,
-        "count": 2
       }
-    }
+    },
+    "10": {}
   },
   "key_metrics": {
     "ftp": null,
@@ -277,7 +283,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 24
+        "countdown_days": 23
       }
     ],
     "past": [
@@ -307,12 +313,18 @@
       }
     ]
   },
-  "streak": 1,
+  "streak": 2,
   "weekly_trend": [
     {
       "week_num": 40,
       "start_date": "2026-09-28",
-      "sports": {}
+      "sports": {
+        "run": {
+          "distance_km": 6.0,
+          "time_hours": 1.0,
+          "count": 1
+        }
+      }
     },
     {
       "week_num": 39,
@@ -409,6 +421,15 @@
   ],
   "recent_activities": [
     {
+      "id": 20388186711,
+      "name": "午间跑步",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 6.0,
+      "date_short": "9/30",
+      "moving_time_min": 62.0
+    },
+    {
       "id": 20373112945,
       "name": "晨间锻炼 ☀️",
       "sport_type": "WeightTraining",
@@ -461,16 +482,7 @@
       "distance_km": 12.0,
       "date_short": "9/21",
       "moving_time_min": 33.0
-    },
-    {
-      "id": 20248559102,
-      "name": "MyWhoosh - Climbing Sustained Threshold #2",
-      "sport_type": "VirtualRide",
-      "sport_icon": "[B]",
-      "distance_km": 32.0,
-      "date_short": "9/20",
-      "moving_time_min": 60.0
     }
   ],
-  "last_updated": "2026-09-30T01:11:24.951405"
+  "last_updated": "2026-10-01T01:11:30.857381"
 }
