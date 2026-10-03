@@ -1,11 +1,18 @@
 {
   "annual_summary": {
     "run": {
-      "distance_km": 226.5,
-      "time_hours": 86.5,
-      "count": 45,
+      "distance_km": 235.4,
+      "time_hours": 87.3,
+      "count": 47,
       "calories": 1806,
       "pr_count": 17
+    },
+    "swim": {
+      "distance_km": 18.0,
+      "time_hours": 6.5,
+      "count": 13,
+      "calories": 0,
+      "pr_count": 0
     },
     "workout": {
       "distance_km": 0.0,
@@ -21,13 +28,6 @@
       "calories": 3122,
       "pr_count": 159
     },
-    "swim": {
-      "distance_km": 16.5,
-      "time_hours": 6.2,
-      "count": 12,
-      "calories": 0,
-      "pr_count": 0
-    },
     "walk": {
       "distance_km": 7.7,
       "time_hours": 1.8,
@@ -38,8 +38,13 @@
   },
   "weekly_summary": {
     "run": {
-      "distance_km": 6.0,
-      "time_hours": 1.0,
+      "distance_km": 14.9,
+      "time_hours": 1.8,
+      "count": 3
+    },
+    "swim": {
+      "distance_km": 1.5,
+      "time_hours": 0.4,
       "count": 1
     },
     "workout": {
@@ -58,8 +63,8 @@
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 6.0,
-      "pct": 30.0
+      "current": 14.9,
+      "pct": 74.5
     },
     {
       "label": "Workouts",
@@ -78,14 +83,14 @@
     {
       "label": "Run Distance",
       "target": 800,
-      "current": 226.5,
-      "pct": 28.3
+      "current": 235.4,
+      "pct": 29.4
     },
     {
       "label": "Swim Distance",
       "target": 20,
-      "current": 16.5,
-      "pct": 82.5
+      "current": 18.0,
+      "pct": 90.0
     },
     {
       "label": "Workouts",
@@ -268,7 +273,18 @@
         "count": 20
       }
     },
-    "10": {}
+    "10": {
+      "run": {
+        "distance_km": 8.9,
+        "time_hours": 0.8,
+        "count": 2
+      },
+      "swim": {
+        "distance_km": 1.5,
+        "time_hours": 0.4,
+        "count": 1
+      }
+    }
   },
   "key_metrics": {
     "ftp": null,
@@ -283,7 +299,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 22
+        "countdown_days": 21
       }
     ],
     "past": [
@@ -313,15 +329,20 @@
       }
     ]
   },
-  "streak": 0,
+  "streak": 1,
   "weekly_trend": [
     {
       "week_num": 40,
       "start_date": "2026-09-28",
       "sports": {
         "run": {
-          "distance_km": 6.0,
-          "time_hours": 1.0,
+          "distance_km": 14.9,
+          "time_hours": 1.8,
+          "count": 3
+        },
+        "swim": {
+          "distance_km": 1.5,
+          "time_hours": 0.4,
           "count": 1
         }
       }
@@ -421,6 +442,33 @@
   ],
   "recent_activities": [
     {
+      "id": 20416812163,
+      "name": "午后跑步",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 4.4,
+      "date_short": "10/2",
+      "moving_time_min": 24.0
+    },
+    {
+      "id": 20416600023,
+      "name": "下雨江边跑步",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 4.5,
+      "date_short": "10/2",
+      "moving_time_min": 21.0
+    },
+    {
+      "id": 20415028945,
+      "name": "晨间游泳",
+      "sport_type": "Swim",
+      "sport_icon": "[S]",
+      "distance_km": 1.5,
+      "date_short": "10/2",
+      "moving_time_min": 23.0
+    },
+    {
       "id": 20388186711,
       "name": "午间跑步",
       "sport_type": "Run",
@@ -455,34 +503,7 @@
       "distance_km": 0.0,
       "date_short": "9/23",
       "moving_time_min": 1.0
-    },
-    {
-      "id": 20289524605,
-      "name": "Morning Ride",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 12.7,
-      "date_short": "9/23",
-      "moving_time_min": 34.0
-    },
-    {
-      "id": 20264916835,
-      "name": "上身",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "9/21",
-      "moving_time_min": 1.0
-    },
-    {
-      "id": 20261601464,
-      "name": "Morning Ride",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 12.0,
-      "date_short": "9/21",
-      "moving_time_min": 33.0
     }
   ],
-  "last_updated": "2026-10-02T01:30:04.979654"
+  "last_updated": "2026-10-03T01:01:43.972705"
 }
