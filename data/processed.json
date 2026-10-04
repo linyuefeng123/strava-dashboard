@@ -1,9 +1,9 @@
 {
   "annual_summary": {
     "run": {
-      "distance_km": 235.4,
-      "time_hours": 87.3,
-      "count": 47,
+      "distance_km": 245.5,
+      "time_hours": 88.2,
+      "count": 49,
       "calories": 1806,
       "pr_count": 17
     },
@@ -38,9 +38,9 @@
   },
   "weekly_summary": {
     "run": {
-      "distance_km": 14.9,
-      "time_hours": 1.8,
-      "count": 3
+      "distance_km": 24.9,
+      "time_hours": 2.7,
+      "count": 5
     },
     "swim": {
       "distance_km": 1.5,
@@ -63,8 +63,8 @@
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 14.9,
-      "pct": 74.5
+      "current": 24.9,
+      "pct": 100.0
     },
     {
       "label": "Workouts",
@@ -83,8 +83,8 @@
     {
       "label": "Run Distance",
       "target": 800,
-      "current": 235.4,
-      "pct": 29.4
+      "current": 245.5,
+      "pct": 30.7
     },
     {
       "label": "Swim Distance",
@@ -275,9 +275,9 @@
     },
     "10": {
       "run": {
-        "distance_km": 8.9,
-        "time_hours": 0.8,
-        "count": 2
+        "distance_km": 18.9,
+        "time_hours": 1.6,
+        "count": 4
       },
       "swim": {
         "distance_km": 1.5,
@@ -299,7 +299,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 21
+        "countdown_days": 20
       }
     ],
     "past": [
@@ -329,16 +329,16 @@
       }
     ]
   },
-  "streak": 1,
+  "streak": 2,
   "weekly_trend": [
     {
       "week_num": 40,
       "start_date": "2026-09-28",
       "sports": {
         "run": {
-          "distance_km": 14.9,
-          "time_hours": 1.8,
-          "count": 3
+          "distance_km": 24.9,
+          "time_hours": 2.7,
+          "count": 5
         },
         "swim": {
           "distance_km": 1.5,
@@ -442,6 +442,24 @@
   ],
   "recent_activities": [
     {
+      "id": 20427655513,
+      "name": "午间跑步",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 5.0,
+      "date_short": "10/3",
+      "moving_time_min": 27.0
+    },
+    {
+      "id": 20427526346,
+      "name": "艹天天下雨",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 5.0,
+      "date_short": "10/3",
+      "moving_time_min": 26.0
+    },
+    {
       "id": 20416812163,
       "name": "午后跑步",
       "sport_type": "Run",
@@ -485,25 +503,7 @@
       "distance_km": 0.0,
       "date_short": "9/29",
       "moving_time_min": 3.0
-    },
-    {
-      "id": 20306332698,
-      "name": "午间锻炼💪",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "9/24",
-      "moving_time_min": 137.0
-    },
-    {
-      "id": 20291405661,
-      "name": "腿",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "9/23",
-      "moving_time_min": 1.0
     }
   ],
-  "last_updated": "2026-10-03T01:01:43.972705"
+  "last_updated": "2026-10-04T00:26:52.961969"
 }
