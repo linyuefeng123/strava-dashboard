@@ -1,21 +1,11 @@
 {
   "current": {
-    "temperature": 21,
-    "weather_code": 51,
-    "description": "小毛雨",
-    "icon": "."
+    "temperature": 19,
+    "weather_code": 2,
+    "description": "多云",
+    "icon": "~"
   },
   "forecast": [
-    {
-      "date": "2026-10-05",
-      "day_label": "周一",
-      "high": 22,
-      "low": 16,
-      "weather_code": 3,
-      "description": "阴",
-      "icon": "~",
-      "precip_prob": 0
-    },
     {
       "date": "2026-10-06",
       "day_label": "周二",
@@ -39,44 +29,54 @@
     {
       "date": "2026-10-08",
       "day_label": "周四",
-      "high": 24,
+      "high": 25,
       "low": 14,
       "weather_code": 1,
       "description": "大部晴",
       "icon": "*",
-      "precip_prob": 4
+      "precip_prob": 0
     },
     {
       "date": "2026-10-09",
       "day_label": "周五",
       "high": 25,
       "low": 16,
-      "weather_code": 53,
-      "description": "毛雨",
+      "weather_code": 51,
+      "description": "小毛雨",
       "icon": ".",
-      "precip_prob": 14
+      "precip_prob": 18
     },
     {
       "date": "2026-10-10",
       "day_label": "周六",
-      "high": 25,
-      "low": 18,
-      "weather_code": 2,
-      "description": "多云",
-      "icon": "~",
-      "precip_prob": 10
-    },
-    {
-      "date": "2026-10-11",
-      "day_label": "周日",
-      "high": 25,
+      "high": 26,
       "low": 18,
       "weather_code": 1,
       "description": "大部晴",
       "icon": "*",
-      "precip_prob": 18
+      "precip_prob": 15
+    },
+    {
+      "date": "2026-10-11",
+      "day_label": "周日",
+      "high": 26,
+      "low": 17,
+      "weather_code": 51,
+      "description": "小毛雨",
+      "icon": ".",
+      "precip_prob": 23
+    },
+    {
+      "date": "2026-10-12",
+      "day_label": "周一",
+      "high": 28,
+      "low": 21,
+      "weather_code": 3,
+      "description": "阴",
+      "icon": "~",
+      "precip_prob": 23
     }
   ],
   "rain_alert": "",
-  "fetched_at": "2026-10-04T00:26:53.247759"
+  "fetched_at": "2026-10-05T00:39:43.259726"
 }
