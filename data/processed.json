@@ -1,16 +1,16 @@
 {
   "annual_summary": {
     "run": {
-      "distance_km": 255.5,
-      "time_hours": 89.1,
-      "count": 51,
+      "distance_km": 260.5,
+      "time_hours": 89.5,
+      "count": 52,
       "calories": 1806,
       "pr_count": 17
     },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 65.5,
-      "count": 60,
+      "count": 61,
       "calories": 0,
       "pr_count": 0
     },
@@ -38,14 +38,14 @@
   },
   "weekly_summary": {
     "run": {
-      "distance_km": 5.0,
-      "time_hours": 0.5,
-      "count": 1
+      "distance_km": 10.0,
+      "time_hours": 0.9,
+      "count": 2
     },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 0.0,
-      "count": 1
+      "count": 2
     },
     "ride": {
       "distance_km": 6.2,
@@ -63,14 +63,14 @@
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 5.0,
-      "pct": 25.0
+      "current": 10.0,
+      "pct": 50.0
     },
     {
       "label": "Workouts",
       "target": 2,
-      "current": 1,
-      "pct": 50.0
+      "current": 2,
+      "pct": 100.0
     }
   ],
   "annual_goals": [
@@ -83,8 +83,8 @@
     {
       "label": "Run Distance",
       "target": 800,
-      "current": 255.5,
-      "pct": 31.9
+      "current": 260.5,
+      "pct": 32.6
     },
     {
       "label": "Swim Distance",
@@ -95,8 +95,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 60,
-      "pct": 60.0
+      "current": 61,
+      "pct": 61.0
     }
   ],
   "monthly_trend": {
@@ -275,14 +275,14 @@
     },
     "10": {
       "run": {
-        "distance_km": 29.0,
-        "time_hours": 2.5,
-        "count": 6
+        "distance_km": 34.0,
+        "time_hours": 2.9,
+        "count": 7
       },
       "workout": {
         "distance_km": 0.0,
         "time_hours": 0.0,
-        "count": 1
+        "count": 2
       },
       "ride": {
         "distance_km": 6.2,
@@ -298,7 +298,7 @@
   },
   "key_metrics": {
     "ftp": null,
-    "best_5k_time": 1502,
+    "best_5k_time": 1401,
     "best_half_marathon_time": null,
     "total_prs": 176
   },
@@ -309,7 +309,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 15
+        "countdown_days": 14
       }
     ],
     "past": [
@@ -339,16 +339,16 @@
       }
     ]
   },
-  "streak": 2,
+  "streak": 4,
   "weekly_trend": [
     {
       "week_num": 41,
       "start_date": "2026-10-05",
       "sports": {
         "run": {
-          "distance_km": 5.0,
-          "time_hours": 0.5,
-          "count": 1
+          "distance_km": 10.0,
+          "time_hours": 0.9,
+          "count": 2
         },
         "ride": {
           "distance_km": 6.2,
@@ -452,6 +452,24 @@
   ],
   "recent_activities": [
     {
+      "id": 20521759460,
+      "name": "晨间跑步",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 5.0,
+      "date_short": "10/10",
+      "moving_time_min": 23.0
+    },
+    {
+      "id": 20510896193,
+      "name": "晨间锻炼 ☀️",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "10/9",
+      "moving_time_min": 1.0
+    },
+    {
       "id": 20502049196,
       "name": "傍晚跑步",
       "sport_type": "Run",
@@ -495,25 +513,7 @@
       "distance_km": 5.0,
       "date_short": "10/3",
       "moving_time_min": 27.0
-    },
-    {
-      "id": 20427526346,
-      "name": "艹天天下雨",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 5.0,
-      "date_short": "10/3",
-      "moving_time_min": 26.0
-    },
-    {
-      "id": 20416812163,
-      "name": "午后跑步",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 4.4,
-      "date_short": "10/2",
-      "moving_time_min": 24.0
     }
   ],
-  "last_updated": "2026-10-09T01:55:35.349763"
+  "last_updated": "2026-10-10T01:37:35.053103"
 }
