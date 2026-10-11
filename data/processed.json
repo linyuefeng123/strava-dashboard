@@ -1,5 +1,12 @@
 {
   "annual_summary": {
+    "ride": {
+      "distance_km": 3383.1,
+      "time_hours": 126.7,
+      "count": 181,
+      "calories": 3122,
+      "pr_count": 159
+    },
     "run": {
       "distance_km": 260.5,
       "time_hours": 89.5,
@@ -13,13 +20,6 @@
       "count": 61,
       "calories": 0,
       "pr_count": 0
-    },
-    "ride": {
-      "distance_km": 3357.4,
-      "time_hours": 125.8,
-      "count": 180,
-      "calories": 3122,
-      "pr_count": 159
     },
     "swim": {
       "distance_km": 18.0,
@@ -37,6 +37,11 @@
     }
   },
   "weekly_summary": {
+    "ride": {
+      "distance_km": 31.9,
+      "time_hours": 1.1,
+      "count": 2
+    },
     "run": {
       "distance_km": 10.0,
       "time_hours": 0.9,
@@ -46,19 +51,14 @@
       "distance_km": 0.0,
       "time_hours": 0.0,
       "count": 2
-    },
-    "ride": {
-      "distance_km": 6.2,
-      "time_hours": 0.2,
-      "count": 1
     }
   },
   "weekly_goals": [
     {
       "label": "Ride Distance",
       "target": 100,
-      "current": 6.2,
-      "pct": 6.2
+      "current": 31.9,
+      "pct": 31.9
     },
     {
       "label": "Run Distance",
@@ -77,8 +77,8 @@
     {
       "label": "Ride Distance",
       "target": 5000,
-      "current": 3357.4,
-      "pct": 67.1
+      "current": 3383.1,
+      "pct": 67.7
     },
     {
       "label": "Run Distance",
@@ -274,6 +274,11 @@
       }
     },
     "10": {
+      "ride": {
+        "distance_km": 31.9,
+        "time_hours": 1.1,
+        "count": 2
+      },
       "run": {
         "distance_km": 34.0,
         "time_hours": 2.9,
@@ -283,11 +288,6 @@
         "distance_km": 0.0,
         "time_hours": 0.0,
         "count": 2
-      },
-      "ride": {
-        "distance_km": 6.2,
-        "time_hours": 0.2,
-        "count": 1
       },
       "swim": {
         "distance_km": 1.5,
@@ -309,7 +309,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 14
+        "countdown_days": 13
       }
     ],
     "past": [
@@ -345,15 +345,15 @@
       "week_num": 41,
       "start_date": "2026-10-05",
       "sports": {
+        "ride": {
+          "distance_km": 31.9,
+          "time_hours": 1.1,
+          "count": 2
+        },
         "run": {
           "distance_km": 10.0,
           "time_hours": 0.9,
           "count": 2
-        },
-        "ride": {
-          "distance_km": 6.2,
-          "time_hours": 0.2,
-          "count": 1
         }
       }
     },
@@ -452,6 +452,15 @@
   ],
   "recent_activities": [
     {
+      "id": 20522288002,
+      "name": "MyWhoosh - 90 Minute Endurance",
+      "sport_type": "VirtualRide",
+      "sport_icon": "[B]",
+      "distance_km": 25.7,
+      "date_short": "10/10",
+      "moving_time_min": 53.0
+    },
+    {
       "id": 20521759460,
       "name": "晨间跑步",
       "sport_type": "Run",
@@ -504,16 +513,7 @@
       "distance_km": 5.0,
       "date_short": "10/4",
       "moving_time_min": 26.0
-    },
-    {
-      "id": 20427655513,
-      "name": "午间跑步",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 5.0,
-      "date_short": "10/3",
-      "moving_time_min": 27.0
     }
   ],
-  "last_updated": "2026-10-10T01:37:35.053103"
+  "last_updated": "2026-10-11T00:46:37.409607"
 }
