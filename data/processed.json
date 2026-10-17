@@ -1,18 +1,18 @@
 {
   "annual_summary": {
+    "ride": {
+      "distance_km": 3433.2,
+      "time_hours": 128.8,
+      "count": 185,
+      "calories": 3122,
+      "pr_count": 159
+    },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 65.6,
-      "count": 63,
+      "count": 64,
       "calories": 0,
       "pr_count": 0
-    },
-    "ride": {
-      "distance_km": 3415.5,
-      "time_hours": 128.2,
-      "count": 184,
-      "calories": 3122,
-      "pr_count": 159
     },
     "run": {
       "distance_km": 260.5,
@@ -37,14 +37,14 @@
     }
   },
   "weekly_summary": {
+    "ride": {
+      "distance_km": 50.1,
+      "time_hours": 2.2,
+      "count": 4
+    },
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 0.0,
-      "count": 2
-    },
-    "ride": {
-      "distance_km": 32.3,
-      "time_hours": 1.6,
+      "time_hours": 0.1,
       "count": 3
     }
   },
@@ -52,8 +52,8 @@
     {
       "label": "Ride Distance",
       "target": 100,
-      "current": 32.3,
-      "pct": 32.3
+      "current": 50.1,
+      "pct": 50.1
     },
     {
       "label": "Run Distance",
@@ -64,7 +64,7 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 2,
+      "current": 3,
       "pct": 100.0
     }
   ],
@@ -72,8 +72,8 @@
     {
       "label": "Ride Distance",
       "target": 5000,
-      "current": 3415.5,
-      "pct": 68.3
+      "current": 3433.2,
+      "pct": 68.7
     },
     {
       "label": "Run Distance",
@@ -90,8 +90,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 63,
-      "pct": 63.0
+      "current": 64,
+      "pct": 64.0
     }
   ],
   "monthly_trend": {
@@ -269,14 +269,14 @@
       }
     },
     "10": {
+      "ride": {
+        "distance_km": 82.0,
+        "time_hours": 3.3,
+        "count": 6
+      },
       "workout": {
         "distance_km": 0.0,
         "time_hours": 0.1,
-        "count": 4
-      },
-      "ride": {
-        "distance_km": 64.3,
-        "time_hours": 2.7,
         "count": 5
       },
       "run": {
@@ -304,7 +304,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 8
+        "countdown_days": 7
       }
     ],
     "past": [
@@ -334,16 +334,16 @@
       }
     ]
   },
-  "streak": 1,
+  "streak": 2,
   "weekly_trend": [
     {
       "week_num": 42,
       "start_date": "2026-10-12",
       "sports": {
         "ride": {
-          "distance_km": 32.3,
-          "time_hours": 1.6,
-          "count": 3
+          "distance_km": 50.1,
+          "time_hours": 2.2,
+          "count": 4
         }
       }
     },
@@ -442,6 +442,24 @@
   ],
   "recent_activities": [
     {
+      "id": 20608138013,
+      "name": "MyWhoosh - 22min Intensive Aerobic",
+      "sport_type": "VirtualRide",
+      "sport_icon": "[B]",
+      "distance_km": 17.8,
+      "date_short": "10/16",
+      "moving_time_min": 35.0
+    },
+    {
+      "id": 20604057533,
+      "name": "晨间锻炼 ☀️",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "10/16",
+      "moving_time_min": 3.0
+    },
+    {
       "id": 20590156822,
       "name": "晨间锻炼 ☀️",
       "sport_type": "WeightTraining",
@@ -485,25 +503,7 @@
       "distance_km": 0.0,
       "date_short": "10/12",
       "moving_time_min": 1.0
-    },
-    {
-      "id": 20522288002,
-      "name": "MyWhoosh - 90 Minute Endurance",
-      "sport_type": "VirtualRide",
-      "sport_icon": "[B]",
-      "distance_km": 25.7,
-      "date_short": "10/10",
-      "moving_time_min": 53.0
-    },
-    {
-      "id": 20521759460,
-      "name": "晨间跑步",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 5.0,
-      "date_short": "10/10",
-      "moving_time_min": 23.0
     }
   ],
-  "last_updated": "2026-10-16T00:12:18.862923"
+  "last_updated": "2026-10-17T00:15:45.030464"
 }
