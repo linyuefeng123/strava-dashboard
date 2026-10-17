@@ -1,9 +1,9 @@
 {
   "annual_summary": {
     "ride": {
-      "distance_km": 3433.2,
-      "time_hours": 128.8,
-      "count": 185,
+      "distance_km": 3452.5,
+      "time_hours": 129.5,
+      "count": 186,
       "calories": 3122,
       "pr_count": 159
     },
@@ -38,9 +38,9 @@
   },
   "weekly_summary": {
     "ride": {
-      "distance_km": 50.1,
-      "time_hours": 2.2,
-      "count": 4
+      "distance_km": 69.4,
+      "time_hours": 2.8,
+      "count": 5
     },
     "workout": {
       "distance_km": 0.0,
@@ -52,8 +52,8 @@
     {
       "label": "Ride Distance",
       "target": 100,
-      "current": 50.1,
-      "pct": 50.1
+      "current": 69.4,
+      "pct": 69.4
     },
     {
       "label": "Run Distance",
@@ -72,8 +72,8 @@
     {
       "label": "Ride Distance",
       "target": 5000,
-      "current": 3433.2,
-      "pct": 68.7
+      "current": 3452.5,
+      "pct": 69.0
     },
     {
       "label": "Run Distance",
@@ -270,9 +270,9 @@
     },
     "10": {
       "ride": {
-        "distance_km": 82.0,
-        "time_hours": 3.3,
-        "count": 6
+        "distance_km": 101.3,
+        "time_hours": 3.9,
+        "count": 7
       },
       "workout": {
         "distance_km": 0.0,
@@ -334,16 +334,16 @@
       }
     ]
   },
-  "streak": 2,
+  "streak": 3,
   "weekly_trend": [
     {
       "week_num": 42,
       "start_date": "2026-10-12",
       "sports": {
         "ride": {
-          "distance_km": 50.1,
-          "time_hours": 2.2,
-          "count": 4
+          "distance_km": 69.4,
+          "time_hours": 2.8,
+          "count": 5
         }
       }
     },
@@ -442,6 +442,15 @@
   ],
   "recent_activities": [
     {
+      "id": 20615837739,
+      "name": "MyWhoosh - 22min Intensive Aerobic",
+      "sport_type": "VirtualRide",
+      "sport_icon": "[B]",
+      "distance_km": 19.3,
+      "date_short": "10/17",
+      "moving_time_min": 38.0
+    },
+    {
       "id": 20608138013,
       "name": "MyWhoosh - 22min Intensive Aerobic",
       "sport_type": "VirtualRide",
@@ -494,16 +503,7 @@
       "distance_km": 8.0,
       "date_short": "10/13",
       "moving_time_min": 30.0
-    },
-    {
-      "id": 20550475079,
-      "name": "上身",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "10/12",
-      "moving_time_min": 1.0
     }
   ],
-  "last_updated": "2026-10-17T00:15:45.030464"
+  "last_updated": "2026-10-17T23:54:45.404800"
 }
