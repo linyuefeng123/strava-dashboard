@@ -1,5 +1,12 @@
 {
   "annual_summary": {
+    "run": {
+      "distance_km": 265.0,
+      "time_hours": 89.9,
+      "count": 53,
+      "calories": 1806,
+      "pr_count": 17
+    },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 65.8,
@@ -13,13 +20,6 @@
       "count": 188,
       "calories": 3122,
       "pr_count": 159
-    },
-    "run": {
-      "distance_km": 260.5,
-      "time_hours": 89.5,
-      "count": 52,
-      "calories": 1806,
-      "pr_count": 17
     },
     "swim": {
       "distance_km": 18.0,
@@ -37,6 +37,11 @@
     }
   },
   "weekly_summary": {
+    "run": {
+      "distance_km": 4.5,
+      "time_hours": 0.4,
+      "count": 1
+    },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 0.2,
@@ -53,8 +58,8 @@
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 0,
-      "pct": 0.0
+      "current": 4.5,
+      "pct": 22.5
     },
     {
       "label": "Workouts",
@@ -73,8 +78,8 @@
     {
       "label": "Run Distance",
       "target": 800,
-      "current": 260.5,
-      "pct": 32.6
+      "current": 265.0,
+      "pct": 33.1
     },
     {
       "label": "Swim Distance",
@@ -264,6 +269,11 @@
       }
     },
     "10": {
+      "run": {
+        "distance_km": 38.5,
+        "time_hours": 3.4,
+        "count": 8
+      },
       "workout": {
         "distance_km": 0.0,
         "time_hours": 0.3,
@@ -273,11 +283,6 @@
         "distance_km": 127.0,
         "time_hours": 5.2,
         "count": 9
-      },
-      "run": {
-        "distance_km": 34.0,
-        "time_hours": 2.9,
-        "count": 7
       },
       "swim": {
         "distance_km": 1.5,
@@ -299,7 +304,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 4
+        "countdown_days": 3
       }
     ],
     "past": [
@@ -334,7 +339,13 @@
     {
       "week_num": 43,
       "start_date": "2026-10-19",
-      "sports": {}
+      "sports": {
+        "run": {
+          "distance_km": 4.5,
+          "time_hours": 0.4,
+          "count": 1
+        }
+      }
     },
     {
       "week_num": 42,
@@ -431,6 +442,15 @@
   ],
   "recent_activities": [
     {
+      "id": 20656911139,
+      "name": "Lunch Run",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 4.5,
+      "date_short": "10/20",
+      "moving_time_min": 27.0
+    },
+    {
       "id": 20654398978,
       "name": "上身",
       "sport_type": "WeightTraining",
@@ -483,16 +503,7 @@
       "distance_km": 0.0,
       "date_short": "10/16",
       "moving_time_min": 3.0
-    },
-    {
-      "id": 20590156822,
-      "name": "晨间锻炼 ☀️",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "10/15",
-      "moving_time_min": 1.0
     }
   ],
-  "last_updated": "2026-10-20T01:00:15.539014"
+  "last_updated": "2026-10-21T00:29:25.381348"
 }
