@@ -1,16 +1,16 @@
 {
   "annual_summary": {
     "run": {
-      "distance_km": 265.0,
-      "time_hours": 89.9,
-      "count": 53,
+      "distance_km": 268.4,
+      "time_hours": 90.3,
+      "count": 54,
       "calories": 1806,
       "pr_count": 17
     },
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 65.8,
-      "count": 65,
+      "time_hours": 65.9,
+      "count": 66,
       "calories": 0,
       "pr_count": 0
     },
@@ -38,14 +38,14 @@
   },
   "weekly_summary": {
     "run": {
-      "distance_km": 4.5,
-      "time_hours": 0.4,
-      "count": 1
+      "distance_km": 7.9,
+      "time_hours": 0.8,
+      "count": 2
     },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 0.2,
-      "count": 1
+      "count": 2
     }
   },
   "weekly_goals": [
@@ -58,14 +58,14 @@
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 4.5,
-      "pct": 22.5
+      "current": 7.9,
+      "pct": 39.5
     },
     {
       "label": "Workouts",
       "target": 2,
-      "current": 1,
-      "pct": 50.0
+      "current": 2,
+      "pct": 100.0
     }
   ],
   "annual_goals": [
@@ -78,8 +78,8 @@
     {
       "label": "Run Distance",
       "target": 800,
-      "current": 265.0,
-      "pct": 33.1
+      "current": 268.4,
+      "pct": 33.5
     },
     {
       "label": "Swim Distance",
@@ -90,8 +90,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 65,
-      "pct": 65.0
+      "current": 66,
+      "pct": 66.0
     }
   ],
   "monthly_trend": {
@@ -270,14 +270,14 @@
     },
     "10": {
       "run": {
-        "distance_km": 38.5,
-        "time_hours": 3.4,
-        "count": 8
+        "distance_km": 41.9,
+        "time_hours": 3.7,
+        "count": 9
       },
       "workout": {
         "distance_km": 0.0,
-        "time_hours": 0.3,
-        "count": 6
+        "time_hours": 0.4,
+        "count": 7
       },
       "ride": {
         "distance_km": 127.0,
@@ -304,7 +304,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 3
+        "countdown_days": 2
       }
     ],
     "past": [
@@ -334,16 +334,16 @@
       }
     ]
   },
-  "streak": 1,
+  "streak": 2,
   "weekly_trend": [
     {
       "week_num": 43,
       "start_date": "2026-10-19",
       "sports": {
         "run": {
-          "distance_km": 4.5,
-          "time_hours": 0.4,
-          "count": 1
+          "distance_km": 7.9,
+          "time_hours": 0.8,
+          "count": 2
         }
       }
     },
@@ -442,6 +442,24 @@
   ],
   "recent_activities": [
     {
+      "id": 20670032135,
+      "name": "Lunch Run",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 3.4,
+      "date_short": "10/21",
+      "moving_time_min": 22.0
+    },
+    {
+      "id": 20669924061,
+      "name": "pull",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "10/21",
+      "moving_time_min": 2.0
+    },
+    {
       "id": 20656911139,
       "name": "Lunch Run",
       "sport_type": "Run",
@@ -485,25 +503,7 @@
       "distance_km": 19.3,
       "date_short": "10/17",
       "moving_time_min": 38.0
-    },
-    {
-      "id": 20608138013,
-      "name": "MyWhoosh - 22min Intensive Aerobic",
-      "sport_type": "VirtualRide",
-      "sport_icon": "[B]",
-      "distance_km": 17.8,
-      "date_short": "10/16",
-      "moving_time_min": 35.0
-    },
-    {
-      "id": 20604057533,
-      "name": "晨间锻炼 ☀️",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "10/16",
-      "moving_time_min": 3.0
     }
   ],
-  "last_updated": "2026-10-21T00:29:25.381348"
+  "last_updated": "2026-10-22T00:33:19.590679"
 }
