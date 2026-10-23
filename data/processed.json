@@ -1,25 +1,25 @@
 {
   "annual_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 66.7,
+      "count": 73,
+      "calories": 0,
+      "pr_count": 0
+    },
+    "ride": {
+      "distance_km": 3498.4,
+      "time_hours": 131.5,
+      "count": 189,
+      "calories": 3122,
+      "pr_count": 159
+    },
     "run": {
       "distance_km": 268.4,
       "time_hours": 90.3,
       "count": 54,
       "calories": 1806,
       "pr_count": 17
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 65.9,
-      "count": 66,
-      "calories": 0,
-      "pr_count": 0
-    },
-    "ride": {
-      "distance_km": 3478.2,
-      "time_hours": 130.8,
-      "count": 188,
-      "calories": 3122,
-      "pr_count": 159
     },
     "swim": {
       "distance_km": 18.0,
@@ -37,14 +37,19 @@
     }
   },
   "weekly_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 1.1,
+      "count": 9
+    },
+    "ride": {
+      "distance_km": 20.2,
+      "time_hours": 0.7,
+      "count": 1
+    },
     "run": {
       "distance_km": 7.9,
       "time_hours": 0.8,
-      "count": 2
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 0.2,
       "count": 2
     }
   },
@@ -52,8 +57,8 @@
     {
       "label": "Ride Distance",
       "target": 100,
-      "current": 0,
-      "pct": 0.0
+      "current": 20.2,
+      "pct": 20.2
     },
     {
       "label": "Run Distance",
@@ -64,7 +69,7 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 2,
+      "current": 9,
       "pct": 100.0
     }
   ],
@@ -72,8 +77,8 @@
     {
       "label": "Ride Distance",
       "target": 5000,
-      "current": 3478.2,
-      "pct": 69.6
+      "current": 3498.4,
+      "pct": 70.0
     },
     {
       "label": "Run Distance",
@@ -90,8 +95,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 66,
-      "pct": 66.0
+      "current": 73,
+      "pct": 73.0
     }
   ],
   "monthly_trend": {
@@ -269,19 +274,19 @@
       }
     },
     "10": {
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 1.2,
+        "count": 14
+      },
+      "ride": {
+        "distance_km": 147.2,
+        "time_hours": 6.0,
+        "count": 10
+      },
       "run": {
         "distance_km": 41.9,
         "time_hours": 3.7,
-        "count": 9
-      },
-      "workout": {
-        "distance_km": 0.0,
-        "time_hours": 0.4,
-        "count": 7
-      },
-      "ride": {
-        "distance_km": 127.0,
-        "time_hours": 5.2,
         "count": 9
       },
       "swim": {
@@ -304,7 +309,7 @@
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 2
+        "countdown_days": 1
       }
     ],
     "past": [
@@ -334,12 +339,17 @@
       }
     ]
   },
-  "streak": 2,
+  "streak": 4,
   "weekly_trend": [
     {
       "week_num": 43,
       "start_date": "2026-10-19",
       "sports": {
+        "ride": {
+          "distance_km": 20.2,
+          "time_hours": 0.7,
+          "count": 1
+        },
         "run": {
           "distance_km": 7.9,
           "time_hours": 0.8,
@@ -442,68 +452,68 @@
   ],
   "recent_activities": [
     {
-      "id": 20670032135,
-      "name": "Lunch Run",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 3.4,
-      "date_short": "10/21",
-      "moving_time_min": 22.0
-    },
-    {
-      "id": 20669924061,
-      "name": "pull",
+      "id": 20694865778,
+      "name": "晨间锻炼 ☀️",
       "sport_type": "WeightTraining",
       "sport_icon": "[W]",
       "distance_km": 0.0,
-      "date_short": "10/21",
-      "moving_time_min": 2.0
+      "date_short": "10/23",
+      "moving_time_min": 3.0
     },
     {
-      "id": 20656911139,
-      "name": "Lunch Run",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 4.5,
-      "date_short": "10/20",
-      "moving_time_min": 27.0
-    },
-    {
-      "id": 20654398978,
-      "name": "上身",
-      "sport_type": "WeightTraining",
+      "id": 20694814262,
+      "name": "Morning Workout",
+      "sport_type": "Workout",
       "sport_icon": "[W]",
       "distance_km": 0.0,
-      "date_short": "10/20",
-      "moving_time_min": 13.0
+      "date_short": "10/23",
+      "moving_time_min": 26.0
     },
     {
-      "id": 20630564688,
-      "name": "Afternoon Ride",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 11.0,
-      "date_short": "10/18",
-      "moving_time_min": 34.0
+      "id": 20694814317,
+      "name": "Night Workout",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "10/22",
+      "moving_time_min": 1.0
     },
     {
-      "id": 20629099509,
-      "name": "Morning Ride",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 14.7,
-      "date_short": "10/18",
-      "moving_time_min": 47.0
-    },
-    {
-      "id": 20615837739,
-      "name": "MyWhoosh - 22min Intensive Aerobic",
+      "id": 20687163604,
+      "name": "MyWhoosh - Al Qudra",
       "sport_type": "VirtualRide",
       "sport_icon": "[B]",
-      "distance_km": 19.3,
-      "date_short": "10/17",
-      "moving_time_min": 38.0
+      "distance_km": 20.2,
+      "date_short": "10/22",
+      "moving_time_min": 43.0
+    },
+    {
+      "id": 20694814303,
+      "name": "Evening Workout",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "10/22",
+      "moving_time_min": 0.0
+    },
+    {
+      "id": 20694814256,
+      "name": "Evening Workout",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "10/22",
+      "moving_time_min": 4.0
+    },
+    {
+      "id": 20694814282,
+      "name": "Evening Workout",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "10/22",
+      "moving_time_min": 1.0
     }
   ],
-  "last_updated": "2026-10-22T00:33:19.590679"
+  "last_updated": "2026-10-23T00:30:41.073957"
 }
