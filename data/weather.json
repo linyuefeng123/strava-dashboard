@@ -1,50 +1,40 @@
 {
   "current": {
-    "temperature": 19,
-    "weather_code": 53,
-    "description": "毛雨",
-    "icon": "."
+    "temperature": 21,
+    "weather_code": 3,
+    "description": "阴",
+    "icon": "~"
   },
   "forecast": [
-    {
-      "date": "2026-10-25",
-      "day_label": "周日",
-      "high": 22,
-      "low": 19,
-      "weather_code": 51,
-      "description": "小毛雨",
-      "icon": ".",
-      "precip_prob": 60
-    },
     {
       "date": "2026-10-26",
       "day_label": "周一",
       "high": 23,
-      "low": 17,
+      "low": 16,
       "weather_code": 3,
       "description": "阴",
       "icon": "~",
-      "precip_prob": 39
+      "precip_prob": 0
     },
     {
       "date": "2026-10-27",
       "day_label": "周二",
       "high": 21,
-      "low": 14,
+      "low": 15,
       "weather_code": 3,
       "description": "阴",
       "icon": "~",
-      "precip_prob": 2
+      "precip_prob": 10
     },
     {
       "date": "2026-10-28",
       "day_label": "周三",
       "high": 20,
-      "low": 14,
+      "low": 13,
       "weather_code": 3,
       "description": "阴",
       "icon": "~",
-      "precip_prob": 2
+      "precip_prob": 4
     },
     {
       "date": "2026-10-29",
@@ -54,29 +44,39 @@
       "weather_code": 53,
       "description": "毛雨",
       "icon": ".",
-      "precip_prob": 34
+      "precip_prob": 62
     },
     {
       "date": "2026-10-30",
       "day_label": "周五",
-      "high": 24,
+      "high": 23,
       "low": 14,
       "weather_code": 3,
       "description": "阴",
       "icon": "~",
-      "precip_prob": 20
+      "precip_prob": 19
     },
     {
       "date": "2026-10-31",
       "day_label": "周六",
+      "high": 21,
+      "low": 14,
+      "weather_code": 3,
+      "description": "阴",
+      "icon": "~",
+      "precip_prob": 23
+    },
+    {
+      "date": "2026-11-01",
+      "day_label": "周日",
       "high": 24,
-      "low": 18,
+      "low": 15,
       "weather_code": 51,
       "description": "小毛雨",
       "icon": ".",
-      "precip_prob": 32
+      "precip_prob": 59
     }
   ],
-  "rain_alert": "! 周日 有雨，注意带伞",
-  "fetched_at": "2026-10-24T00:26:00.307684"
+  "rain_alert": "! 周四/周日 有雨，注意带伞",
+  "fetched_at": "2026-10-25T00:09:45.724540"
 }

@@ -1,18 +1,18 @@
 {
   "annual_summary": {
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 66.7,
-      "count": 73,
-      "calories": 0,
-      "pr_count": 0
-    },
     "ride": {
-      "distance_km": 3498.4,
-      "time_hours": 131.5,
-      "count": 189,
+      "distance_km": 3529.6,
+      "time_hours": 132.5,
+      "count": 190,
       "calories": 3122,
       "pr_count": 159
+    },
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 67.6,
+      "count": 74,
+      "calories": 0,
+      "pr_count": 0
     },
     "run": {
       "distance_km": 268.4,
@@ -37,15 +37,15 @@
     }
   },
   "weekly_summary": {
+    "ride": {
+      "distance_km": 51.4,
+      "time_hours": 1.7,
+      "count": 2
+    },
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 1.1,
-      "count": 9
-    },
-    "ride": {
-      "distance_km": 20.2,
-      "time_hours": 0.7,
-      "count": 1
+      "time_hours": 2.0,
+      "count": 10
     },
     "run": {
       "distance_km": 7.9,
@@ -57,8 +57,8 @@
     {
       "label": "Ride Distance",
       "target": 100,
-      "current": 20.2,
-      "pct": 20.2
+      "current": 51.4,
+      "pct": 51.4
     },
     {
       "label": "Run Distance",
@@ -69,7 +69,7 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 9,
+      "current": 10,
       "pct": 100.0
     }
   ],
@@ -77,8 +77,8 @@
     {
       "label": "Ride Distance",
       "target": 5000,
-      "current": 3498.4,
-      "pct": 70.0
+      "current": 3529.6,
+      "pct": 70.6
     },
     {
       "label": "Run Distance",
@@ -95,8 +95,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 73,
-      "pct": 73.0
+      "current": 74,
+      "pct": 74.0
     }
   ],
   "monthly_trend": {
@@ -274,15 +274,15 @@
       }
     },
     "10": {
+      "ride": {
+        "distance_km": 178.4,
+        "time_hours": 7.0,
+        "count": 11
+      },
       "workout": {
         "distance_km": 0.0,
-        "time_hours": 1.2,
-        "count": 14
-      },
-      "ride": {
-        "distance_km": 147.2,
-        "time_hours": 6.0,
-        "count": 10
+        "time_hours": 2.1,
+        "count": 15
       },
       "run": {
         "distance_km": 41.9,
@@ -303,16 +303,16 @@
     "total_prs": 176
   },
   "races": {
-    "upcoming": [
+    "upcoming": [],
+    "past": [
       {
         "name": "Challenge铁人三项",
         "date": "2026-10-24",
         "distance_km": null,
         "sport": "",
-        "countdown_days": 0
-      }
-    ],
-    "past": [
+        "result": null,
+        "time": null
+      },
       {
         "name": "松江田园铁三",
         "date": "2026-06-14",
@@ -339,16 +339,16 @@
       }
     ]
   },
-  "streak": 4,
+  "streak": 5,
   "weekly_trend": [
     {
       "week_num": 43,
       "start_date": "2026-10-19",
       "sports": {
         "ride": {
-          "distance_km": 20.2,
-          "time_hours": 0.7,
-          "count": 1
+          "distance_km": 51.4,
+          "time_hours": 1.7,
+          "count": 2
         },
         "run": {
           "distance_km": 7.9,
@@ -452,6 +452,24 @@
   ],
   "recent_activities": [
     {
+      "id": 20708902556,
+      "name": "MyWhoosh - 200",
+      "sport_type": "VirtualRide",
+      "sport_icon": "[B]",
+      "distance_km": 31.2,
+      "date_short": "10/24",
+      "moving_time_min": 60.0
+    },
+    {
+      "id": 20712154523,
+      "name": "Afternoon Workout",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "10/24",
+      "moving_time_min": 56.0
+    },
+    {
       "id": 20694865778,
       "name": "晨间锻炼 ☀️",
       "sport_type": "WeightTraining",
@@ -495,25 +513,7 @@
       "distance_km": 0.0,
       "date_short": "10/22",
       "moving_time_min": 0.0
-    },
-    {
-      "id": 20694814256,
-      "name": "Evening Workout",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "10/22",
-      "moving_time_min": 4.0
-    },
-    {
-      "id": 20694814282,
-      "name": "Evening Workout",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "10/22",
-      "moving_time_min": 1.0
     }
   ],
-  "last_updated": "2026-10-24T00:25:59.581051"
+  "last_updated": "2026-10-25T00:09:45.129318"
 }
