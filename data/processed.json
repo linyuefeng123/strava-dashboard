@@ -1,11 +1,11 @@
 {
   "annual_summary": {
     "ride": {
-      "distance_km": 3529.6,
-      "time_hours": 132.5,
-      "count": 190,
+      "distance_km": 3565.6,
+      "time_hours": 133.7,
+      "count": 191,
       "calories": 3122,
-      "pr_count": 159
+      "pr_count": 160
     },
     "workout": {
       "distance_km": 0.0,
@@ -36,49 +36,33 @@
       "pr_count": 0
     }
   },
-  "weekly_summary": {
-    "ride": {
-      "distance_km": 51.4,
-      "time_hours": 1.7,
-      "count": 2
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 2.0,
-      "count": 10
-    },
-    "run": {
-      "distance_km": 7.9,
-      "time_hours": 0.8,
-      "count": 2
-    }
-  },
+  "weekly_summary": {},
   "weekly_goals": [
     {
       "label": "Ride Distance",
       "target": 100,
-      "current": 51.4,
-      "pct": 51.4
+      "current": 0,
+      "pct": 0.0
     },
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 7.9,
-      "pct": 39.5
+      "current": 0,
+      "pct": 0.0
     },
     {
       "label": "Workouts",
       "target": 2,
-      "current": 10,
-      "pct": 100.0
+      "current": 0,
+      "pct": 0.0
     }
   ],
   "annual_goals": [
     {
       "label": "Ride Distance",
       "target": 5000,
-      "current": 3529.6,
-      "pct": 70.6
+      "current": 3565.6,
+      "pct": 71.3
     },
     {
       "label": "Run Distance",
@@ -275,9 +259,9 @@
     },
     "10": {
       "ride": {
-        "distance_km": 178.4,
-        "time_hours": 7.0,
-        "count": 11
+        "distance_km": 214.4,
+        "time_hours": 8.1,
+        "count": 12
       },
       "workout": {
         "distance_km": 0.0,
@@ -300,7 +284,7 @@
     "ftp": null,
     "best_5k_time": 1401,
     "best_half_marathon_time": null,
-    "total_prs": 176
+    "total_prs": 177
   },
   "races": {
     "upcoming": [],
@@ -339,16 +323,21 @@
       }
     ]
   },
-  "streak": 5,
+  "streak": 6,
   "weekly_trend": [
+    {
+      "week_num": 44,
+      "start_date": "2026-10-26",
+      "sports": {}
+    },
     {
       "week_num": 43,
       "start_date": "2026-10-19",
       "sports": {
         "ride": {
-          "distance_km": 51.4,
-          "time_hours": 1.7,
-          "count": 2
+          "distance_km": 87.4,
+          "time_hours": 2.9,
+          "count": 3
         },
         "run": {
           "distance_km": 7.9,
@@ -437,20 +426,18 @@
           "count": 7
         }
       }
-    },
-    {
-      "week_num": 36,
-      "start_date": "2026-08-31",
-      "sports": {
-        "ride": {
-          "distance_km": 125.7,
-          "time_hours": 4.2,
-          "count": 7
-        }
-      }
     }
   ],
   "recent_activities": [
+    {
+      "id": 20720211629,
+      "name": "MyWhoosh - 4min FTP #4",
+      "sport_type": "VirtualRide",
+      "sport_icon": "[B]",
+      "distance_km": 36.0,
+      "date_short": "10/25",
+      "moving_time_min": 70.0
+    },
     {
       "id": 20708902556,
       "name": "MyWhoosh - 200",
@@ -504,16 +491,7 @@
       "distance_km": 20.2,
       "date_short": "10/22",
       "moving_time_min": 43.0
-    },
-    {
-      "id": 20694814303,
-      "name": "Evening Workout",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "10/22",
-      "moving_time_min": 0.0
     }
   ],
-  "last_updated": "2026-10-25T00:09:45.129318"
+  "last_updated": "2026-10-26T00:01:37.416083"
 }
