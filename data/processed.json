@@ -1,18 +1,18 @@
 {
   "annual_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 68.4,
+      "count": 76,
+      "calories": 0,
+      "pr_count": 0
+    },
     "ride": {
       "distance_km": 3565.6,
       "time_hours": 133.7,
       "count": 191,
       "calories": 3122,
       "pr_count": 160
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 67.6,
-      "count": 74,
-      "calories": 0,
-      "pr_count": 0
     },
     "run": {
       "distance_km": 268.4,
@@ -36,7 +36,13 @@
       "pr_count": 0
     }
   },
-  "weekly_summary": {},
+  "weekly_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 0.8,
+      "count": 2
+    }
+  },
   "weekly_goals": [
     {
       "label": "Ride Distance",
@@ -53,8 +59,8 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 0,
-      "pct": 0.0
+      "current": 2,
+      "pct": 100.0
     }
   ],
   "annual_goals": [
@@ -79,8 +85,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 74,
-      "pct": 74.0
+      "current": 76,
+      "pct": 76.0
     }
   ],
   "monthly_trend": {
@@ -258,15 +264,15 @@
       }
     },
     "10": {
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 2.9,
+        "count": 17
+      },
       "ride": {
         "distance_km": 214.4,
         "time_hours": 8.1,
         "count": 12
-      },
-      "workout": {
-        "distance_km": 0.0,
-        "time_hours": 2.1,
-        "count": 15
       },
       "run": {
         "distance_km": 41.9,
@@ -323,7 +329,7 @@
       }
     ]
   },
-  "streak": 6,
+  "streak": 8,
   "weekly_trend": [
     {
       "week_num": 44,
@@ -430,6 +436,24 @@
   ],
   "recent_activities": [
     {
+      "id": 20744592115,
+      "name": "上身",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "10/27",
+      "moving_time_min": 42.0
+    },
+    {
+      "id": 20733113146,
+      "name": "pull",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "10/26",
+      "moving_time_min": 4.0
+    },
+    {
       "id": 20720211629,
       "name": "MyWhoosh - 4min FTP #4",
       "sport_type": "VirtualRide",
@@ -473,25 +497,7 @@
       "distance_km": 0.0,
       "date_short": "10/23",
       "moving_time_min": 26.0
-    },
-    {
-      "id": 20694814317,
-      "name": "Night Workout",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "10/22",
-      "moving_time_min": 1.0
-    },
-    {
-      "id": 20687163604,
-      "name": "MyWhoosh - Al Qudra",
-      "sport_type": "VirtualRide",
-      "sport_icon": "[B]",
-      "distance_km": 20.2,
-      "date_short": "10/22",
-      "moving_time_min": 43.0
     }
   ],
-  "last_updated": "2026-10-26T00:01:37.416083"
+  "last_updated": "2026-10-27T01:21:12.435146"
 }
