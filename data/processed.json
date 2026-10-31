@@ -2,8 +2,8 @@
   "annual_summary": {
     "ride": {
       "distance_km": 3580.5,
-      "time_hours": 135.2,
-      "count": 193,
+      "time_hours": 136.1,
+      "count": 194,
       "calories": 3122,
       "pr_count": 160
     },
@@ -39,8 +39,8 @@
   "weekly_summary": {
     "ride": {
       "distance_km": 14.9,
-      "time_hours": 1.5,
-      "count": 2
+      "time_hours": 2.4,
+      "count": 3
     },
     "workout": {
       "distance_km": 0.0,
@@ -271,8 +271,8 @@
     "10": {
       "ride": {
         "distance_km": 229.3,
-        "time_hours": 9.6,
-        "count": 14
+        "time_hours": 10.5,
+        "count": 15
       },
       "workout": {
         "distance_km": 0.0,
@@ -342,8 +342,8 @@
       "sports": {
         "ride": {
           "distance_km": 14.9,
-          "time_hours": 1.5,
-          "count": 2
+          "time_hours": 2.4,
+          "count": 3
         }
       }
     },
@@ -447,6 +447,15 @@
   ],
   "recent_activities": [
     {
+      "id": 20789591869,
+      "name": "Afternoon Ride",
+      "sport_type": "Ride",
+      "sport_icon": "[B]",
+      "distance_km": 0.0,
+      "date_short": "10/30",
+      "moving_time_min": 54.0
+    },
+    {
       "id": 20785584346,
       "name": "Morning Ride",
       "sport_type": "Ride",
@@ -499,16 +508,7 @@
       "distance_km": 0.0,
       "date_short": "10/27",
       "moving_time_min": 42.0
-    },
-    {
-      "id": 20733113146,
-      "name": "pull",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "10/26",
-      "moving_time_min": 4.0
     }
   ],
-  "last_updated": "2026-10-30T01:47:37.564412"
+  "last_updated": "2026-10-31T01:28:52.139766"
 }
