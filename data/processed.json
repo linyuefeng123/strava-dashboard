@@ -289,7 +289,8 @@
         "time_hours": 0.4,
         "count": 1
       }
-    }
+    },
+    "11": {}
   },
   "key_metrics": {
     "ftp": null,
@@ -334,7 +335,7 @@
       }
     ]
   },
-  "streak": 11,
+  "streak": 0,
   "weekly_trend": [
     {
       "week_num": 44,
@@ -510,5 +511,5 @@
       "moving_time_min": 42.0
     }
   ],
-  "last_updated": "2026-10-31T01:28:52.139766"
+  "last_updated": "2026-11-01T00:52:56.621007"
 }
