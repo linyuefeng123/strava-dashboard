@@ -2,8 +2,8 @@
   "annual_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 69.4,
-      "count": 81,
+      "time_hours": 69.5,
+      "count": 84,
       "calories": 0,
       "pr_count": 0
     },
@@ -39,8 +39,8 @@
   "weekly_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 0.2,
-      "count": 2
+      "time_hours": 0.4,
+      "count": 5
     }
   },
   "weekly_goals": [
@@ -59,7 +59,7 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 2,
+      "current": 5,
       "pct": 100.0
     }
   ],
@@ -85,8 +85,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 81,
-      "pct": 81.0
+      "current": 84,
+      "pct": 84.0
     }
   ],
   "monthly_trend": {
@@ -288,8 +288,8 @@
     "11": {
       "workout": {
         "distance_km": 0.0,
-        "time_hours": 0.2,
-        "count": 2
+        "time_hours": 0.4,
+        "count": 5
       }
     }
   },
@@ -336,7 +336,7 @@
       }
     ]
   },
-  "streak": 2,
+  "streak": 3,
   "weekly_trend": [
     {
       "week_num": 45,
@@ -443,6 +443,33 @@
   ],
   "recent_activities": [
     {
+      "id": 20850428005,
+      "name": "上身",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/4",
+      "moving_time_min": 1.0
+    },
+    {
+      "id": 20838108479,
+      "name": "Lunch Workout",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/3",
+      "moving_time_min": 4.0
+    },
+    {
+      "id": 20838108351,
+      "name": "Lunch Workout",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/3",
+      "moving_time_min": 6.0
+    },
+    {
       "id": 20836332800,
       "name": "pull",
       "sport_type": "WeightTraining",
@@ -477,34 +504,7 @@
       "distance_km": 0.0,
       "date_short": "10/30",
       "moving_time_min": 59.0
-    },
-    {
-      "id": 20773829214,
-      "name": "上身",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "10/29",
-      "moving_time_min": 1.0
-    },
-    {
-      "id": 20775489315,
-      "name": "Lunch Workout",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "10/29",
-      "moving_time_min": 45.0
-    },
-    {
-      "id": 20764664013,
-      "name": "MyWhoosh - 90 Minute Endurance",
-      "sport_type": "VirtualRide",
-      "sport_icon": "[B]",
-      "distance_km": 14.9,
-      "date_short": "10/28",
-      "moving_time_min": 30.0
     }
   ],
-  "last_updated": "2026-11-03T03:24:36.910854"
+  "last_updated": "2026-11-04T02:04:05.065171"
 }
