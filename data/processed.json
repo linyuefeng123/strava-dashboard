@@ -2,8 +2,8 @@
   "annual_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 69.5,
-      "count": 84,
+      "time_hours": 69.7,
+      "count": 86,
       "calories": 0,
       "pr_count": 0
     },
@@ -39,8 +39,8 @@
   "weekly_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 0.4,
-      "count": 5
+      "time_hours": 0.5,
+      "count": 7
     }
   },
   "weekly_goals": [
@@ -59,7 +59,7 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 5,
+      "current": 7,
       "pct": 100.0
     }
   ],
@@ -85,8 +85,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 84,
-      "pct": 84.0
+      "current": 86,
+      "pct": 86.0
     }
   ],
   "monthly_trend": {
@@ -288,8 +288,8 @@
     "11": {
       "workout": {
         "distance_km": 0.0,
-        "time_hours": 0.4,
-        "count": 5
+        "time_hours": 0.5,
+        "count": 7
       }
     }
   },
@@ -443,6 +443,24 @@
   ],
   "recent_activities": [
     {
+      "id": 20852544316,
+      "name": "Lunch Workout",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/4",
+      "moving_time_min": 8.0
+    },
+    {
+      "id": 20852544320,
+      "name": "Lunch Workout",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/4",
+      "moving_time_min": 0.0
+    },
+    {
       "id": 20850428005,
       "name": "上身",
       "sport_type": "WeightTraining",
@@ -486,25 +504,7 @@
       "distance_km": 0.0,
       "date_short": "11/2",
       "moving_time_min": 10.0
-    },
-    {
-      "id": 20789591869,
-      "name": "Afternoon Ride",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 0.0,
-      "date_short": "10/30",
-      "moving_time_min": 54.0
-    },
-    {
-      "id": 20785584346,
-      "name": "Morning Ride",
-      "sport_type": "Ride",
-      "sport_icon": "[B]",
-      "distance_km": 0.0,
-      "date_short": "10/30",
-      "moving_time_min": 59.0
     }
   ],
-  "last_updated": "2026-11-04T02:04:05.065171"
+  "last_updated": "2026-11-05T02:11:48.929552"
 }
