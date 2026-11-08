@@ -1,5 +1,19 @@
 {
   "annual_summary": {
+    "ride": {
+      "distance_km": 3595.0,
+      "time_hours": 136.7,
+      "count": 195,
+      "calories": 3122,
+      "pr_count": 160
+    },
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 69.7,
+      "count": 87,
+      "calories": 0,
+      "pr_count": 0
+    },
     "walk": {
       "distance_km": 8.7,
       "time_hours": 1.9,
@@ -14,20 +28,6 @@
       "calories": 1806,
       "pr_count": 17
     },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 69.7,
-      "count": 86,
-      "calories": 0,
-      "pr_count": 0
-    },
-    "ride": {
-      "distance_km": 3580.5,
-      "time_hours": 136.1,
-      "count": 194,
-      "calories": 3122,
-      "pr_count": 160
-    },
     "swim": {
       "distance_km": 18.0,
       "time_hours": 6.5,
@@ -37,6 +37,16 @@
     }
   },
   "weekly_summary": {
+    "ride": {
+      "distance_km": 14.5,
+      "time_hours": 0.6,
+      "count": 1
+    },
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 0.5,
+      "count": 8
+    },
     "walk": {
       "distance_km": 1.0,
       "time_hours": 0.1,
@@ -46,19 +56,14 @@
       "distance_km": 12.0,
       "time_hours": 0.9,
       "count": 1
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 0.5,
-      "count": 7
     }
   },
   "weekly_goals": [
     {
       "label": "Ride Distance",
       "target": 100,
-      "current": 0,
-      "pct": 0.0
+      "current": 14.5,
+      "pct": 14.5
     },
     {
       "label": "Run Distance",
@@ -69,7 +74,7 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 7,
+      "current": 8,
       "pct": 100.0
     }
   ],
@@ -77,8 +82,8 @@
     {
       "label": "Ride Distance",
       "target": 5000,
-      "current": 3580.5,
-      "pct": 71.6
+      "current": 3595.0,
+      "pct": 71.9
     },
     {
       "label": "Run Distance",
@@ -95,8 +100,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 86,
-      "pct": 86.0
+      "current": 87,
+      "pct": 87.0
     }
   ],
   "monthly_trend": {
@@ -296,6 +301,16 @@
       }
     },
     "11": {
+      "ride": {
+        "distance_km": 14.5,
+        "time_hours": 0.6,
+        "count": 1
+      },
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 0.5,
+        "count": 8
+      },
       "walk": {
         "distance_km": 1.0,
         "time_hours": 0.1,
@@ -305,11 +320,6 @@
         "distance_km": 12.0,
         "time_hours": 0.9,
         "count": 1
-      },
-      "workout": {
-        "distance_km": 0.0,
-        "time_hours": 0.5,
-        "count": 7
       }
     }
   },
@@ -356,12 +366,17 @@
       }
     ]
   },
-  "streak": 1,
+  "streak": 2,
   "weekly_trend": [
     {
       "week_num": 45,
       "start_date": "2026-11-02",
       "sports": {
+        "ride": {
+          "distance_km": 14.5,
+          "time_hours": 0.6,
+          "count": 1
+        },
         "walk": {
           "distance_km": 1.0,
           "time_hours": 0.1,
@@ -474,6 +489,24 @@
   ],
   "recent_activities": [
     {
+      "id": 20891111999,
+      "name": "MyWhoosh - Al Qudra",
+      "sport_type": "VirtualRide",
+      "sport_icon": "[B]",
+      "distance_km": 14.5,
+      "date_short": "11/7",
+      "moving_time_min": 35.0
+    },
+    {
+      "id": 20891245926,
+      "name": "锻炼（下午）",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/7",
+      "moving_time_min": 1.0
+    },
+    {
       "id": 20878202221,
       "name": "每天爬楼 168 米",
       "sport_type": "Walk",
@@ -517,25 +550,7 @@
       "distance_km": 0.0,
       "date_short": "11/4",
       "moving_time_min": 1.0
-    },
-    {
-      "id": 20838108479,
-      "name": "Lunch Workout",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/3",
-      "moving_time_min": 4.0
-    },
-    {
-      "id": 20838108351,
-      "name": "Lunch Workout",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/3",
-      "moving_time_min": 6.0
     }
   ],
-  "last_updated": "2026-11-07T01:45:05.823696"
+  "last_updated": "2026-11-08T01:13:52.260232"
 }
