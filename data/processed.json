@@ -1,18 +1,18 @@
 {
   "annual_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 69.7,
+      "count": 88,
+      "calories": 0,
+      "pr_count": 0
+    },
     "ride": {
       "distance_km": 3595.0,
       "time_hours": 136.7,
       "count": 195,
       "calories": 3122,
       "pr_count": 160
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 69.7,
-      "count": 87,
-      "calories": 0,
-      "pr_count": 0
     },
     "walk": {
       "distance_km": 8.7,
@@ -36,7 +36,13 @@
       "pr_count": 0
     }
   },
-  "weekly_summary": {},
+  "weekly_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 0.0,
+      "count": 1
+    }
+  },
   "weekly_goals": [
     {
       "label": "Ride Distance",
@@ -53,8 +59,8 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 0,
-      "pct": 0.0
+      "current": 1,
+      "pct": 50.0
     }
   ],
   "annual_goals": [
@@ -79,8 +85,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 87,
-      "pct": 87.0
+      "current": 88,
+      "pct": 88.0
     }
   ],
   "monthly_trend": {
@@ -280,15 +286,15 @@
       }
     },
     "11": {
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 0.5,
+        "count": 9
+      },
       "ride": {
         "distance_km": 14.5,
         "time_hours": 0.6,
         "count": 1
-      },
-      "workout": {
-        "distance_km": 0.0,
-        "time_hours": 0.5,
-        "count": 8
       },
       "walk": {
         "distance_km": 1.0,
@@ -345,7 +351,7 @@
       }
     ]
   },
-  "streak": 0,
+  "streak": 1,
   "weekly_trend": [
     {
       "week_num": 46,
@@ -457,6 +463,15 @@
   ],
   "recent_activities": [
     {
+      "id": 20916029699,
+      "name": "晨间锻炼 ☀️",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/9",
+      "moving_time_min": 1.0
+    },
+    {
       "id": 20891111999,
       "name": "MyWhoosh - Al Qudra",
       "sport_type": "VirtualRide",
@@ -509,16 +524,7 @@
       "distance_km": 0.0,
       "date_short": "11/4",
       "moving_time_min": 0.0
-    },
-    {
-      "id": 20850428005,
-      "name": "上身",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/4",
-      "moving_time_min": 1.0
     }
   ],
-  "last_updated": "2026-11-09T01:34:32.087796"
+  "last_updated": "2026-11-10T04:00:49.216729"
 }
