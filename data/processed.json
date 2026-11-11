@@ -2,8 +2,8 @@
   "annual_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 69.7,
-      "count": 88,
+      "time_hours": 69.8,
+      "count": 90,
       "calories": 0,
       "pr_count": 0
     },
@@ -39,8 +39,8 @@
   "weekly_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 0.0,
-      "count": 1
+      "time_hours": 0.1,
+      "count": 3
     }
   },
   "weekly_goals": [
@@ -59,8 +59,8 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 1,
-      "pct": 50.0
+      "current": 3,
+      "pct": 100.0
     }
   ],
   "annual_goals": [
@@ -85,8 +85,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 88,
-      "pct": 88.0
+      "current": 90,
+      "pct": 90.0
     }
   ],
   "monthly_trend": {
@@ -288,8 +288,8 @@
     "11": {
       "workout": {
         "distance_km": 0.0,
-        "time_hours": 0.5,
-        "count": 9
+        "time_hours": 0.6,
+        "count": 11
       },
       "ride": {
         "distance_km": 14.5,
@@ -351,7 +351,7 @@
       }
     ]
   },
-  "streak": 1,
+  "streak": 3,
   "weekly_trend": [
     {
       "week_num": 46,
@@ -463,6 +463,24 @@
   ],
   "recent_activities": [
     {
+      "id": 20940455351,
+      "name": "晨间锻炼 ☀️",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/11",
+      "moving_time_min": 6.0
+    },
+    {
+      "id": 20929643151,
+      "name": "午间锻炼💪",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/10",
+      "moving_time_min": 1.0
+    },
+    {
       "id": 20916029699,
       "name": "晨间锻炼 ☀️",
       "sport_type": "WeightTraining",
@@ -506,25 +524,7 @@
       "distance_km": 12.0,
       "date_short": "11/6",
       "moving_time_min": 56.0
-    },
-    {
-      "id": 20852544316,
-      "name": "Lunch Workout",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/4",
-      "moving_time_min": 8.0
-    },
-    {
-      "id": 20852544320,
-      "name": "Lunch Workout",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/4",
-      "moving_time_min": 0.0
     }
   ],
-  "last_updated": "2026-11-10T04:00:49.216729"
+  "last_updated": "2026-11-11T01:48:12.980190"
 }
