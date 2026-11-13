@@ -2,8 +2,8 @@
   "annual_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 69.8,
-      "count": 90,
+      "time_hours": 69.9,
+      "count": 91,
       "calories": 0,
       "pr_count": 0
     },
@@ -39,8 +39,8 @@
   "weekly_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 0.1,
-      "count": 3
+      "time_hours": 0.2,
+      "count": 4
     }
   },
   "weekly_goals": [
@@ -59,7 +59,7 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 3,
+      "current": 4,
       "pct": 100.0
     }
   ],
@@ -85,8 +85,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 90,
-      "pct": 90.0
+      "current": 91,
+      "pct": 91.0
     }
   ],
   "monthly_trend": {
@@ -288,8 +288,8 @@
     "11": {
       "workout": {
         "distance_km": 0.0,
-        "time_hours": 0.6,
-        "count": 11
+        "time_hours": 0.7,
+        "count": 12
       },
       "ride": {
         "distance_km": 14.5,
@@ -351,7 +351,7 @@
       }
     ]
   },
-  "streak": 3,
+  "streak": 4,
   "weekly_trend": [
     {
       "week_num": 46,
@@ -463,6 +463,15 @@
   ],
   "recent_activities": [
     {
+      "id": 20955350361,
+      "name": "晨间锻炼 ☀️",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/12",
+      "moving_time_min": 2.0
+    },
+    {
       "id": 20940455351,
       "name": "晨间锻炼 ☀️",
       "sport_type": "WeightTraining",
@@ -515,16 +524,7 @@
       "distance_km": 1.0,
       "date_short": "11/6",
       "moving_time_min": 8.0
-    },
-    {
-      "id": 20878205769,
-      "name": "午间跑步",
-      "sport_type": "Run",
-      "sport_icon": "[R]",
-      "distance_km": 12.0,
-      "date_short": "11/6",
-      "moving_time_min": 56.0
     }
   ],
-  "last_updated": "2026-11-12T02:47:25.335808"
+  "last_updated": "2026-11-13T02:30:18.039655"
 }
