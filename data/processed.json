@@ -2,8 +2,8 @@
   "annual_summary": {
     "workout": {
       "distance_km": 0.0,
-      "time_hours": 69.9,
-      "count": 91,
+      "time_hours": 78.3,
+      "count": 100,
       "calories": 0,
       "pr_count": 0
     },
@@ -36,13 +36,7 @@
       "pr_count": 0
     }
   },
-  "weekly_summary": {
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 0.2,
-      "count": 4
-    }
-  },
+  "weekly_summary": {},
   "weekly_goals": [
     {
       "label": "Ride Distance",
@@ -59,8 +53,8 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 4,
-      "pct": 100.0
+      "current": 0,
+      "pct": 0.0
     }
   ],
   "annual_goals": [
@@ -85,8 +79,8 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 91,
-      "pct": 91.0
+      "current": 100,
+      "pct": 100.0
     }
   ],
   "monthly_trend": {
@@ -288,8 +282,8 @@
     "11": {
       "workout": {
         "distance_km": 0.0,
-        "time_hours": 0.7,
-        "count": 12
+        "time_hours": 9.1,
+        "count": 21
       },
       "ride": {
         "distance_km": 14.5,
@@ -351,8 +345,13 @@
       }
     ]
   },
-  "streak": 0,
+  "streak": 1,
   "weekly_trend": [
+    {
+      "week_num": 47,
+      "start_date": "2026-11-16",
+      "sports": {}
+    },
     {
       "week_num": 46,
       "start_date": "2026-11-09",
@@ -448,83 +447,72 @@
           "count": 1
         }
       }
-    },
-    {
-      "week_num": 39,
-      "start_date": "2026-09-21",
-      "sports": {
-        "ride": {
-          "distance_km": 24.6,
-          "time_hours": 1.1,
-          "count": 2
-        }
-      }
     }
   ],
   "recent_activities": [
     {
-      "id": 20955350361,
-      "name": "晨间锻炼 ☀️",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/12",
-      "moving_time_min": 2.0
-    },
-    {
-      "id": 20940455351,
-      "name": "晨间锻炼 ☀️",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/11",
-      "moving_time_min": 6.0
-    },
-    {
-      "id": 20929643151,
-      "name": "午间锻炼💪",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/10",
-      "moving_time_min": 1.0
-    },
-    {
-      "id": 20916029699,
-      "name": "晨间锻炼 ☀️",
-      "sport_type": "WeightTraining",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/9",
-      "moving_time_min": 1.0
-    },
-    {
-      "id": 20891111999,
-      "name": "MyWhoosh - Al Qudra",
-      "sport_type": "VirtualRide",
-      "sport_icon": "[B]",
-      "distance_km": 14.5,
-      "date_short": "11/7",
-      "moving_time_min": 35.0
-    },
-    {
-      "id": 20891245926,
+      "id": 21004080705,
       "name": "锻炼（下午）",
       "sport_type": "Workout",
       "sport_icon": "[W]",
       "distance_km": 0.0,
-      "date_short": "11/7",
-      "moving_time_min": 1.0
+      "date_short": "11/15",
+      "moving_time_min": 120.0
     },
     {
-      "id": 20878202221,
-      "name": "每天爬楼 168 米",
-      "sport_type": "Walk",
-      "sport_icon": "[?]",
-      "distance_km": 1.0,
-      "date_short": "11/6",
-      "moving_time_min": 8.0
+      "id": 21004078327,
+      "name": "锻炼（下午）",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/15",
+      "moving_time_min": 5.0
+    },
+    {
+      "id": 21004078337,
+      "name": "锻炼（下午）",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/15",
+      "moving_time_min": 0.0
+    },
+    {
+      "id": 21004078336,
+      "name": "锻炼（下午）",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/15",
+      "moving_time_min": 82.0
+    },
+    {
+      "id": 21004078329,
+      "name": "锻炼（下午）",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/15",
+      "moving_time_min": 2.0
+    },
+    {
+      "id": 21004078328,
+      "name": "锻炼（下午）",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/15",
+      "moving_time_min": 52.0
+    },
+    {
+      "id": 21004078326,
+      "name": "锻炼（下午）",
+      "sport_type": "Workout",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/15",
+      "moving_time_min": 1.0
     }
   ],
-  "last_updated": "2026-11-15T01:41:29.989805"
+  "last_updated": "2026-11-16T01:45:10.054597"
 }
