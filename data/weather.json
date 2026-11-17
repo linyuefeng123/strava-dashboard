@@ -1,6 +1,6 @@
 {
   "current": null,
   "forecast": [],
-  "fetched_at": "2026-11-16T01:45:25.417549",
+  "fetched_at": "2026-11-17T04:24:18.228062",
   "error": "HTTPSConnectionPool(host='api.open-meteo.com', port=443): Read timed out. (read timeout=15)"
 }
