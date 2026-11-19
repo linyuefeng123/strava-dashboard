@@ -351,7 +351,7 @@
       }
     ]
   },
-  "streak": 1,
+  "streak": 0,
   "weekly_trend": [
     {
       "week_num": 47,
@@ -520,5 +520,5 @@
       "moving_time_min": 52.0
     }
   ],
-  "last_updated": "2026-11-18T03:32:27.054501"
+  "last_updated": "2026-11-19T03:04:46.314047"
 }
