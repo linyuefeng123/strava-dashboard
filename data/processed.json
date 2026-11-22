@@ -1,5 +1,12 @@
 {
   "annual_summary": {
+    "run": {
+      "distance_km": 287.1,
+      "time_hours": 91.8,
+      "count": 56,
+      "calories": 1806,
+      "pr_count": 17
+    },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 78.3,
@@ -21,13 +28,6 @@
       "calories": 0,
       "pr_count": 0
     },
-    "run": {
-      "distance_km": 280.4,
-      "time_hours": 91.2,
-      "count": 55,
-      "calories": 1806,
-      "pr_count": 17
-    },
     "swim": {
       "distance_km": 18.0,
       "time_hours": 6.5,
@@ -37,6 +37,11 @@
     }
   },
   "weekly_summary": {
+    "run": {
+      "distance_km": 6.7,
+      "time_hours": 0.6,
+      "count": 1
+    },
     "workout": {
       "distance_km": 0.0,
       "time_hours": 0.0,
@@ -53,8 +58,8 @@
     {
       "label": "Run Distance",
       "target": 20,
-      "current": 0,
-      "pct": 0.0
+      "current": 6.7,
+      "pct": 33.5
     },
     {
       "label": "Workouts",
@@ -73,8 +78,8 @@
     {
       "label": "Run Distance",
       "target": 800,
-      "current": 280.4,
-      "pct": 35.0
+      "current": 287.1,
+      "pct": 35.9
     },
     {
       "label": "Swim Distance",
@@ -286,6 +291,11 @@
       }
     },
     "11": {
+      "run": {
+        "distance_km": 18.7,
+        "time_hours": 1.5,
+        "count": 2
+      },
       "workout": {
         "distance_km": 0.0,
         "time_hours": 9.1,
@@ -299,11 +309,6 @@
       "walk": {
         "distance_km": 1.0,
         "time_hours": 0.1,
-        "count": 1
-      },
-      "run": {
-        "distance_km": 12.0,
-        "time_hours": 0.9,
         "count": 1
       }
     }
@@ -351,12 +356,18 @@
       }
     ]
   },
-  "streak": 0,
+  "streak": 1,
   "weekly_trend": [
     {
       "week_num": 47,
       "start_date": "2026-11-16",
-      "sports": {}
+      "sports": {
+        "run": {
+          "distance_km": 6.7,
+          "time_hours": 0.6,
+          "count": 1
+        }
+      }
     },
     {
       "week_num": 46,
@@ -457,6 +468,15 @@
   ],
   "recent_activities": [
     {
+      "id": 21068427007,
+      "name": "傍晚跑步",
+      "sport_type": "Run",
+      "sport_icon": "[R]",
+      "distance_km": 6.7,
+      "date_short": "11/21",
+      "moving_time_min": 33.0
+    },
+    {
       "id": 21017220181,
       "name": "午间锻炼💪",
       "sport_type": "WeightTraining",
@@ -509,16 +529,7 @@
       "distance_km": 0.0,
       "date_short": "11/15",
       "moving_time_min": 2.0
-    },
-    {
-      "id": 21004078328,
-      "name": "锻炼（下午）",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/15",
-      "moving_time_min": 52.0
     }
   ],
-  "last_updated": "2026-11-21T03:04:06.469620"
+  "last_updated": "2026-11-22T02:00:41.985254"
 }
