@@ -1,5 +1,12 @@
 {
   "annual_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 78.8,
+      "count": 102,
+      "calories": 0,
+      "pr_count": 0
+    },
     "ride": {
       "distance_km": 3617.3,
       "time_hours": 137.4,
@@ -13,13 +20,6 @@
       "count": 57,
       "calories": 1806,
       "pr_count": 17
-    },
-    "workout": {
-      "distance_km": 0.0,
-      "time_hours": 78.3,
-      "count": 101,
-      "calories": 0,
-      "pr_count": 0
     },
     "walk": {
       "distance_km": 8.7,
@@ -36,7 +36,13 @@
       "pr_count": 0
     }
   },
-  "weekly_summary": {},
+  "weekly_summary": {
+    "workout": {
+      "distance_km": 0.0,
+      "time_hours": 0.5,
+      "count": 1
+    }
+  },
   "weekly_goals": [
     {
       "label": "Ride Distance",
@@ -53,8 +59,8 @@
     {
       "label": "Workouts",
       "target": 2,
-      "current": 0,
-      "pct": 0.0
+      "current": 1,
+      "pct": 50.0
     }
   ],
   "annual_goals": [
@@ -79,7 +85,7 @@
     {
       "label": "Workouts",
       "target": 100,
-      "current": 101,
+      "current": 102,
       "pct": 100.0
     }
   ],
@@ -280,6 +286,11 @@
       }
     },
     "11": {
+      "workout": {
+        "distance_km": 0.0,
+        "time_hours": 9.6,
+        "count": 23
+      },
       "ride": {
         "distance_km": 36.7,
         "time_hours": 1.3,
@@ -289,11 +300,6 @@
         "distance_km": 24.5,
         "time_hours": 2.0,
         "count": 3
-      },
-      "workout": {
-        "distance_km": 0.0,
-        "time_hours": 9.1,
-        "count": 22
       },
       "walk": {
         "distance_km": 1.0,
@@ -345,7 +351,7 @@
       }
     ]
   },
-  "streak": 0,
+  "streak": 1,
   "weekly_trend": [
     {
       "week_num": 48,
@@ -451,6 +457,15 @@
   ],
   "recent_activities": [
     {
+      "id": 21115556237,
+      "name": "晨间锻炼 ☀️",
+      "sport_type": "WeightTraining",
+      "sport_icon": "[W]",
+      "distance_km": 0.0,
+      "date_short": "11/25",
+      "moving_time_min": 31.0
+    },
+    {
       "id": 21079238527,
       "name": "MyWhoosh - 90 Minute Endurance",
       "sport_type": "VirtualRide",
@@ -503,16 +518,7 @@
       "distance_km": 0.0,
       "date_short": "11/15",
       "moving_time_min": 5.0
-    },
-    {
-      "id": 21004078337,
-      "name": "锻炼（下午）",
-      "sport_type": "Workout",
-      "sport_icon": "[W]",
-      "distance_km": 0.0,
-      "date_short": "11/15",
-      "moving_time_min": 0.0
     }
   ],
-  "last_updated": "2026-11-24T05:50:26.951876"
+  "last_updated": "2026-11-25T04:51:19.327703"
 }
