@@ -1,6 +1,82 @@
 {
-  "current": null,
-  "forecast": [],
-  "fetched_at": "2026-11-25T04:51:34.664835",
-  "error": "HTTPSConnectionPool(host='api.open-meteo.com', port=443): Read timed out. (read timeout=15)"
+  "current": {
+    "temperature": 17,
+    "weather_code": 0,
+    "description": "晴",
+    "icon": "*"
+  },
+  "forecast": [
+    {
+      "date": "2026-11-27",
+      "day_label": "周五",
+      "high": 19,
+      "low": 8,
+      "weather_code": 0,
+      "description": "晴",
+      "icon": "*",
+      "precip_prob": 0
+    },
+    {
+      "date": "2026-11-28",
+      "day_label": "周六",
+      "high": 16,
+      "low": 6,
+      "weather_code": 0,
+      "description": "晴",
+      "icon": "*",
+      "precip_prob": 0
+    },
+    {
+      "date": "2026-11-29",
+      "day_label": "周日",
+      "high": 14,
+      "low": 2,
+      "weather_code": 0,
+      "description": "晴",
+      "icon": "*",
+      "precip_prob": 0
+    },
+    {
+      "date": "2026-11-30",
+      "day_label": "周一",
+      "high": 21,
+      "low": 8,
+      "weather_code": 0,
+      "description": "晴",
+      "icon": "*",
+      "precip_prob": 0
+    },
+    {
+      "date": "2026-12-01",
+      "day_label": "周二",
+      "high": 23,
+      "low": 10,
+      "weather_code": 1,
+      "description": "大部晴",
+      "icon": "*",
+      "precip_prob": 2
+    },
+    {
+      "date": "2026-12-02",
+      "day_label": "周三",
+      "high": 24,
+      "low": 15,
+      "weather_code": 2,
+      "description": "多云",
+      "icon": "~",
+      "precip_prob": 12
+    },
+    {
+      "date": "2026-12-03",
+      "day_label": "周四",
+      "high": 25,
+      "low": 15,
+      "weather_code": 45,
+      "description": "雾",
+      "icon": "=",
+      "precip_prob": 14
+    }
+  ],
+  "rain_alert": "",
+  "fetched_at": "2026-11-26T04:03:28.118065"
 }
