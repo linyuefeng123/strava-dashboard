@@ -1,28 +1,18 @@
 {
   "current": {
-    "temperature": 17,
+    "temperature": 18,
     "weather_code": 0,
     "description": "晴",
     "icon": "*"
   },
   "forecast": [
     {
-      "date": "2026-11-27",
-      "day_label": "周五",
-      "high": 19,
-      "low": 8,
-      "weather_code": 0,
-      "description": "晴",
-      "icon": "*",
-      "precip_prob": 0
-    },
-    {
       "date": "2026-11-28",
       "day_label": "周六",
-      "high": 16,
+      "high": 15,
       "low": 6,
-      "weather_code": 0,
-      "description": "晴",
+      "weather_code": 1,
+      "description": "大部晴",
       "icon": "*",
       "precip_prob": 0
     },
@@ -30,7 +20,7 @@
       "date": "2026-11-29",
       "day_label": "周日",
       "high": 14,
-      "low": 2,
+      "low": 3,
       "weather_code": 0,
       "description": "晴",
       "icon": "*",
@@ -39,7 +29,7 @@
     {
       "date": "2026-11-30",
       "day_label": "周一",
-      "high": 21,
+      "high": 20,
       "low": 8,
       "weather_code": 0,
       "description": "晴",
@@ -54,29 +44,39 @@
       "weather_code": 1,
       "description": "大部晴",
       "icon": "*",
-      "precip_prob": 2
+      "precip_prob": 0
     },
     {
       "date": "2026-12-02",
       "day_label": "周三",
-      "high": 24,
+      "high": 23,
       "low": 15,
-      "weather_code": 2,
-      "description": "多云",
+      "weather_code": 3,
+      "description": "阴",
       "icon": "~",
-      "precip_prob": 12
+      "precip_prob": 14
     },
     {
       "date": "2026-12-03",
       "day_label": "周四",
       "high": 25,
+      "low": 16,
+      "weather_code": 45,
+      "description": "雾",
+      "icon": "=",
+      "precip_prob": 25
+    },
+    {
+      "date": "2026-12-04",
+      "day_label": "周五",
+      "high": 23,
       "low": 15,
       "weather_code": 45,
       "description": "雾",
       "icon": "=",
-      "precip_prob": 14
+      "precip_prob": 26
     }
   ],
   "rain_alert": "",
-  "fetched_at": "2026-11-26T04:03:28.118065"
+  "fetched_at": "2026-11-27T04:01:39.375688"
 }
